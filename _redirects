@@ -1,0 +1,5 @@
+# Preserve old GHL ad-landing paths -> new homepage (301, query strings pass through automatically)
+/pages/proposals     /    301
+/pages/proposals/    /    301
+/pg/proposals        /    301
+/pg/proposals/       /    301
