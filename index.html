@@ -36,11 +36,12 @@
     nav {
       position: fixed; top: 0; left: 0; right: 0; z-index: 100;
       display: flex; justify-content: space-between; align-items: center;
-      padding: 18px 40px;
+      padding: 14px 40px;
       background: rgba(250,248,245,0.92); backdrop-filter: blur(10px);
       border-bottom: 1px solid rgba(201,169,110,0.2);
-      transition: padding 0.3s ease;
+      transition: padding 0.3s ease, transform 0.35s ease;
     }
+    nav.scrolled { padding: 10px 40px; }
     .nav-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.35rem; font-weight: 400; letter-spacing: 0.04em; color: var(--ink); text-decoration: none; }
     .nav-logo span { color: var(--gold); font-style: italic; }
 
@@ -180,7 +181,8 @@
 
     /* RESPONSIVE */
     @media (max-width: 768px) {
-      nav { padding: 16px 20px; }
+      nav { padding: 10px 20px; }
+      nav.scrolled { padding: 8px 20px; }
       .hero-content { padding: 0 24px; }
       .fold2-inner { grid-template-columns: 1fr; gap: 60px; }
       .fold2-text { padding-left: 0; }
@@ -576,6 +578,8 @@
     .fineprint { padding: 16px 24px 0; }
     .legal-panel { padding: 34px 24px 28px; }
     .mobile-cta { display: block; }
+    /* Only one banner at a time: slide the top nav away (behind the call bar) once the bottom CTA is up */
+    body.cta-active nav { transform: translateY(-100%); pointer-events: none; }
   }
   @media (max-width: 560px) {
     .gallery-grid { grid-template-columns: 1fr; }
@@ -588,7 +592,7 @@
   .skip-link { position: absolute; left: -9999px; top: 0; z-index: 200; background: var(--ink); color: var(--gold); padding: 12px 18px; font-family: 'Outfit', sans-serif; font-size: 0.8rem; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; }
   .skip-link:focus { left: 0; }
   .call-banner { position: fixed; top: 0; left: 0; right: 0; z-index: 101; height: 38px; background: var(--ink); border-bottom: 1px solid rgba(201,169,110,0.35); }
-  .call-banner a { display: flex; align-items: center; justify-content: center; gap: 9px; height: 100%; color: rgba(255,255,255,0.82); text-decoration: none; font-size: 0.78rem; font-weight: 300; letter-spacing: 0.02em; transition: color 0.2s ease; }
+  .call-banner a { display: flex; align-items: center; justify-content: center; gap: 9px; height: 100%; color: rgba(255,255,255,0.82); text-decoration: none; font-size: 0.85rem; font-weight: 300; letter-spacing: 0.02em; transition: color 0.2s ease; }
   .call-banner a:hover { color: var(--gold); }
   .call-banner svg { flex-shrink: 0; color: var(--gold); }
   .call-banner strong { font-weight: 500; color: var(--gold); letter-spacing: 0.02em; }
@@ -1387,8 +1391,8 @@
   }
 
   window.addEventListener('scroll', function() {
-    document.getElementById('nav').style.padding = window.scrollY > 60 ? '12px 40px' : '18px 40px';
-  });
+    document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 60);
+  }, { passive: true });
 </script>
 
 <!-- STICKY MOBILE CTA -->
@@ -1460,7 +1464,9 @@
     if (!stickyBar || !quizSectionEl) return;
     var pastQuiz = window.scrollY > (quizSectionEl.offsetTop + quizSectionEl.offsetHeight - window.innerHeight * 0.5);
     var done = quizThanksEl && quizThanksEl.classList.contains('active');
-    stickyBar.classList.toggle('show', pastQuiz && !done);
+    var showCta = pastQuiz && !done;
+    stickyBar.classList.toggle('show', showCta);
+    document.body.classList.toggle('cta-active', showCta); // hide the top nav while the bottom CTA is up (mobile only)
   }
   window.addEventListener('scroll', updateSticky, { passive: true });
 
