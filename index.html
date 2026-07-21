@@ -8,6 +8,11 @@
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
   gtag('config', 'AW-18226213062');
+  // Google Ads call tracking: swaps the displayed number with a Google forwarding
+  // number for ad visitors so phone calls are counted as conversions.
+  gtag('config', 'AW-18226213062/Ll86CM2zntQcEMbh9_JD', {
+    'phone_conversion_number': '+61 432 168 197'
+  });
   // To see the quiz funnel drop-off in GA4, add your GA4 Measurement ID here:
   // gtag('config', 'G-XXXXXXXXXX');
 </script>
