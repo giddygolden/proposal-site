@@ -1,0 +1,1493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18226213062"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-18226213062');
+  // To see the quiz funnel drop-off in GA4, add your GA4 Measurement ID here:
+  // gtag('config', 'G-XXXXXXXXXX');
+</script>
+
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sydney Proposal Photographer | Joshua Sharman</title>
+  <meta name="description" content="Secret proposal photography in Sydney — covert coverage, transparent pricing from $699, 130+ five-star reviews. Start with a free 30-second quiz." />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#1A1714" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --cream: #FAF8F5; --ink: #1A1714; --warm-mid: #7C6A5A;
+      --gold: #C9A96E; --blush: #E8D5C4; --white: #FFFFFF;
+      --shadow: rgba(26,23,20,0.18);
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Outfit', sans-serif; background: var(--cream); color: var(--ink); overflow-x: hidden; }
+
+    /* NAV */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 18px 40px;
+      background: rgba(250,248,245,0.92); backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(201,169,110,0.2);
+      transition: padding 0.3s ease;
+    }
+    .nav-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.35rem; font-weight: 400; letter-spacing: 0.04em; color: var(--ink); text-decoration: none; }
+    .nav-logo span { color: var(--gold); font-style: italic; }
+
+    /* SHINE BUTTON BASE */
+    .btn-shine {
+      position: relative; overflow: hidden;
+      display: inline-block;
+      font-family: 'Outfit', sans-serif; font-size: 0.8rem; font-weight: 500;
+      letter-spacing: 0.14em; text-transform: uppercase;
+      cursor: pointer; text-decoration: none;
+      border: none; border-radius: 1px; white-space: nowrap;
+      transition: all 0.25s ease;
+    }
+    .btn-shine::after {
+      content: '';
+      position: absolute;
+      top: 0; left: -130%;
+      width: 80%; height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.22), transparent);
+      transform: skewX(-20deg);
+      animation: shine 6s ease-in-out infinite;
+    }
+    @keyframes shine {
+      0%   { left: -100%; }
+      22%  { left: 130%; }
+      100% { left: 130%; }
+    }
+
+    .btn-gold { color: var(--ink); background: var(--gold); padding: 16px 36px; }
+    .btn-gold:hover { background: var(--white); transform: translateY(-2px); box-shadow: 0 8px 28px var(--shadow); }
+    .btn-dark { color: var(--white); background: var(--ink); padding: 10px 22px; }
+    .btn-dark:hover { background: var(--gold); color: var(--ink); transform: translateY(-1px); }
+    .btn-dark-lg { color: var(--white); background: var(--ink); padding: 16px 36px; }
+    .btn-dark-lg:hover { background: var(--gold); color: var(--ink); transform: translateY(-2px); box-shadow: 0 8px 28px var(--shadow); }
+    .btn-ghost { color: var(--white); background: transparent; padding: 15px 36px; border: 1.5px solid rgba(255,255,255,0.6); }
+    .btn-ghost:hover { border-color: var(--gold); color: var(--gold); transform: translateY(-2px); }
+
+    /* HERO */
+    .hero { position: relative; min-height: 100vh; display: flex; align-items: flex-end; padding: 0 0 80px; overflow: hidden; margin-top: 60px; }
+    .hero-bg { position: absolute; inset: 0; background-position: center 32%; background-size: cover; filter: brightness(0.72); background-image: url('https://assets.cdn.filesafe.space/s76Gfcyq4U0iZ1yA3LWg/media/6a5f22541097b81195a37766.webp'); } /* Ishan, main hero */
+    .hero-gradient { position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(26,23,20,0.05) 0%, rgba(26,23,20,0.02) 30%, rgba(26,23,20,0.55) 70%, rgba(26,23,20,0.84) 100%); }
+    .hero-content { position: relative; z-index: 2; max-width: 780px; padding: 0 48px; }
+    .hero-eyebrow { font-size: 0.72rem; font-weight: 500; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin-bottom: 18px; opacity: 0; animation: fadeUp 0.8s 0.3s forwards; }
+    .hero-headline { font-family: 'Cormorant Garamond', serif; font-size: clamp(3rem, 6vw, 5.2rem); font-weight: 300; line-height: 1.08; color: var(--white); margin-bottom: 36px; opacity: 0; animation: fadeUp 0.8s 0.5s forwards; }
+    .hero-headline em { font-style: italic; color: var(--gold); }
+    .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; opacity: 0; animation: fadeUp 0.8s 0.7s forwards; }
+
+    /* TRUST BAR */
+    .trust-bar { background: var(--ink); padding: 20px 40px; display: flex; justify-content: center; align-items: center; gap: 48px; flex-wrap: wrap; }
+    .trust-item { display: flex; align-items: center; gap: 10px; color: rgba(255,255,255,0.7); font-size: 0.78rem; font-weight: 400; letter-spacing: 0.06em; white-space: nowrap; }
+    .trust-divider { width: 1px; height: 20px; background: rgba(255,255,255,0.15); }
+
+    /* GUARANTEE IN TRUST BAR */
+    .trust-item-guarantee { display: flex; align-items: center; gap: 10px; font-size: 0.78rem; font-weight: 500; letter-spacing: 0.06em; white-space: nowrap; }
+    .trust-item-guarantee a { color: var(--gold); text-decoration: underline; cursor: pointer; }
+    .trust-item-guarantee a:hover { color: var(--white); }
+
+    /* FOLD 2 */
+    .fold2 { padding: 100px 40px; background: var(--cream); overflow: hidden; }
+    .fold2-inner { max-width: 1140px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+    .fold2-image-wrap { position: relative; }
+    .fold2-image-wrap::before { content: ''; position: absolute; inset: -16px -16px 16px 16px; border: 1.5px solid var(--gold); opacity: 0.4; z-index: 0; }
+    .fold2-image { position: relative; z-index: 1; width: 100%; aspect-ratio: 3/4; object-fit: cover; object-position: 38% top; display: block; box-shadow: 12px 12px 40px var(--shadow); }
+    .social-proof-badge { position: absolute; bottom: -24px; right: -24px; z-index: 2; background: var(--white); padding: 20px 24px; box-shadow: 0 8px 32px var(--shadow); border-radius: 2px; min-width: 180px; }
+    .badge-number { font-family: 'Cormorant Garamond', serif; font-size: 2.6rem; font-weight: 300; color: var(--ink); line-height: 1; }
+    .badge-label { font-size: 0.72rem; font-weight: 400; letter-spacing: 0.1em; text-transform: uppercase; color: var(--warm-mid); margin-top: 4px; }
+    .stars { display: flex; gap: 3px; margin-top: 8px; }
+    .star { color: var(--gold); font-size: 0.9rem; }
+    .fold2-text { padding-left: 20px; }
+    .section-eyebrow { font-size: 0.7rem; font-weight: 500; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; display: block; }
+    .section-headline { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.2rem, 3.8vw, 3.4rem); font-weight: 300; line-height: 1.12; color: var(--ink); margin-bottom: 24px; }
+    .section-headline em { font-style: italic; color: var(--warm-mid); }
+    .section-body { font-size: 1rem; font-weight: 300; line-height: 1.78; color: var(--warm-mid); margin-bottom: 16px; }
+    .testimonial-block { margin: 28px 0; padding: 24px 28px; border-left: 3px solid var(--gold); background: var(--white); box-shadow: 0 2px 16px rgba(0,0,0,0.05); }
+    .testimonial-text { font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; font-style: italic; font-weight: 300; line-height: 1.6; color: var(--ink); margin-bottom: 10px; }
+    .testimonial-author { font-size: 0.75rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--warm-mid); }
+
+    /* FOLD 3 */
+    .fold3 { position: relative; min-height: 90vh; display: flex; align-items: center; overflow: hidden; }
+    .fold3-bg { position: absolute; inset: 0; background-image: url('https://assets.cdn.filesafe.space/s76Gfcyq4U0iZ1yA3LWg/media/6a5e88fbbaf5f6da409eac95.webp'); background-size: cover; background-position: center 45%; filter: brightness(0.58); }
+    .fold3-gradient { position: absolute; inset: 0; background: linear-gradient(135deg, rgba(26,23,20,0.78) 0%, rgba(26,23,20,0.38) 60%, rgba(26,23,20,0.62) 100%); }
+    .fold3-content { position: relative; z-index: 2; max-width: 680px; margin: 0 auto; text-align: center; padding: 80px 40px; }
+    .fold3-headline { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.4rem, 5vw, 4rem); font-weight: 300; line-height: 1.1; color: var(--white); margin-bottom: 24px; }
+    .fold3-headline em { font-style: italic; color: var(--gold); }
+    .fold3-sub { font-size: 0.98rem; font-weight: 300; line-height: 1.72; color: rgba(255,255,255,0.8); max-width: 480px; margin: 0 auto 16px; }
+    .urgency-note { font-size: 0.78rem; font-weight: 500; letter-spacing: 0.06em; color: var(--gold); margin-bottom: 36px; display: flex; align-items: center; justify-content: center; gap: 8px; }
+    .pulse-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--gold); animation: pulse 2s infinite; flex-shrink: 0; }
+
+    .form-group { margin-bottom: 14px; }
+    .form-group label { display: block; font-size: 0.72rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--warm-mid); margin-bottom: 7px; }
+    .form-group input { width: 100%; padding: 12px 14px; font-family: 'Outfit', sans-serif; font-size: 0.97rem; font-weight: 300; color: var(--ink); background: var(--white); border: 1.5px solid var(--blush); border-radius: 1px; outline: none; transition: border-color 0.2s ease; }
+    .form-group input:focus { border-color: var(--gold); }
+
+    
+
+    /* SHINE SUBMIT */
+    .form-submit {
+      position: relative; overflow: hidden;
+      width: 100%; padding: 15px;
+      font-family: 'Outfit', sans-serif; font-size: 0.82rem; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--white); background: var(--ink);
+      border: none; cursor: pointer; border-radius: 1px; margin-top: 4px;
+      transition: background 0.25s ease, transform 0.15s ease, box-shadow 0.25s ease;
+    }
+    .form-submit:hover { background: var(--gold); color: var(--ink); transform: translateY(-1px); box-shadow: 0 6px 20px var(--shadow); }
+    .form-submit::after {
+      content: '';
+      position: absolute;
+      top: 0; left: -130%;
+      width: 80%; height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.22), transparent);
+      transform: skewX(-20deg);
+      animation: shine 6s ease-in-out infinite;
+    }
+
+    .thank-you { display: none; text-align: center; padding: 20px 0; }
+    .thank-you-icon { font-size: 2.6rem; margin-bottom: 16px; display: block; }
+    .thank-you-headline { font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; font-weight: 300; color: var(--ink); margin-bottom: 10px; }
+    .thank-you-body { font-size: 0.95rem; font-weight: 300; color: var(--warm-mid); line-height: 1.65; }
+
+    /* FOOTER */
+    footer { background: var(--ink); color: rgba(255,255,255,0.5); text-align: center; padding: 28px 40px; font-size: 0.78rem; font-weight: 300; }
+    footer a { color: var(--gold); text-decoration: none; }
+
+    /* ANIMATIONS */
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    @keyframes slideUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes pulse { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.5; transform: scale(1.4); } }
+
+    /* SCROLL REVEAL */
+    .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease, transform 0.8s ease; }
+    .reveal.visible { opacity: 1; transform: none; }
+    .reveal-delay-1 { transition-delay: 0.15s; }
+    .reveal-delay-2 { transition-delay: 0.3s; }
+    .reveal-delay-3 { transition-delay: 0.45s; }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      nav { padding: 16px 20px; }
+      .hero-content { padding: 0 24px; }
+      .fold2-inner { grid-template-columns: 1fr; gap: 60px; }
+      .fold2-text { padding-left: 0; }
+      .social-proof-badge { right: 0; bottom: -20px; }
+      .fold2 { padding: 80px 24px; }
+      .fold3-content { padding: 80px 24px; }
+      .modal { padding: 32px 24px 28px; }
+      .trust-bar { gap: 24px; padding: 20px 24px; }
+      .trust-divider { display: none; }
+      .hero-actions { flex-direction: column; align-items: flex-start; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+    }
+
+    /* FAQ */
+    .faq-list { border-top: 1px solid var(--blush); }
+    .faq-item { border-bottom: 1px solid var(--blush); }
+    .faq-q {
+      list-style: none; cursor: pointer;
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 20px 4px; font-size: 1rem; font-weight: 500; color: var(--ink);
+      gap: 16px;
+    }
+    .faq-q::-webkit-details-marker { display: none; }
+    .faq-q::after { content: "+"; font-size: 1.4rem; color: var(--gold); font-family: "Cormorant Garamond", serif; flex-shrink: 0; transition: transform 0.25s; }
+    details[open] .faq-q::after { transform: rotate(45deg); }
+    .faq-a { padding: 0 4px 20px; font-size: 0.96rem; font-weight: 300; line-height: 1.78; color: var(--warm-mid); max-width: 62ch; }
+
+
+    /* SUBMIT LOADING SPINNER (ring) */
+    .submitting .form-submit { pointer-events: none; opacity: 0.85; }
+    .btn-spinner { display: none; width: 16px; height: 16px; border: 2px solid rgba(255,255,255,0.35); border-top-color: #fff; border-radius: 50%; animation: spin 0.7s linear infinite; vertical-align: -3px; margin-left: 8px; }
+    .submitting .btn-spinner { display: inline-block; }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    /* THANK-YOU RESHAPE + entrance */
+    .thank-you { display: none; text-align: center; padding: 14px 0 6px; }
+    .thank-you.show { display: block; }
+    .thank-you-ring { width: 76px; height: 86px; image-rendering: pixelated; display: block; margin: 0 auto 20px; animation: ringDrop 0.6s cubic-bezier(0.18, 0.9, 0.32, 1.4) both; }
+    @keyframes ringDrop {
+      0% { opacity: 0; transform: translateY(-22px) scale(0.7) rotate(-12deg); }
+      60% { opacity: 1; transform: translateY(3px) scale(1.05) rotate(3deg); }
+      100% { opacity: 1; transform: translateY(0) scale(1) rotate(0); }
+    }
+    .thank-you-headline { font-family: 'Cormorant Garamond', serif; font-weight: 300; color: var(--ink); line-height: 1.15; opacity: 0; animation: tyFade 0.5s ease 0.35s both; }
+    .thank-you-headline.lead { font-size: 2rem; margin-bottom: 2px; }
+    .thank-you-headline.sub { font-size: 1.2rem; font-style: italic; color: var(--warm-mid); animation-delay: 0.5s; }
+    @keyframes tyFade { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+
+
+    /* PROPOSAL SPRITE ANIMATION (plays once) */
+    
+    
+    
+    @media (max-width: 480px) {
+      
+      
+    }
+
+
+    /* THANK-YOU PROPOSAL SCENE (static) */
+    .thank-you-scene { width: 240px; max-width: 88%; height: auto; image-rendering: pixelated; display: block; margin: 0 auto 20px; border-radius: 6px; border: 2px solid var(--ink); }
+
+
+    /* ============ QUIZ ============ */
+    .quiz-section {
+      position: relative;
+      background: var(--ink);
+      padding: 0;
+      overflow: hidden;
+      min-height: 72vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .quiz-bg {
+      position: absolute; inset: 0;
+      background-image: url('https://assets.cdn.filesafe.space/s76Gfcyq4U0iZ1yA3LWg/media/6a5e88f9bc0b1f5d2ef3765c.webp');
+      background-size: cover; background-position: center 50%;
+      filter: brightness(0.4) saturate(1.05);
+      transform: scale(1.05) translateX(-1.5%);
+    }
+    .quiz-bg-gradient {
+      position: absolute; inset: 0;
+      background: linear-gradient(135deg, rgba(26,23,20,0.86) 0%, rgba(26,23,20,0.66) 50%, rgba(26,23,20,0.86) 100%);
+    }
+    .quiz-wrap {
+      position: relative; z-index: 3;
+      width: 100%; max-width: 760px;
+      padding: 54px 40px;
+      text-align: center;
+    }
+    /* progress */
+    .quiz-progress { max-width: 560px; margin: 0 auto 30px; }
+    .quiz-progress-label { font-size: 0.68rem; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(255,255,255,0.5); margin-bottom: 10px; }
+    .quiz-progress-track { height: 4px; background: rgba(255,255,255,0.14); border-radius: 4px; overflow: hidden; }
+    .quiz-progress-fill { height: 100%; width: 20%; background: var(--gold); border-radius: 4px; transition: width 0.5s cubic-bezier(0.22,0.9,0.34,1); }
+
+    /* steps */
+    .quiz-step { display: none; }
+    .quiz-step.active { display: block; animation: quizFade 0.55s cubic-bezier(0.22,0.9,0.34,1); }
+    @keyframes quizFade {
+      0% { opacity: 0; transform: translateY(18px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+    .quiz-step.leaving { animation: quizLeave 0.35s ease forwards; pointer-events: none; }
+    @keyframes quizLeave {
+      0% { opacity: 1; transform: translateY(0); }
+      100% { opacity: 0; transform: translateY(-14px); }
+    }
+
+    .quiz-eyebrow {
+      font-size: 0.72rem; font-weight: 500; letter-spacing: 0.22em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 16px; display: block;
+    }
+    .quiz-question {
+      font-family: 'Cormorant Garamond', serif; font-weight: 300;
+      font-size: clamp(1.9rem, 4.2vw, 3rem); line-height: 1.12;
+      color: var(--white); margin-bottom: 8px;
+    }
+    .quiz-question em { font-style: italic; color: var(--gold); }
+    .quiz-subq {
+      font-family: 'Cormorant Garamond', serif; font-weight: 300; font-style: italic;
+      font-size: clamp(1.4rem, 3vw, 2.1rem); line-height: 1.15;
+      color: rgba(255,255,255,0.82); margin-bottom: 30px;
+    }
+    .quiz-hint { font-size: 0.85rem; font-weight: 300; color: rgba(255,255,255,0.5); margin-bottom: 30px; }
+
+    /* answer cards */
+    .quiz-options {
+      display: grid; gap: 14px;
+      grid-template-columns: repeat(2, 1fr);
+      max-width: 560px; margin: 0 auto;
+    }
+    .quiz-options.cols-1 { grid-template-columns: 1fr; max-width: 440px; }
+    .quiz-options.cols-2 { grid-template-columns: repeat(2, 1fr); }
+    .quiz-options.cols-4 { grid-template-columns: repeat(2, 1fr); }
+
+    .quiz-opt {
+      position: relative; overflow: hidden;
+      display: flex; align-items: center; gap: 14px;
+      padding: 20px 22px;
+      background: rgba(255,255,255,0.07);
+      border: 1.5px solid rgba(255,255,255,0.16);
+      border-radius: 4px;
+      color: var(--white);
+      font-family: 'Outfit', sans-serif; font-size: 1.02rem; font-weight: 400;
+      cursor: pointer; text-align: left;
+      backdrop-filter: blur(4px);
+      transition: background 0.22s ease, color 0.22s ease, border-color 0.22s ease, transform 0.22s ease, box-shadow 0.22s ease;
+    }
+    .quiz-opt:hover {
+      background: var(--gold); color: var(--ink);
+      border-color: var(--gold);
+      transform: translateY(-3px);
+      box-shadow: 0 12px 32px rgba(201,169,110,0.32);
+    }
+    .quiz-opt:hover .quiz-opt-icon { transform: scale(1.12) rotate(-4deg); }
+    .quiz-opt-icon {
+      flex-shrink: 0; width: 34px; height: 34px;
+      display: flex; align-items: center; justify-content: center;
+      transition: transform 0.25s ease;
+    }
+    .quiz-opt-icon svg { width: 100%; height: 100%; }
+    .quiz-opt-label { flex: 1; line-height: 1.25; }
+    .quiz-opt-label small { display: block; font-size: 0.76rem; font-weight: 300; opacity: 0.7; margin-top: 2px; }
+    /* shine sweep on hover */
+    .quiz-opt::before {
+      content: ''; position: absolute; top: 0; left: -120%;
+      width: 70%; height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.18), transparent);
+      transform: skewX(-20deg); transition: left 0.5s ease;
+    }
+    .quiz-opt:hover::before { left: 140%; }
+
+    /* paired question rows (Q1 has two sub-questions) */
+    .quiz-pair { margin-bottom: 26px; }
+    .quiz-pair:last-child { margin-bottom: 0; }
+    .quiz-pair-q {
+      font-family: 'Cormorant Garamond', serif; font-weight: 300;
+      font-size: clamp(1.5rem, 3.2vw, 2.2rem); color: var(--white); margin-bottom: 16px;
+    }
+    .quiz-pair-q em { font-style: italic; color: var(--gold); }
+    .quiz-pair .quiz-options { max-width: 420px; }
+    .quiz-pair .selected {
+      background: var(--gold); color: var(--ink); border-color: var(--gold);
+    }
+    .quiz-pair .selected .quiz-opt-icon { transform: scale(1.1); }
+
+    .quiz-back {
+      margin-top: 26px; background: none; border: none;
+      color: rgba(255,255,255,0.45); font-family: 'Outfit', sans-serif;
+      font-size: 0.78rem; letter-spacing: 0.08em; cursor: pointer;
+      transition: color 0.2s ease;
+    }
+    .quiz-back:hover { color: var(--white); }
+
+    /* keyboard focus visibility (offset sits on the dark bg so it shows even on a gold button) */
+    .quiz-opt:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+    .quiz-back:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; border-radius: 2px; }
+    #q-submit:focus-visible { outline: 2px solid var(--white); outline-offset: 3px; }
+
+    @media (max-width: 560px) {
+      .quiz-options.cols-2, .quiz-options.cols-4 { grid-template-columns: 1fr; }
+      .quiz-wrap { padding: 50px 24px; }
+    }
+
+
+    /* quiz submit loading */
+    .form-submit.is-loading .btn-spinner { display: inline-block; }
+    .form-submit .btn-spinner { display: none; width: 16px; height: 16px; border: 2px solid rgba(255,255,255,0.35); border-top-color: #fff; border-radius: 50%; animation: spin 0.7s linear infinite; vertical-align: -3px; margin-left: 8px; }
+    .form-submit.is-loading { pointer-events: none; opacity: 0.85; }
+
+
+    .quiz-opt-label.q3-long { font-size: 0.9rem; white-space: nowrap; }
+    @media (max-width: 560px) { .quiz-opt-label.q3-long { white-space: normal; font-size: 0.92rem; } }
+
+
+    /* quiz submit button standout */
+    #q-submit {
+      background: var(--gold);
+      color: var(--ink);
+      border: 2px solid var(--gold);
+      font-weight: 600;
+      box-shadow: 0 8px 24px rgba(201,169,110,0.35);
+      transition: all 0.22s ease;
+    }
+    #q-submit:hover {
+      background: #d8b87f;
+      border-color: #d8b87f;
+      transform: translateY(-2px);
+      box-shadow: 0 12px 32px rgba(201,169,110,0.5);
+    }
+
+
+    #q-name::placeholder, #q-phone::placeholder { color: rgba(255,255,255,0.35); }
+
+  </style>
+
+<style>
+  /* ═══ EXTENSION STYLES (additive only — seed styles untouched) ═══ */
+  [id] { scroll-margin-top: 76px; }
+  a:focus-visible, button:focus-visible, summary:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+
+  /* HOW IT WORKS */
+  .how { padding: 100px 40px; background: var(--white); }
+  .how-inner { max-width: 1040px; margin: 0 auto; }
+  .how-head { max-width: 620px; margin-bottom: 64px; }
+  .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 44px; }
+  .step { border-top: 1.5px solid var(--blush); padding-top: 26px; position: relative; }
+  .step::before { content: ''; position: absolute; top: -1.5px; left: 0; width: 52px; height: 1.5px; background: var(--gold); }
+  .step-num { font-family: 'Cormorant Garamond', serif; font-size: 3rem; font-weight: 300; font-style: italic; color: var(--gold); line-height: 1; margin-bottom: 14px; }
+  .step h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.55rem; font-weight: 400; margin-bottom: 12px; color: var(--ink); }
+  .step p { font-size: 0.95rem; font-weight: 300; line-height: 1.75; color: var(--warm-mid); }
+
+  /* STATS BAND */
+  .stats { background: var(--ink); padding: 56px 40px; }
+  .stats-inner { max-width: 780px; margin: 0 auto; display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; text-align: center; }
+  .stat-number { font-family: 'Cormorant Garamond', serif; font-size: 2.7rem; font-weight: 300; color: var(--white); line-height: 1; }
+  .stat-number em { font-style: italic; color: var(--gold); }
+  .stat-label { font-size: 0.7rem; font-weight: 400; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.55); margin-top: 10px; }
+
+  /* GALLERY */
+  .gallery { padding: 100px 40px; background: var(--cream); }
+  .gallery-inner { max-width: 1140px; margin: 0 auto; }
+  .gallery-head { display: flex; justify-content: space-between; align-items: flex-end; gap: 32px; margin-bottom: 48px; flex-wrap: wrap; }
+  .gallery-head .section-headline { margin-bottom: 0; }
+  .gallery-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .g-item { position: relative; overflow: hidden; background: var(--blush); }
+  .g-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.7s ease; }
+  .g-item:hover img { transform: scale(1.045); }
+  .g-item figcaption { position: absolute; left: 0; right: 0; bottom: 0; padding: 44px 18px 14px; font-size: 0.7rem; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.92); background: linear-gradient(to top, rgba(26,23,20,0.72), transparent); pointer-events: none; }
+  .g-feat { grid-column: span 2; aspect-ratio: 16/10; }
+  .g-tall { aspect-ratio: 4/5; }
+  .g-wide { grid-column: span 2; aspect-ratio: 2.4/1; }
+  .g-cta { aspect-ratio: 4/5; display: flex; flex-direction: column; justify-content: center; align-items: flex-start; gap: 14px; padding: 28px; background: var(--ink); text-decoration: none; border: 1px solid rgba(201,169,110,0.35); transition: border-color 0.25s ease, transform 0.25s ease; }
+  .g-cta:hover { border-color: var(--gold); transform: translateY(-3px); }
+  .g-cta-eyebrow { font-size: 0.66rem; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); }
+  .g-cta-line { font-family: 'Cormorant Garamond', serif; font-size: 1.7rem; font-weight: 300; font-style: italic; line-height: 1.25; color: var(--white); }
+  .g-cta-arrow { font-size: 0.74rem; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); }
+  .gallery-cta { text-align: center; margin-top: 52px; }
+
+  /* SERVICES */
+  .services { padding: 100px 40px; background: var(--white); }
+  .services-inner { max-width: 1140px; margin: 0 auto; }
+  .services-head { max-width: 640px; margin-bottom: 56px; }
+  .services-grid { display: grid; grid-template-columns: 1.1fr 1fr; gap: 16px; }
+  .svc { position: relative; overflow: hidden; display: block; text-decoration: none; background: var(--ink); cursor: pointer; }
+  .svc img { width: 100%; height: 100%; object-fit: cover; position: absolute; inset: 0; opacity: 0.85; transition: transform 0.7s ease, opacity 0.4s ease; }
+  .svc:hover img { transform: scale(1.045); opacity: 0.7; }
+  /* "Proposal Photography" tile: crop 15% off the right only (left edge anchored, no distortion) */
+  .svc-feat img { transform-origin: right center; transform: scale(1.1765); }
+  .svc-feat:hover img { transform: scale(1.1765) scale(1.045); opacity: 0.7; }
+  .svc-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(26,23,20,0.82) 0%, rgba(26,23,20,0.15) 55%, rgba(26,23,20,0.05) 100%); }
+  .svc-content { position: relative; z-index: 2; display: flex; flex-direction: column; justify-content: flex-end; height: 100%; padding: 28px; }
+  .svc-tag { font-size: 0.66rem; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 10px; }
+  .svc h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.9rem; font-weight: 300; color: var(--white); margin-bottom: 8px; }
+  .svc p { font-size: 0.9rem; font-weight: 300; line-height: 1.6; color: rgba(255,255,255,0.82); max-width: 42ch; }
+  .svc-arrow { margin-top: 14px; font-size: 0.74rem; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); }
+  .svc-feat { grid-row: span 3; min-height: 660px; }
+  .svc-feat h3 { font-size: 2.6rem; }
+  .svc-feat p { font-size: 0.98rem; }
+  .svc-small { min-height: 208px; }
+  .svc-feat-actions { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 22px; align-items: center; }
+
+  /* LOCATIONS */
+  .locations { padding: 100px 40px; background: var(--cream); }
+  .locations-inner { max-width: 1140px; margin: 0 auto; }
+  .locations-head { max-width: 660px; margin-bottom: 56px; }
+  .locations-grid { display: grid; grid-template-columns: 1fr 1.25fr; gap: 64px; align-items: start; }
+  .loc-image-wrap { position: relative; }
+  .loc-image-wrap::before { content: ''; position: absolute; inset: -16px 16px 16px -16px; border: 1.5px solid var(--gold); opacity: 0.4; z-index: 0; }
+  .loc-image { position: relative; z-index: 1; width: 100%; aspect-ratio: 3/4; object-fit: cover; object-position: center 35%; display: block; box-shadow: -12px 12px 40px var(--shadow); }
+  .loc-list { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 26px 36px; }
+  .loc-list h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.35rem; font-weight: 400; color: var(--ink); margin-bottom: 6px; }
+  .loc-list h3::before { content: '✦'; color: var(--gold); font-size: 0.72rem; margin-right: 9px; vertical-align: 2px; }
+  .loc-list p { font-size: 0.88rem; font-weight: 300; line-height: 1.65; color: var(--warm-mid); }
+  .loc-cta { margin-top: 44px; display: flex; align-items: center; gap: 22px; flex-wrap: wrap; }
+  .loc-cta p { font-size: 0.92rem; font-weight: 300; font-style: italic; color: var(--warm-mid); }
+
+  /* PRICING */
+  .pricing { padding: 100px 40px; background: var(--white); }
+  .pricing-inner { max-width: 980px; margin: 0 auto; }
+  .pricing-head { max-width: 620px; margin-bottom: 56px; }
+  .price-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .price-card { background: var(--cream); border: 1.5px solid var(--blush); padding: 40px 36px; display: flex; flex-direction: column; transition: transform 0.3s ease, box-shadow 0.3s ease; }
+  .price-card:hover { transform: translateY(-4px); box-shadow: 0 16px 44px rgba(26,23,20,0.1); }
+  .price-card.featured { border-color: var(--gold); background: var(--white); box-shadow: 0 10px 36px rgba(201,169,110,0.18); }
+  .price-tier { font-size: 0.7rem; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 14px; }
+  .price-amount { font-family: 'Cormorant Garamond', serif; font-size: 2.9rem; font-weight: 300; color: var(--ink); line-height: 1; margin-bottom: 6px; }
+  .price-amount small { font-family: 'Outfit', sans-serif; font-size: 0.8rem; font-weight: 300; letter-spacing: 0.06em; color: var(--warm-mid); }
+  .price-desc { font-size: 0.92rem; font-weight: 300; line-height: 1.7; color: var(--warm-mid); margin: 14px 0 22px; }
+  .price-list { list-style: none; margin-bottom: 30px; flex: 1; }
+  .price-list li { font-size: 0.92rem; font-weight: 300; line-height: 1.55; color: var(--ink); padding: 7px 0 7px 24px; position: relative; }
+  .price-list li::before { content: '✦'; position: absolute; left: 0; color: var(--gold); font-size: 0.75rem; top: 10px; }
+  .price-note { text-align: center; margin-top: 34px; font-size: 0.88rem; font-weight: 300; font-style: italic; color: var(--warm-mid); }
+  .price-card.compact { padding: 28px 30px; }
+  .price-card.compact .price-desc { margin: 10px 0 14px; }
+  .price-inline { font-size: 0.88rem; font-weight: 300; line-height: 1.75; color: var(--ink); margin-bottom: 22px; }
+  .price-inline .sep { color: var(--gold); font-size: 0.7rem; padding: 0 5px; }
+  .price-card.compact .btn-shine { margin-top: auto; }
+
+  /* GUARANTEE BAND */
+  .guarantee { background: var(--cream); border-top: 1px solid rgba(201,169,110,0.25); border-bottom: 1px solid rgba(201,169,110,0.25); padding: 34px 40px; }
+  .guarantee-inner { max-width: 900px; margin: 0 auto; display: flex; align-items: center; justify-content: center; gap: 18px; flex-wrap: wrap; text-align: center; }
+  .guarantee p { font-size: 0.92rem; font-weight: 300; color: var(--ink); }
+  .guarantee p strong { font-weight: 500; }
+  .guarantee a { color: var(--gold); text-decoration: underline; text-underline-offset: 3px; cursor: pointer; font-weight: 500; }
+  .guarantee a:hover { color: var(--ink); }
+
+  /* FINE PRINT STRIP (sits above the footer; footer itself untouched) */
+  .fineprint { background: var(--ink); border-top: 1px solid rgba(201,169,110,0.25); padding: 18px 40px 0; text-align: center; }
+  .fineprint p { font-size: 0.72rem; font-weight: 300; color: rgba(255,255,255,0.4); }
+  .fineprint a { color: var(--gold); text-decoration: none; cursor: pointer; }
+  .fineprint a:hover { text-decoration: underline; }
+
+  /* STICKY MOBILE CTA */
+  .mobile-cta { display: none; position: fixed; left: 0; right: 0; bottom: 0; z-index: 90; padding: 12px 16px calc(12px + env(safe-area-inset-bottom)); background: rgba(26,23,20,0.94); backdrop-filter: blur(8px); border-top: 1px solid rgba(201,169,110,0.35); transform: translateY(110%); transition: transform 0.35s ease; }
+  .mobile-cta.show { transform: translateY(0); }
+  .mobile-cta .btn-gold { width: 100%; text-align: center; padding: 15px 20px; }
+
+  /* LEGAL OVERLAYS (privacy / terms) */
+  .legal-overlay { display: none; position: fixed; inset: 0; background: rgba(26,23,20,0.72); backdrop-filter: blur(6px); z-index: 999; align-items: center; justify-content: center; padding: 20px; }
+  .legal-overlay.open { display: flex; }
+  .legal-panel { background: var(--cream); max-width: 640px; width: 100%; max-height: 84vh; overflow-y: auto; padding: 44px 40px 38px; position: relative; box-shadow: 0 24px 80px rgba(0,0,0,0.4); border-radius: 12px; }
+  .legal-close { position: absolute; top: 14px; right: 18px; background: none; border: none; font-size: 1.4rem; cursor: pointer; color: var(--warm-mid); line-height: 1; transition: color 0.2s; }
+  .legal-close:hover { color: var(--ink); }
+  .legal-panel h2 { font-family: 'Cormorant Garamond', serif; font-size: 1.9rem; font-weight: 300; color: var(--ink); margin-bottom: 6px; }
+  .legal-updated { font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--warm-mid); margin-bottom: 22px; }
+  .legal-panel h3 { font-family: 'Outfit', sans-serif; font-size: 0.78rem; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); margin: 20px 0 8px; }
+  .legal-panel p { font-size: 0.92rem; font-weight: 300; line-height: 1.75; color: var(--warm-mid); margin-bottom: 10px; }
+  .legal-panel a { color: var(--gold); }
+
+  /* responsive for extension folds */
+  @media (max-width: 900px) {
+    .steps { grid-template-columns: 1fr; gap: 36px; }
+    .services-grid { grid-template-columns: 1fr; }
+    .svc-feat { grid-row: auto; min-height: 0; aspect-ratio: 3/4; }
+    .svc-small { min-height: 0; aspect-ratio: 16/9; }
+    .locations-grid { grid-template-columns: 1fr; gap: 56px; }
+    .price-grid { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 768px) {
+    .how { padding: 80px 24px; }
+    .gallery { padding: 80px 24px; }
+    .gallery-grid { grid-template-columns: 1fr 1fr; }
+    .g-feat { grid-column: span 2; }
+    .g-wide { grid-column: span 2; }
+    .services { padding: 80px 24px; }
+    .locations { padding: 80px 24px; }
+    .pricing { padding: 80px 24px; }
+    .fineprint { padding: 16px 24px 0; }
+    .legal-panel { padding: 34px 24px 28px; }
+    .mobile-cta { display: block; }
+  }
+  @media (max-width: 560px) {
+    .gallery-grid { grid-template-columns: 1fr; }
+    .g-feat { grid-column: span 1; aspect-ratio: 4/3; }
+    .g-wide { grid-column: span 1; aspect-ratio: 4/3; }
+    .loc-list { grid-template-columns: 1fr; }
+  }
+
+  /* CALL BANNER (secondary conversion) */
+  .skip-link { position: absolute; left: -9999px; top: 0; z-index: 200; background: var(--ink); color: var(--gold); padding: 12px 18px; font-family: 'Outfit', sans-serif; font-size: 0.8rem; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; }
+  .skip-link:focus { left: 0; }
+  .call-banner { position: fixed; top: 0; left: 0; right: 0; z-index: 101; height: 38px; background: var(--ink); border-bottom: 1px solid rgba(201,169,110,0.35); }
+  .call-banner a { display: flex; align-items: center; justify-content: center; gap: 9px; height: 100%; color: rgba(255,255,255,0.82); text-decoration: none; font-size: 0.78rem; font-weight: 300; letter-spacing: 0.02em; transition: color 0.2s ease; }
+  .call-banner a:hover { color: var(--gold); }
+  .call-banner svg { flex-shrink: 0; color: var(--gold); }
+  .call-banner strong { font-weight: 500; color: var(--gold); letter-spacing: 0.02em; }
+  .call-banner a:hover strong { color: var(--white); }
+
+  /* Shift fixed nav / hero / anchors down to sit below the call banner */
+  nav { top: 38px; }
+  .hero { margin-top: 98px; }
+  [id] { scroll-margin-top: 114px; }
+
+  /* border between hero and quiz */
+  .quiz-section { border-top: 1px solid rgba(201,169,110,0.28); }
+
+  /* GUARANTEE TOOLTIP */
+  .tip { position: relative; cursor: help; }
+  .tip > strong { border-bottom: 1px dotted var(--warm-mid); }
+  .tip-icon { display: inline-flex; align-items: center; justify-content: center; width: 15px; height: 15px; margin-left: 7px; font-size: 0.68rem; font-style: normal; font-weight: 600; border: 1px solid var(--gold); border-radius: 50%; color: var(--gold); cursor: pointer; vertical-align: 1px; }
+  .tip-bubble {
+    position: absolute; left: 50%; bottom: calc(100% + 12px); transform: translateX(-50%) translateY(4px);
+    width: 270px; max-width: 78vw; background: var(--ink); color: rgba(255,255,255,0.92);
+    font-size: 0.78rem; font-weight: 300; line-height: 1.6; text-align: left; text-transform: none; letter-spacing: normal; font-style: normal;
+    padding: 14px 16px; border-radius: 8px; border: 1px solid rgba(201,169,110,0.4);
+    box-shadow: 0 14px 36px rgba(0,0,0,0.3);
+    opacity: 0; visibility: hidden; pointer-events: none; z-index: 60;
+    transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
+  }
+  .tip-bubble::after { content: ''; position: absolute; top: 100%; left: 50%; transform: translateX(-50%); border: 6px solid transparent; border-top-color: var(--ink); }
+  .tip:hover .tip-bubble, .tip:focus .tip-bubble, .tip.tip-open .tip-bubble { opacity: 1; visibility: visible; transform: translateX(-50%) translateY(0); pointer-events: auto; }
+
+</style>
+
+
+
+
+
+
+
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMCAzMiIgd2lkdGg9IjMwIiBoZWlnaHQ9IjMyIiBzaGFwZS1yZW5kZXJpbmc9ImNyaXNwRWRnZXMiPgo8cmVjdCB4PSIxNCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0iI0Y1Qzg0MiIvPgo8cmVjdCB4PSIxNSIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0iI0Y1Qzg0MiIvPgo8cmVjdCB4PSIxNCIgeT0iMSIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0iI0Y1Qzg0MiIvPgo8cmVjdCB4PSIxNSIgeT0iMSIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0iI0Y1Qzg0MiIvPgo8cmVjdCB4PSI4IiB5PSIyIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSIjRjVDODQyIi8+CjxyZWN0IHg9IjIxIiB5PSIyIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSIjRjVDODQyIi8+CjxyZWN0IHg9IjkiIHk9IjMiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9IiNGNUM4NDIiLz4KPHJlY3QgeD0iMjAiIHk9IjMiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9IiNGNUM4NDIiLz4KPHJlY3QgeD0iMTAiIHk9IjQiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9IiNGNUM4NDIiLz4KPHJlY3QgeD0iMTkiIHk9IjQiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9IiNGNUM4NDIiLz4KPHJlY3QgeD0iMTEiIHk9IjUiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9IiMxQTFBMUEiLz4KPHJlY3QgeD0iMTIiIHk9IjUiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9IiMxQTFBMUEiLz4KPHJlY3QgeD0iMTMiIHk9IjUiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9IiMxQTFBMUEiLz4KPHJlY3QgeD0iMTQiIHk9IjUiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9IiMxQTFBMUEiLz4KPHJlY3QgeD0iMTUiIHk9IjUiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9IiMxQTFBMUEiLz4KPHJlY3QgeD0iMTYiIHk9IjUiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9IiMxQTFBMUEiLz4KPHJlY3QgeD0iMTciIHk9IjUiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9IiMxQTFBMUEiLz4KPHJlY3QgeD0iMTgiIHk9IjUiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9IiMxQTFBMUEiLz4KPHJlY3QgeD0iNSIgeT0iNiIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0iI0Y1Qzg0MiIvPgo8cmVjdCB4PSI2IiB5PSI2IiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSIjRjVDODQyIi8+CjxyZWN0IHg9IjEwIiB5PSI2IiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSIjMUExQTFBIi8+CjxyZWN0IHg9IjExIiB5PSI2IiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSIjRThGOEZGIi8+CjxyZWN0IHg9IjEyIiB5PSI2IiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSIjRThGOEZGIi8+CjxyZWN0IHg9IjEzIiB5PSI2IiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSIjQTlFMkY3Ii8+CjxyZWN0IHg9IjE0IiB5PSI2IiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSIjQTlFMkY3Ii8+CjxyZWN0IHg9IjE1IiB5PSI2IiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSIjQTlFMkY3Ii8+CjxyZWN0IHg9IjE2IiB5PSI2IiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSIjQTlFMkY3Ii8+CjxyZWN0IHg9IjE3IiB5PSI2IiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSIjQTlFMkY3Ii8+CjxyZWN0IHg9IjE4IiB5PSI2IiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSIjQTlFMkY3Ii8+CjxyZWN0IHg9IjE5IiB5PSI2IiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSIjMUExQTFBIi8+CjxyZWN0IHg9IjIzIiB5PSI2IiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSIjRjVDODQyIi8+CjxyZWN0IHg9IjI0IiB5PSI2IiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSIjRjVDODQyIi8+CjxyZWN0IHg9IjEwIiB5PSI3IiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSIjMUExQTFBIi8+CjxyZWN0IHg9IjExIiB5PSI3IiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSIjRThGOEZGIi8+CjxyZWN0IHg9IjEyIiB5PSI3IiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSIjQTlFMkY3Ii8+CjxyZWN0IHg9IjEzIiB5PSI3IiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSIjNkZDNEU4Ii8+CjxyZWN0IHg9IjE0IiB5PSI3IiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSIjQTlFMkY3Ii8+CjxyZWN0IHg9IjE1IiB5PSI3IiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSIjQTlFMkY3Ii8+CjxyZWN0IHg9IjE2IiB5PSI3IiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSIjNkZDNEU4Ii8+CjxyZWN0IHg9IjE3IiB5PSI3IiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSIjQTlFMkY3Ii8+CjxyZWN0IHg9IjE4IiB5PSI3IiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSIjMUExQTFBIi8+CjxyZWN0IHg9IjExIiB5PSI4IiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSIjMUExQTFBIi8+CjxyZWN0IHg9IjEyIiB5PSI4IiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSIjNkZDNEU4Ii8+CjxyZWN0IHg9IjEzIiB5PSI4IiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSIjQTlFMkY3Ii8+CjxyZWN0IHg9IjE0IiB5PSI4IiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSIjNkZDNEU4Ii8+CjxyZWN0IHg9IjE1IiB5PSI4IiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSIjNkZDNEU4Ii8+CjxyZWN0IHg9IjE2IiB5PSI4IiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSIjQTlFMkY3Ii8+CjxyZWN0IHg9IjE3IiB5PSI4IiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSIjNkZDNEU4Ii8+CjxyZWN0IHg9IjE4IiB5PSI4IiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSIjMUExQTFBIi8+CjxyZWN0IHg9IjYiIHk9IjkiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9IiNGNUM4NDIiLz4KPHJlY3QgeD0iNyIgeT0iOSIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0iI0Y1Qzg0MiIvPgo8cmVjdCB4PSIxMiIgeT0iOSIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0iIzFBMUExQSIvPgo8cmVjdCB4PSIxMyIgeT0iOSIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0iIzZGQzRFOCIvPgo8cmVjdCB4PSIxNCIgeT0iOSIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0iIzNEOUJDOSIvPgo8cmVjdCB4PSIxNSIgeT0iOSIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0iIzNEOUJDOSIvPgo8cmVjdCB4PSIxNiIgeT0iOSIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0iIzZGQzRFOCIvPgo8cmVjdCB4PSIxNyIgeT0iOSIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0iIzFBMUExQSIvPgo8cmVjdCB4PSIyMiIgeT0iOSIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0iI0Y1Qzg0MiIvPgo8cmVjdCB4PSIyMyIgeT0iOSIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0iI0Y1Qzg0MiIvPgo8cmVjdCB4PSIxMyIgeT0iMTAiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9IiMxQTFBMUEiLz4KPHJlY3QgeD0iMTQiIHk9IjEwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSIjM0Q5QkM5Ii8+CjxyZWN0IHg9IjE1IiB5PSIxMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0iIzNEOUJDOSIvPgo8cmVjdCB4PSIxNiIgeT0iMTAiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9IiMxQTFBMUEiLz4KPHJlY3QgeD0iMTMiIHk9IjExIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSIjMUExQTFBIi8+CjxyZWN0IHg9IjE0IiB5PSIxMSIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0iI0ZGRDIzRiIvPgo8cmVjdCB4PSIxNSIgeT0iMTEiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9IiNGRkQyM0YiLz4KPHJlY3QgeD0iMTYiIHk9IjExIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSIjMUExQTFBIi8+CjxyZWN0IHg9IjEzIiB5PSIxMiIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0iIzFBMUExQSIvPgo8cmVjdCB4PSIxNCIgeT0iMTIiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9IiNGNUI1MTkiLz4KPHJlY3QgeD0iMTUiIHk9IjEyIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSIjRjVCNTE5Ii8+CjxyZWN0IHg9IjE2IiB5PSIxMiIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0iIzFBMUExQSIvPgo8cmVjdCB4PSIxMiIgeT0iMTQiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9IiMxQTFBMUEiLz4KPHJlY3QgeD0iMTMiIHk9IjE0IiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSIjMUExQTFBIi8+CjxyZWN0IHg9IjE0IiB5PSIxNCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0iIzFBMUExQSIvPgo8cmVjdCB4PSIxNSIgeT0iMTQiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9IiMxQTFBMUEiLz4KPHJlY3QgeD0iMTYiIHk9IjE0IiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSIjMUExQTFBIi8+CjxyZWN0IHg9IjE3IiB5PSIxNCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0iIzFBMUExQSIvPgo8cmVjdCB4PSIxMCIgeT0iMTUiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9IiMxQTFBMUEiLz4KPHJlY3QgeD0iMTEiIHk9IjE1IiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSIjMUExQTFBIi8+CjxyZWN0IHg9IjEyIiB5PSIxNSIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0iI0ZGRTY4MCIvPgo8cmVjdCB4PSIxMyIgeT0iMTUiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9IiNGRkU2ODAiLz4KPHJlY3QgeD0iMTQiIHk9IjE1IiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSIjRkZFNjgwIi8+CjxyZWN0IHg9IjE1IiB5PSIxNSIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0iI0Y1QjUxOSIvPgo8cmVjdCB4PSIxNiIgeT0iMTUiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9IiNGNUI1MTkiLz4KPHJlY3QgeD0iMTciIHk9IjE1IiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSIjRjVCNTE5Ii8+CjxyZWN0IHg9IjE4IiB5PSIxNSIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0iIzFBMUExQSIvPgo8cmVjdCB4PSIxOSIgeT0iMTUiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9IiMxQTFBMUEiLz4KPHJlY3QgeD0iOSIgeT0iMTYiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9IiMxQTFBMUEiLz4KPHJlY3QgeD0iMTAiIHk9IjE2IiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSIjRkZFNjgwIi8+CjxyZWN0IHg9IjExIiB5PSIxNiIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0iI0ZGRTY4MCIvPgo8cmVjdCB4PSIxMiIgeT0iMTYiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9IiMxQTFBMUEiLz4KPHJlY3QgeD0iMTMiIHk9IjE2IiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSIjMUExQTFBIi8+CjxyZWN0IHg9IjE0IiB5PSIxNiIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0iIzFBMUExQSIvPgo8cmVjdCB4PSIxNSIgeT0iMTYiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9IiMxQTFBMUEiLz4KPHJlY3QgeD0iMTYiIHk9IjE2IiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSIjMUExQTFBIi8+CjxyZWN0IHg9IjE3IiB5PSIxNiIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0iIzFBMUExQSIvPgo8cmVjdCB4PSIxOCIgeT0iMTYiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9IiNGNUI1MTkiLz4KPHJlY3QgeD0iMTkiIHk9IjE2IiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSIjRjVCNTE5Ii8+CjxyZWN0IHg9IjIwIiB5PSIxNiIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0iIzFBMUExQSIvPgo8cmVjdCB4PSI5IiB5PSIxNyIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0iIzFBMUExQSIvPgo8cmVjdCB4PSIxMCIgeT0iMTciIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9IiNGRkU2ODAiLz4KPHJlY3QgeD0iMTEiIHk9IjE3IiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSIjMUExQTFBIi8+CjxyZWN0IHg9IjE4IiB5PSIxNyIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0iIzFBMUExQSIvPgo8cmVjdCB4PSIxOSIgeT0iMTciIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9IiNGNUI1MTkiLz4KPHJlY3QgeD0iMjAiIHk9IjE3IiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSIjMUExQTFBIi8+CjxyZWN0IHg9IjgiIHk9IjE4IiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSIjMUExQTFBIi8+CjxyZWN0IHg9IjkiIHk9IjE4IiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSIjRkZFNjgwIi8+CjxyZWN0IHg9IjEwIiB5PSIxOCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0iIzFBMUExQSIvPgo8cmVjdCB4PSIxOSIgeT0iMTgiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9IiMxQTFBMUEiLz4KPHJlY3QgeD0iMjAiIHk9IjE4IiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSIjRjVCNTE5Ii8+CjxyZWN0IHg9IjIxIiB5PSIxOCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0iIzFBMUExQSIvPgo8cmVjdCB4PSI4IiB5PSIxOSIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0iIzFBMUExQSIvPgo8cmVjdCB4PSI5IiB5PSIxOSIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0iI0ZGRTY4MCIvPgo8cmVjdCB4PSIyMCIgeT0iMTkiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9IiNGNUI1MTkiLz4KPHJlY3QgeD0iMjEiIHk9IjE5IiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSIjMUExQTFBIi8+CjxyZWN0IHg9IjciIHk9IjIwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSIjMUExQTFBIi8+CjxyZWN0IHg9IjgiIHk9IjIwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSIjRkZFNjgwIi8+CjxyZWN0IHg9IjkiIHk9IjIwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSIjMUExQTFBIi8+CjxyZWN0IHg9IjIwIiB5PSIyMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0iIzFBMUExQSIvPgo8cmVjdCB4PSIyMSIgeT0iMjAiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9IiNGNUI1MTkiLz4KPHJlY3QgeD0iMjIiIHk9IjIwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSIjMUExQTFBIi8+CjxyZWN0IHg9IjciIHk9IjIxIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSIjMUExQTFBIi8+CjxyZWN0IHg9IjgiIHk9IjIxIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSIjRkZEMjNGIi8+CjxyZWN0IHg9IjkiIHk9IjIxIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSIjMUExQTFBIi8+CjxyZWN0IHg9IjIwIiB5PSIyMSIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0iIzFBMUExQSIvPgo8cmVjdCB4PSIyMSIgeT0iMjEiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9IiNDODg5MEEiLz4KPHJlY3QgeD0iMjIiIHk9IjIxIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSIjMUExQTFBIi8+CjxyZWN0IHg9IjciIHk9IjIyIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSIjMUExQTFBIi8+CjxyZWN0IHg9IjgiIHk9IjIyIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSIjRkZEMjNGIi8+CjxyZWN0IHg9IjkiIHk9IjIyIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSIjMUExQTFBIi8+CjxyZWN0IHg9IjIwIiB5PSIyMiIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0iIzFBMUExQSIvPgo8cmVjdCB4PSIyMSIgeT0iMjIiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9IiNDODg5MEEiLz4KPHJlY3QgeD0iMjIiIHk9IjIyIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSIjMUExQTFBIi8+CjxyZWN0IHg9IjgiIHk9IjIzIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSIjMUExQTFBIi8+CjxyZWN0IHg9IjkiIHk9IjIzIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSIjRkZEMjNGIi8+CjxyZWN0IHg9IjIwIiB5PSIyMyIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0iI0M4ODkwQSIvPgo8cmVjdCB4PSIyMSIgeT0iMjMiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9IiMxQTFBMUEiLz4KPHJlY3QgeD0iOCIgeT0iMjQiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9IiMxQTFBMUEiLz4KPHJlY3QgeD0iOSIgeT0iMjQiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9IiNGRkQyM0YiLz4KPHJlY3QgeD0iMTAiIHk9IjI0IiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSIjMUExQTFBIi8+CjxyZWN0IHg9IjE5IiB5PSIyNCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0iIzFBMUExQSIvPgo8cmVjdCB4PSIyMCIgeT0iMjQiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9IiNDODg5MEEiLz4KPHJlY3QgeD0iMjEiIHk9IjI0IiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSIjMUExQTFBIi8+CjxyZWN0IHg9IjkiIHk9IjI1IiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSIjMUExQTFBIi8+CjxyZWN0IHg9IjEwIiB5PSIyNSIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0iI0ZGRDIzRiIvPgo8cmVjdCB4PSIxMSIgeT0iMjUiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9IiMxQTFBMUEiLz4KPHJlY3QgeD0iMTgiIHk9IjI1IiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSIjMUExQTFBIi8+CjxyZWN0IHg9IjE5IiB5PSIyNSIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0iI0M4ODkwQSIvPgo8cmVjdCB4PSIyMCIgeT0iMjUiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9IiMxQTFBMUEiLz4KPHJlY3QgeD0iOSIgeT0iMjYiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9IiMxQTFBMUEiLz4KPHJlY3QgeD0iMTAiIHk9IjI2IiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSIjRkZEMjNGIi8+CjxyZWN0IHg9IjExIiB5PSIyNiIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0iI0ZGRDIzRiIvPgo8cmVjdCB4PSIxMiIgeT0iMjYiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9IiMxQTFBMUEiLz4KPHJlY3QgeD0iMTMiIHk9IjI2IiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSIjMUExQTFBIi8+CjxyZWN0IHg9IjE0IiB5PSIyNiIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0iIzFBMUExQSIvPgo8cmVjdCB4PSIxNSIgeT0iMjYiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9IiMxQTFBMUEiLz4KPHJlY3QgeD0iMTYiIHk9IjI2IiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSIjMUExQTFBIi8+CjxyZWN0IHg9IjE3IiB5PSIyNiIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0iIzFBMUExQSIvPgo8cmVjdCB4PSIxOCIgeT0iMjYiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9IiNDODg5MEEiLz4KPHJlY3QgeD0iMTkiIHk9IjI2IiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSIjQzg4OTBBIi8+CjxyZWN0IHg9IjIwIiB5PSIyNiIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0iIzFBMUExQSIvPgo8cmVjdCB4PSIxMCIgeT0iMjciIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9IiMxQTFBMUEiLz4KPHJlY3QgeD0iMTEiIHk9IjI3IiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSIjMUExQTFBIi8+CjxyZWN0IHg9IjEyIiB5PSIyNyIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0iI0ZGRDIzRiIvPgo8cmVjdCB4PSIxMyIgeT0iMjciIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9IiNGRkQyM0YiLz4KPHJlY3QgeD0iMTQiIHk9IjI3IiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSIjRkZEMjNGIi8+CjxyZWN0IHg9IjE1IiB5PSIyNyIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0iI0M4ODkwQSIvPgo8cmVjdCB4PSIxNiIgeT0iMjciIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9IiNDODg5MEEiLz4KPHJlY3QgeD0iMTciIHk9IjI3IiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSIjQzg4OTBBIi8+CjxyZWN0IHg9IjE4IiB5PSIyNyIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0iIzFBMUExQSIvPgo8cmVjdCB4PSIxOSIgeT0iMjciIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9IiMxQTFBMUEiLz4KPHJlY3QgeD0iMTIiIHk9IjI4IiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSIjMUExQTFBIi8+CjxyZWN0IHg9IjEzIiB5PSIyOCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0iIzFBMUExQSIvPgo8cmVjdCB4PSIxNCIgeT0iMjgiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9IiMxQTFBMUEiLz4KPHJlY3QgeD0iMTUiIHk9IjI4IiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSIjMUExQTFBIi8+CjxyZWN0IHg9IjE2IiB5PSIyOCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0iIzFBMUExQSIvPgo8cmVjdCB4PSIxNyIgeT0iMjgiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9IiMxQTFBMUEiLz4KPC9zdmc+">
+<link rel="icon" type="image/png" sizes="30x32" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAgCAYAAAAFQMh/AAAABmJLR0QA/wD/AP+gvaeTAAABm0lEQVRIie1WPUsDQRB9ESsttHUOFJQrbEPAIIRAKmtB/0Fsxcba1tLS5B8o2ImplFiEBCVCFAQFwUi2CBamSEg3Nt5i4n3MrqtY+Kphb+a9mbnZuQMs0a8XuF8vsG38hG3gj8Omqu90wprImagJoYloykSciGKJlVJivlDHIPPp7Ll+TkTcfOoAAKrdYSjZTnZpRDyMJ1Y4DIFwtTtErd3D6vwMAGh7XDQJ4uuklEqlFz0tVGv3RmxTRGYY1SYi4o2jJpr3zwCA9PICjjfTX6qNa7M1iIhz5Qbnyg1OGrgoTNqKX67sAgA8y3hr4cHLw4flrpO/AuN0o96pyVUyEg4EO9db+mxwc6htv5gySkDkREQcCHqZUqjPY5l1AhJxo+HyMqVIUr9IHIg7ARExqz3RfSUi7p/OiXyNVqYLHxFMqv0cI6k6ueLXC6mmxu1d8kfj7/7sERFzKy9udX1/yu1wSadayicW5VY+thIiYmm1gOEC6VR8eGsIJT7ZfjOhstjVFV+fNc6utL1+MAvA8a4OS2AczpbHP1zjHXhF0P4wRydcAAAAAElFTkSuQmCC">
+<!-- ═══ ADDITIVE HEAD EXTRAS (seed title/description/tags untouched above) ═══ -->
+<!-- Speed: early connections + preload the hero (LCP) from your GHL CDN -->
+<link rel="preconnect" href="https://assets.cdn.filesafe.space" />
+<link rel="preconnect" href="https://www.googletagmanager.com" />
+<link rel="preload" as="image" fetchpriority="high" href="https://assets.cdn.filesafe.space/s76Gfcyq4U0iZ1yA3LWg/media/6a5f22541097b81195a37766.webp" />
+
+<!-- Sharing & relevance. Update the canonical if this page lives at a different URL. -->
+<link rel="canonical" href="https://joshuasharman.com/" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://joshuasharman.com/" />
+<meta property="og:title" content="Sydney Proposal Photographer | Joshua Sharman" />
+<meta property="og:description" content="Secret proposal photography in Sydney — covert coverage, transparent pricing from $699, 130+ five-star reviews. Start with a free 30-second quiz." />
+<meta property="og:image" content="https://assets.cdn.filesafe.space/s76Gfcyq4U0iZ1yA3LWg/media/6a5f22541097b81195a37766.webp" />
+<meta name="twitter:card" content="summary_large_image" />
+
+<!-- Structured data: business + FAQ -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Joshua Sharman Photography",
+  "description": "Secret proposal photography in Sydney and beyond — covert proposal coverage with full planning support, plus engagement, wedding and family sessions.",
+  "url": "https://joshuasharman.com",
+  "email": "josh@joshuasharman.com",
+  "telephone": "+61432168197",
+  "image": "https://assets.cdn.filesafe.space/s76Gfcyq4U0iZ1yA3LWg/media/6a5f22541097b81195a37766.webp",
+  "priceRange": "$699 - $8,350",
+  "areaServed": { "@type": "Place", "name": "Sydney, Australia" },
+  "aggregateRating": { "@type": "AggregateRating", "ratingValue": "5", "reviewCount": "130" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "How much does a proposal session cost?", "acceptedAnswer": { "@type": "Answer", "text": "Packages go up to $8,350, which includes florists, drone shots, a second videographer, custom light-up signs, decoration sourcing and delivery, limousine, and an on-site chef. For photography services without elaborate extras, pricing starts at $699. Consultations are free — no commitment, just a conversation." } },
+    { "@type": "Question", "name": "Will she know I hired a photographer?", "acceptedAnswer": { "@type": "Answer", "text": "She won't know I'm there to shoot the proposal until after the proposal starts." } },
+    { "@type": "Question", "name": "What if I don't have a location or plan yet?", "acceptedAnswer": { "@type": "Answer", "text": "Most people don't. Bring the ring and an idea (or no idea at all), and we'll build it together." } },
+    { "@type": "Question", "name": "How quickly do I get the photos back?", "acceptedAnswer": { "@type": "Answer", "text": "Average turnaround is well under a week. Expedited delivery is available if you need to share them ASAP." } },
+    { "@type": "Question", "name": "Do you only shoot proposals?", "acceptedAnswer": { "@type": "Answer", "text": "I shoot proposals, couples sessions, anniversaries, engagements and weddings — any moment between two people worth capturing." } },
+    { "@type": "Question", "name": "What's your cancellation or bad-weather policy?", "acceptedAnswer": { "@type": "Answer", "text": "Life happens. If the weather turns, we'll reschedule at no extra cost. I'd rather wait for the right moment than force the wrong one." } },
+    { "@type": "Question", "name": "What if I'm not happy with my session?", "acceptedAnswer": { "@type": "Answer", "text": "You get a full refund, no questions asked. That's the 100% Happiness Guarantee — I'd rather make it right than have you settle for photos you don't love." } }
+  ]
+}
+</script>
+
+</head>
+<body>
+
+<a class="skip-link" href="#quiz">Skip to the enquiry quiz</a>
+
+<!-- CALL BANNER (secondary conversion path) -->
+<div class="call-banner">
+  <a href="tel:+61432168197" onclick="trackCallClick()">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+    <span>Call me! <strong>+61 432 168 197</strong></span>
+  </a>
+</div>
+
+<!-- NAV -->
+<nav id="nav">
+  <a href="#" class="nav-logo">joshua<span>sharman</span></a>
+  <a href="#contact" class="btn-shine btn-dark" onclick="scrollToQuiz(event)">Plan My Proposal</a>
+</nav>
+
+<!-- FOLD 1: HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-gradient"></div>
+  <div class="hero-content">
+    <p class="hero-eyebrow">Proposal &amp; Couples Photography &middot; Sydney &amp; Beyond</p>
+    <h1 class="hero-headline">You bring the ring,<br/><em>I'll handle the rest.</em></h1>
+    <div class="hero-actions">
+      <a href="#contact" class="btn-shine btn-gold" onclick="scrollToQuiz(event)">Contact Me</a>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <div class="trust-item-guarantee">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#C9A96E" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+    <a onclick="scrollToQuiz(event)" href="#contact" style="color:var(--gold);text-decoration:underline;cursor:pointer;font-weight:500;">Learn About My 100% Happiness Guarantee</a>
+    <span class="tip" tabindex="0"><span class="tip-icon">i</span><span class="tip-bubble">If you&rsquo;re not happy with your delivery for any reason, I&rsquo;ll give you a full refund. (I&rsquo;ve never had anyone take me up on this)</span></span>
+  </div>
+  <div class="trust-divider"></div>
+  <div class="trust-item">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+    Fast Response, Let&rsquo;s Plan Today
+  </div>
+  <div class="trust-divider"></div>
+  <div class="trust-item">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+    130+ 5-Star Reviews
+  </div>
+  <div class="trust-divider"></div>
+  <div class="trust-item">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+    Insured, Equipped &amp; Professional
+  </div>
+</div>
+
+<!-- FOLD 2: PROOF + VALUE -->
+<section class="fold2" id="work">
+  <div class="fold2-inner">
+
+    <div class="fold2-image-wrap reveal">
+      <img class="fold2-image" src="https://assets.cdn.filesafe.space/s76Gfcyq4U0iZ1yA3LWg/media/6a5f2254bc0b1f5d2e1d3970.webp" alt="Close-up of two hands reaching toward each other during a proposal, Michelangelo style" loading="lazy" />
+      <div class="social-proof-badge">
+        <div class="badge-number">200+</div>
+        <div class="badge-label">Couples Captured</div>
+        <div class="stars">
+          <span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="fold2-text">
+      <span class="section-eyebrow reveal">Ten years. Thousands of moments.</span>
+      <h2 class="section-headline reveal reveal-delay-1">Experience makes<br/><em>all the difference.</em></h2>
+
+      <p class="section-body reveal reveal-delay-2">With more than ten years of professional photography experience, you can trust that the moment they say &ldquo;Yes&rdquo; will be captured forever.</p>
+      <p class="section-body reveal reveal-delay-2" style="font-style: italic;">Champagne sold separately.</p>
+
+      <div class="testimonial-block reveal reveal-delay-3">
+        <p class="testimonial-text">&ldquo;Worth every penny and more.&rdquo;</p>
+        <span class="testimonial-author">&mdash; James &amp; Priya &middot; Sydney Harbour, March 2025</span>
+      </div>
+
+      <div class="reveal reveal-delay-3" style="margin-top: 28px;">
+        <a href="#contact" class="btn-shine btn-dark-lg" onclick="scrollToQuiz(event)">Plan My Proposal &mdash; It&rsquo;s Free</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- QUIZ -->
+<section class="quiz-section" id="quiz">
+  <div class="quiz-bg"></div>
+  <div class="quiz-bg-gradient"></div>
+  <div class="quiz-wrap">
+
+    <div class="quiz-progress" id="quiz-progress">
+      <div class="quiz-progress-label">Step <span id="quiz-step-num">1</span> of 5</div>
+      <div class="quiz-progress-track"><div class="quiz-progress-fill" id="quiz-progress-fill"></div></div>
+    </div>
+
+    <!-- STEP 1: identity pair -->
+    <div class="quiz-step active" data-step="0">
+      <span class="quiz-eyebrow">Let&rsquo;s plan something unforgettable</span>
+      <div class="quiz-pair">
+        <div class="quiz-pair-q">I am a&hellip;</div>
+        <div class="quiz-options cols-2">
+          <button class="quiz-opt" onclick="pairSelect(this,'iam','Man')">
+            <span class="quiz-opt-icon"><svg viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 11.2c-.7-.5-1.5-.9-2.6-1.2-1.6-.45-2.7-.3-3.9.1-.9.3-1.7.8-2.6 1.5-.5.4-.9.5-1.4.4-.4-.08-.7-.3-1-.6.2 1 .8 1.9 1.8 2.4 1.1.55 2.4.6 3.7.2 1.1-.35 1.9-.95 2.6-1.65.5-.5.95-.95 1.4-.95s.9.45 1.4.95c.7.7 1.5 1.3 2.6 1.65 1.3.4 2.6.35 3.7-.2 1-.5 1.6-1.4 1.8-2.4-.3.3-.6.52-1 .6-.5.1-.9 0-1.4-.4-.9-.7-1.7-1.2-2.6-1.5-1.2-.4-2.3-.55-3.9-.1-1.1.3-1.9.7-2.6 1.2z"/></svg></span>
+            <span class="quiz-opt-label">Man</span>
+          </button>
+          <button class="quiz-opt" onclick="pairSelect(this,'iam','Woman')">
+            <span class="quiz-opt-icon"><svg viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M9.2 2c-.3 0-.5.2-.6.5L7.3 6.2c-.15.4 0 .85.4 1.1l1.1.7-3.6 9.5c-.15.4.1.8.5.9.05 0 .1.02.15.02h12.3c.45 0 .8-.4.7-.85 0-.05-.02-.1-.03-.13l-3.6-9.46 1.1-.7c.4-.25.55-.7.4-1.1L15.4 2.5c-.1-.3-.35-.5-.65-.5-.25 0-.5.15-.6.4l-1.05 2.5c-.2.5-.9.5-1.1 0L10.95 2.4c-.1-.25-.35-.4-.6-.4z M8.6 19.5c-.4 0-.7.3-.7.7v.6c0 .65.55 1.2 1.2 1.2h5.8c.65 0 1.2-.55 1.2-1.2v-.6c0-.4-.3-.7-.7-.7z"/></svg></span>
+            <span class="quiz-opt-label">Woman</span>
+          </button>
+        </div>
+      </div>
+      <div class="quiz-pair">
+        <div class="quiz-pair-q">Proposing to a&hellip;</div>
+        <div class="quiz-options cols-2">
+          <button class="quiz-opt" onclick="pairSelect(this,'partner','Man')">
+            <span class="quiz-opt-icon"><svg viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 11.2c-.7-.5-1.5-.9-2.6-1.2-1.6-.45-2.7-.3-3.9.1-.9.3-1.7.8-2.6 1.5-.5.4-.9.5-1.4.4-.4-.08-.7-.3-1-.6.2 1 .8 1.9 1.8 2.4 1.1.55 2.4.6 3.7.2 1.1-.35 1.9-.95 2.6-1.65.5-.5.95-.95 1.4-.95s.9.45 1.4.95c.7.7 1.5 1.3 2.6 1.65 1.3.4 2.6.35 3.7-.2 1-.5 1.6-1.4 1.8-2.4-.3.3-.6.52-1 .6-.5.1-.9 0-1.4-.4-.9-.7-1.7-1.2-2.6-1.5-1.2-.4-2.3-.55-3.9-.1-1.1.3-1.9.7-2.6 1.2z"/></svg></span>
+            <span class="quiz-opt-label">Man</span>
+          </button>
+          <button class="quiz-opt" onclick="pairSelect(this,'partner','Woman')">
+            <span class="quiz-opt-icon"><svg viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M9.2 2c-.3 0-.5.2-.6.5L7.3 6.2c-.15.4 0 .85.4 1.1l1.1.7-3.6 9.5c-.15.4.1.8.5.9.05 0 .1.02.15.02h12.3c.45 0 .8-.4.7-.85 0-.05-.02-.1-.03-.13l-3.6-9.46 1.1-.7c.4-.25.55-.7.4-1.1L15.4 2.5c-.1-.3-.35-.5-.65-.5-.25 0-.5.15-.6.4l-1.05 2.5c-.2.5-.9.5-1.1 0L10.95 2.4c-.1-.25-.35-.4-.6-.4z M8.6 19.5c-.4 0-.7.3-.7.7v.6c0 .65.55 1.2 1.2 1.2h5.8c.65 0 1.2-.55 1.2-1.2v-.6c0-.4-.3-.7-.7-.7z"/></svg></span>
+            <span class="quiz-opt-label">Woman</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STEP 2: timing -->
+    <div class="quiz-step" data-step="1">
+      <div class="quiz-question">When are you planning <em>to propose?</em></div>
+      <div class="quiz-hint">No wrong answer &mdash; it just helps me plan.</div>
+      <div class="quiz-options cols-4">
+        <button class="quiz-opt" onclick="pick('timing','Within a week')">
+          <span class="quiz-opt-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h7l-1 8 10-12h-7z"/></svg></span>
+          <span class="quiz-opt-label">Within a week<small>It&rsquo;s go time</small></span>
+        </button>
+        <button class="quiz-opt" onclick="pick('timing','Within a month')">
+          <span class="quiz-opt-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></span>
+          <span class="quiz-opt-label">Within a month<small>Coming up soon</small></span>
+        </button>
+        <button class="quiz-opt" onclick="pick('timing','Within three months')">
+          <span class="quiz-opt-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></span>
+          <span class="quiz-opt-label">Within three months<small>Planning ahead</small></span>
+        </button>
+        <button class="quiz-opt" onclick="pick('timing','Within a year')">
+          <span class="quiz-opt-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 1 0 10 10"/><path d="M22 2 12 12"/></svg></span>
+          <span class="quiz-opt-label">Within a year<small>Plenty of time</small></span>
+        </button>
+      </div>
+      <button class="quiz-back" onclick="prevStep()">&larr; Back</button>
+    </div>
+
+    <!-- STEP 3: have a plan -->
+    <div class="quiz-step" data-step="2">
+      <div class="quiz-question">Do you know <em>how</em> you&rsquo;re going to propose?</div>
+      <div class="quiz-hint">Either way, you&rsquo;re in good hands.</div>
+      <div class="quiz-options cols-1">
+        <button class="quiz-opt" onclick="pick('plan','Yes')">
+          <span class="quiz-opt-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4 12 14.01l-3-3"/></svg></span>
+          <span class="quiz-opt-label">Yes</span>
+        </button>
+        <button class="quiz-opt" onclick="pick('plan','No')">
+          <span class="quiz-opt-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg></span>
+          <span class="quiz-opt-label">No</span>
+        </button>
+        <button class="quiz-opt" onclick="pick('plan','No, and I would love some help planning')">
+          <span class="quiz-opt-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 15.09 8.26 22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg></span>
+          <span class="quiz-opt-label q3-long">No, and I&rsquo;d love some help planning, thanks mate</span>
+        </button>
+      </div>
+      <button class="quiz-back" onclick="prevStep()">&larr; Back</button>
+    </div>
+
+    <!-- STEP 4: setting (the question I added) -->
+    <div class="quiz-step" data-step="3">
+      <div class="quiz-question">Where do you picture <em>the moment?</em></div>
+      <div class="quiz-hint">A starting point &mdash; we can always change it.</div>
+      <div class="quiz-options cols-4">
+        <button class="quiz-opt" onclick="pick('setting','Beach or by the water')">
+          <span class="quiz-opt-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 18s2-2 5-2 5 2 5 2 2-2 5-2 5 2 5 2"/><path d="M2 12s2-2 5-2 5 2 5 2 2-2 5-2 5 2 5 2"/><circle cx="18" cy="5" r="2.5"/></svg></span>
+          <span class="quiz-opt-label">Beach or waterfront</span>
+        </button>
+        <button class="quiz-opt" onclick="pick('setting','City or rooftop')">
+          <span class="quiz-opt-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V7l8-4v18M19 21V11l-6-4"/><path d="M9 9v.01M9 12v.01M9 15v.01M9 18v.01"/></svg></span>
+          <span class="quiz-opt-label">City or rooftop</span>
+        </button>
+        <button class="quiz-opt" onclick="pick('setting','Park or garden')">
+          <span class="quiz-opt-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10z"/><path d="M2 21c0-3 1.85-5.36 5.08-6"/></svg></span>
+          <span class="quiz-opt-label">Park or garden</span>
+        </button>
+        <button class="quiz-opt" onclick="pick('setting','Somewhere meaningful to us')">
+          <span class="quiz-opt-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 1 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78z"/></svg></span>
+          <span class="quiz-opt-label">Somewhere meaningful<small>A place that&rsquo;s ours</small></span>
+        </button>
+      </div>
+      <button class="quiz-back" onclick="prevStep()">&larr; Back</button>
+    </div>
+
+    <!-- STEP 5: contact gate -->
+    <div class="quiz-step" data-step="4">
+      <span class="quiz-eyebrow">One last thing</span>
+      <div class="quiz-question">Let&rsquo;s <em>get in touch</em></div>
+      <div class="quiz-hint">I&rsquo;ll text you back personally &mdash; usually within 30 minutes.</div>
+      <div style="max-width:380px;margin:0 auto;text-align:left;">
+        <div class="form-group">
+          <label for="q-name" style="color:rgba(255,255,255,0.7);">Full Name</label>
+          <input type="text" id="q-name" name="first_name" autocomplete="name" placeholder="First and last name" />
+        </div>
+        <div class="form-group">
+          <label for="q-phone" style="color:rgba(255,255,255,0.7);">Phone Number</label>
+          <input type="tel" id="q-phone" name="phone" autocomplete="tel" />
+        </div>
+        <button class="form-submit" id="q-submit" onclick="submitQuiz()" style="margin-top:10px;"><span class="btn-label">Let&rsquo;s do this &rarr;</span><span class="btn-spinner"></span></button>
+        <p style="margin-top:14px; font-size:0.76rem; color:rgba(255,255,255,0.5); font-weight:300; text-align:center;">No commitment. Just a conversation.</p>
+      </div>
+      <button class="quiz-back" onclick="prevStep()">&larr; Back</button>
+    </div>
+
+    <!-- THANK YOU (quiz) -->
+    <div class="quiz-step" data-step="5" id="quiz-thankyou">
+      <img class="thank-you-scene" src="data:image/webp;base64,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" alt="Pixel art of a marriage proposal at sunset" style="margin-bottom:22px;">
+      <div class="quiz-question" style="margin-bottom:4px;">Thank you.</div>
+      <div class="quiz-subq" style="margin-bottom:0;">I&rsquo;ll be in touch shortly.</div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ═══ EXTENSION FOLDS (inserted between Fold 2 and the FAQ) ═══ -->
+
+<!-- HOW IT WORKS -->
+<section class="how" id="how">
+  <div class="how-inner">
+    <div class="how-head">
+      <span class="section-eyebrow reveal">The covert operation</span>
+      <h2 class="section-headline reveal reveal-delay-1">How the secret<br/><em>stays a secret.</em></h2>
+    </div>
+    <div class="steps">
+      <div class="step reveal">
+        <div class="step-num">01</div>
+        <h3>Tell me the plan</h3>
+        <p>A free, no-pressure call. Bring an idea or no idea at all &mdash; we&rsquo;ll pick the location, the timing and the angle together, all behind their back.</p>
+      </div>
+      <div class="step reveal reveal-delay-1">
+        <div class="step-num">02</div>
+        <h3>I disappear</h3>
+        <p>On the day I&rsquo;m early, out of sight and dressed like a tourist. They won&rsquo;t know I&rsquo;m there to shoot the proposal until after the proposal starts.</p>
+      </div>
+      <div class="step reveal reveal-delay-2">
+        <div class="step-num">03</div>
+        <h3>The yes &mdash; and after</h3>
+        <p>The moment lands, fully captured. Then I step in for the champagne, the tears, and the celebration that follows.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="stats" aria-label="Track record">
+  <div class="stats-inner">
+    <div class="reveal"><div class="stat-number">200<em>+</em></div><div class="stat-label">Couples Captured</div></div>
+    <div class="reveal reveal-delay-1"><div class="stat-number">130<em>+</em></div><div class="stat-label">Five-Star Reviews</div></div>
+    <div class="reveal reveal-delay-2"><div class="stat-number">10<em>+</em></div><div class="stat-label">Years Behind the Camera</div></div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="gallery" id="gallery">
+  <div class="gallery-inner">
+    <div class="gallery-head">
+      <div>
+        <span class="section-eyebrow reveal">Recent proposal photography &middot; Sydney &amp; beyond</span>
+        <h2 class="section-headline reveal reveal-delay-1">Real questions,<br/><em>real yeses.</em></h2>
+      </div>
+      <a href="#contact" class="btn-shine btn-dark reveal reveal-delay-2" onclick="scrollToQuiz(event)" style="margin-bottom: 6px;">Plan Yours</a>
+    </div>
+    <div class="gallery-grid">
+      <figure class="g-item g-feat reveal">
+        <img src="https://assets.cdn.filesafe.space/s76Gfcyq4U0iZ1yA3LWg/media/6a5e88fba60fa529fd545cba.webp" alt="Man kneeling to propose on a candle-lit jetty at golden hour" loading="lazy" decoding="async" />
+        <figcaption>A proposal on the dock</figcaption>
+      </figure>
+      <figure class="g-item g-tall reveal reveal-delay-1">
+        <img src="https://assets.cdn.filesafe.space/s76Gfcyq4U0iZ1yA3LWg/media/6a5e88f9ecb87d54c1b86bf4.webp" alt="Newly engaged couple laughing as champagne sprays over a coastal clifftop" loading="lazy" decoding="async" style="object-position: 30% center;" />
+        <figcaption>The champagne aftermath</figcaption>
+      </figure>
+      <figure class="g-item g-tall reveal">
+        <img src="https://assets.cdn.filesafe.space/s76Gfcyq4U0iZ1yA3LWg/media/6a5e88f9baf5f6da409eac6b.webp" alt="Two women holding hands and smiling in front of a red rose arch and Will You Marry Me neon sign" loading="lazy" decoding="async" />
+        <figcaption>Runa&rsquo;s yes, framed in roses</figcaption>
+      </figure>
+      <figure class="g-item g-wide reveal reveal-delay-1">
+        <img src="https://assets.cdn.filesafe.space/s76Gfcyq4U0iZ1yA3LWg/media/6a5e88fc1097b81195781282.webp" alt="Friends spraying champagne at a headland proposal set-up with red roses and a neon sign" loading="lazy" decoding="async" style="object-position: center 48%;" />
+        <figcaption>Atharva&rsquo;s crew, zero chill</figcaption>
+      </figure>
+      <figure class="g-item g-tall reveal reveal-delay-2">
+        <img src="https://assets.cdn.filesafe.space/s76Gfcyq4U0iZ1yA3LWg/media/6a5e88f9300bfb1db854450b.webp" alt="Woman holding her partner's face as he kneels with the engagement ring in a botanic garden" loading="lazy" decoding="async" />
+        <figcaption>A garden ambush</figcaption>
+      </figure>
+      <figure class="g-item g-tall reveal">
+        <img src="https://assets.cdn.filesafe.space/s76Gfcyq4U0iZ1yA3LWg/media/6a5e88fbecb87d54c1b86c0c.webp" alt="A newly engaged couple with champagne and flowers as a crowd cheers behind them in Porto, Portugal" loading="lazy" decoding="async" style="object-position: center 30%;" />
+        <figcaption>A yes in Porto &mdash; I travel</figcaption>
+      </figure>
+      <a class="g-cta reveal reveal-delay-1" href="#contact" onclick="scrollToQuiz(event)">
+        <span class="g-cta-eyebrow">Your turn</span>
+        <span class="g-cta-line">The next yes could be yours.</span>
+        <span class="g-cta-arrow">Start planning &rarr;</span>
+      </a>
+    </div>
+    <div class="gallery-cta reveal">
+      <a href="#contact" class="btn-shine btn-dark-lg" onclick="scrollToQuiz(event)">I Want Photos Like These</a>
+    </div>
+  </div>
+</section>
+
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="services-inner">
+    <div class="services-head">
+      <span class="section-eyebrow reveal">What I shoot</span>
+      <h2 class="section-headline reveal reveal-delay-1">Proposals first.<br/><em>Every love story after.</em></h2>
+    </div>
+    <div class="services-grid">
+      <a class="svc svc-feat reveal" href="#contact" onclick="scrollToQuiz(event)">
+        <img src="https://assets.cdn.filesafe.space/s76Gfcyq4U0iZ1yA3LWg/media/6a5f2254baf5f6da40c68d84.webp" alt="Groom carrying his new fianc&eacute;e on the beach, laughing, just after she said yes" loading="lazy" decoding="async" />
+        <div class="svc-overlay"></div>
+        <div class="svc-content">
+          <div class="svc-tag">The Specialty</div>
+          <h3>Proposal Photography</h3>
+          <p>The main event. Covert coverage, full planning support, and productions from beautifully simple to completely over the top.</p>
+          <div class="svc-feat-actions">
+            <span class="btn-shine btn-gold" style="padding: 13px 28px;">Plan a Proposal</span>
+          </div>
+        </div>
+      </a>
+      <a class="svc svc-small reveal reveal-delay-1" href="#contact" onclick="scrollToQuiz(event)">
+        <img src="https://assets.cdn.filesafe.space/s76Gfcyq4U0iZ1yA3LWg/media/6a5e88f99c9b37b5fd2773a7.webp" alt="Two women embracing, backs to camera, looking out at the sunset water" loading="lazy" decoding="async" />
+        <div class="svc-overlay"></div>
+        <div class="svc-content">
+          <h3>Couples &amp; Engagements</h3>
+          <p>Golden-hour engagement sessions for the newly engaged &mdash; or the long-time smitten.</p>
+          <div class="svc-arrow">Enquire &rarr;</div>
+        </div>
+      </a>
+      <a class="svc svc-small reveal reveal-delay-2" href="#contact" onclick="scrollToQuiz(event)">
+        <img src="https://assets.cdn.filesafe.space/s76Gfcyq4U0iZ1yA3LWg/media/6a5e88f9a60fa529fd545993.webp" alt="Close-up of an older couple's clasped hands and wedding rings" loading="lazy" decoding="async" />
+        <div class="svc-overlay"></div>
+        <div class="svc-content">
+          <h3>Weddings</h3>
+          <p>From &ldquo;I will&rdquo; to &ldquo;I do&rdquo; &mdash; full-day wedding storytelling without the stiff poses.</p>
+          <div class="svc-arrow">Enquire &rarr;</div>
+        </div>
+      </a>
+      <a class="svc svc-small reveal reveal-delay-3" href="#contact" onclick="scrollToQuiz(event)">
+        <img src="https://assets.cdn.filesafe.space/s76Gfcyq4U0iZ1yA3LWg/media/6a5e88fbecb87d54c1b86c12.webp" alt="Parents laughing with their toddler on a calm Sydney harbour beach" loading="lazy" decoding="async" style="object-position: center 38%;" />
+        <div class="svc-overlay"></div>
+        <div class="svc-content">
+          <h3>Families</h3>
+          <p>Beach mornings and beautiful chaos &mdash; the little years, kept forever.</p>
+          <div class="svc-arrow">Enquire &rarr;</div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- LOCATIONS -->
+<section class="locations" id="locations">
+  <div class="locations-inner">
+    <div class="locations-head">
+      <span class="section-eyebrow reveal">Where to propose in Sydney</span>
+      <h2 class="section-headline reveal reveal-delay-1">The proposal locations<br/><em>I know by heart.</em></h2>
+      <p class="section-body reveal reveal-delay-2">After 200+ proposals across Sydney, I know exactly where the light falls, where the crowds don&rsquo;t, and where I can hide. A few favourites to get you thinking:</p>
+    </div>
+    <div class="locations-grid">
+      <div class="loc-image-wrap reveal">
+        <img class="loc-image" src="https://assets.cdn.filesafe.space/s76Gfcyq4U0iZ1yA3LWg/media/6a5e88fbbaf5f6da409eaca3.webp" alt="Newly engaged couple clinking champagne glasses at golden hour on a Sydney headland" loading="lazy" decoding="async" />
+      </div>
+      <ul class="loc-list">
+        <li class="reveal"><h3>Sydney Harbour &amp; the Opera House</h3><p>Skyline backdrops at sunrise, before the crowds arrive.</p></li>
+        <li class="reveal reveal-delay-1"><h3>Bondi to Bronte clifftops</h3><p>Dramatic ledges over that famous blue water.</p></li>
+        <li class="reveal"><h3>Royal Botanic Garden</h3><p>Ferns, sandstone and quiet corners minutes from the CBD.</p></li>
+        <li class="reveal reveal-delay-1"><h3>Watsons Bay &amp; South Head</h3><p>The lighthouse, the harbour, and golden light both ways.</p></li>
+        <li class="reveal"><h3>Northern Beaches headlands</h3><p>Palm Beach, Barrenjoey and long, empty lookouts.</p></li>
+        <li class="reveal reveal-delay-1"><h3>Milk Beach &amp; Hermitage Foreshore</h3><p>Small, calm, with the skyline floating across the water.</p></li>
+        <li class="reveal"><h3>McKell Park, Darling Point</h3><p>A manicured garden that drops straight into the harbour.</p></li>
+        <li class="reveal reveal-delay-1"><h3>Blue Mountains lookouts</h3><p>For couples who&rsquo;d rather have a valley than an ocean.</p></li>
+      </ul>
+    </div>
+    <div class="loc-cta reveal">
+      <a href="#contact" class="btn-shine btn-dark-lg" onclick="scrollToQuiz(event)">Help Me Pick a Spot</a>
+      <p>Somewhere else in mind &mdash; or nowhere at all? The quiz takes 30 seconds and I&rsquo;ll shortlist locations that fit your plan.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="pricing" id="pricing">
+  <div class="pricing-inner">
+    <div class="pricing-head">
+      <span class="section-eyebrow reveal">Honest numbers</span>
+      <h2 class="section-headline reveal reveal-delay-1">Know the price<br/><em>before we talk.</em></h2>
+      <p class="section-body reveal reveal-delay-2">No &ldquo;enquire for pricing&rdquo; games. Two ways to work together &mdash; every one starts with a free consultation.</p>
+    </div>
+    <div class="price-grid">
+      <div class="price-card featured compact reveal">
+        <div class="price-tier">Full Production</div>
+        <div class="price-amount"><small>Up to</small> $8,350 <small>AUD</small></div>
+        <p class="price-desc">A proposal built like a film set.</p>
+        <p class="price-inline">Limousine &amp; private chef <span class="sep">&#10022;</span> florals, styling &amp; delivery <span class="sep">&#10022;</span> custom light-up signs <span class="sep">&#10022;</span> drone &amp; second videographer</p>
+        <a href="#contact" class="btn-shine btn-gold" onclick="scrollToQuiz(event)" style="text-align:center;">Design My Proposal</a>
+      </div>
+      <div class="price-card reveal reveal-delay-1">
+        <div class="price-tier">Photography</div>
+        <div class="price-amount"><small>From</small> $699 <small>AUD</small></div>
+        <p class="price-desc">Me, the long lens, and the moment &mdash; captured without them ever knowing.</p>
+        <ul class="price-list">
+          <li>Covert proposal coverage (or any session)</li>
+          <li>Location &amp; timing planned together</li>
+          <li>Celebration coverage after the yes</li>
+          <li>Edited, ready-to-share gallery</li>
+        </ul>
+        <a href="#contact" class="btn-shine btn-dark-lg" onclick="scrollToQuiz(event)" style="text-align:center;">Check My Date</a>
+      </div>
+    </div>
+    <p class="price-note reveal">Free consultations &mdash; no commitment, just a conversation.</p>
+  </div>
+</section>
+
+<!-- GUARANTEE -->
+<section class="guarantee">
+  <div class="guarantee-inner reveal">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#C9A96E" stroke-width="1.8" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+    <p><span class="tip" tabindex="0"><strong>100% Happiness Guarantee.</strong><span class="tip-bubble">If you&rsquo;re not happy with your delivery for any reason, I&rsquo;ll give you a full refund. (I&rsquo;ve never had anyone take me up on this)</span></span> If you&rsquo;re not happy with your session, you get a full refund &mdash; no questions asked. If the weather turns, we reschedule free. <a onclick="scrollToQuiz(event)" href="#contact">Ask me about it</a></p>
+  </div>
+</section>
+
+
+<!-- FAQ -->
+<section style="padding:90px 40px;background:#fff;">
+  <div style="max-width:760px;margin:0 auto;">
+    <span class="section-eyebrow reveal" style="display:block;margin-bottom:12px;">Common questions</span>
+    <h2 class="section-headline reveal" style="margin-bottom:48px;">Before you ask,<br/><em>here&rsquo;s what I&rsquo;d tell you.</em></h2>
+
+    <div class="faq-list">
+      <details class="faq-item reveal">
+        <summary class="faq-q">How much does a proposal session cost?</summary>
+        <p class="faq-a">Packages go up to $8,350, which includes florists, drone shots, a second videographer, custom light-up signs, decoration sourcing and delivery, limousine, and an on-site chef. For photography services without elaborate extras, pricing starts at $699. Consultations are free &mdash; no commitment, just a conversation.</p>
+      </details>
+      <details class="faq-item reveal">
+        <summary class="faq-q">Will she know I hired a photographer?</summary>
+        <p class="faq-a">She won&rsquo;t know I&rsquo;m there to shoot the proposal until after the proposal starts.</p>
+      </details>
+      <details class="faq-item reveal">
+        <summary class="faq-q">What if I don&rsquo;t have a location or plan yet?</summary>
+        <p class="faq-a">Most people don&rsquo;t. Bring the ring and an idea (or no idea at all), and we&rsquo;ll build it together.</p>
+      </details>
+      <details class="faq-item reveal">
+        <summary class="faq-q">How quickly do I get the photos back?</summary>
+        <p class="faq-a">Average turnaround is well under a week. Expedited delivery is available if you need to share them ASAP.</p>
+      </details>
+      <details class="faq-item reveal">
+        <summary class="faq-q">Do you only shoot proposals?</summary>
+        <p class="faq-a">I shoot proposals, couples sessions, anniversaries, engagements and weddings &mdash; any moment between two people worth capturing.</p>
+      </details>
+      <details class="faq-item reveal">
+        <summary class="faq-q">What&rsquo;s your cancellation or bad-weather policy?</summary>
+        <p class="faq-a">Life happens. If the weather turns, we&rsquo;ll reschedule at no extra cost. I&rsquo;d rather wait for the right moment than force the wrong one.</p>
+      </details>
+      <details class="faq-item reveal">
+        <summary class="faq-q">What if I&rsquo;m not happy with my session?</summary>
+        <p class="faq-a">You get a full refund, no questions asked. That&rsquo;s the 100% Happiness Guarantee &mdash; I&rsquo;d rather make it right than have you settle for photos you don&rsquo;t love.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- FOLD 3: FINAL CTA -->
+<section class="fold3" id="contact">
+  <div class="fold3-bg"></div>
+  <div class="fold3-gradient"></div>
+  <div class="fold3-content">
+    <h2 class="fold3-headline">A proposal built like<br/><em>a film set.</em></h2>
+    <p class="fold3-sub">Tell me your idea &mdash; I&rsquo;ll help you shape it into something you&rsquo;ll never forget.</p>
+    <div class="urgency-note">
+      <span class="pulse-dot"></span>
+      Dates filling fast
+    </div>
+    <a href="#" class="btn-shine btn-gold" onclick="scrollToQuiz(event)">Contact Me &rarr;</a>
+    <p style="margin-top:16px; font-size:0.78rem; color:rgba(255,255,255,0.5); font-weight:300;">No commitment. Just a conversation.</p>
+  </div>
+</section>
+
+<!-- FINE PRINT (additive strip above the untouched footer) -->
+<section class="fineprint">
+  <p><a href="tel:+61432168197" onclick="trackCallClick()" style="color:var(--gold);">+61 432 168 197</a> &middot; Sydney, Australia &middot; <a href="#" onclick="legalOpen(event,'privacy')">Privacy Policy</a> &middot; <a href="#" onclick="legalOpen(event,'terms')">Terms of Use</a></p>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>&copy; <span id="footer-year"></span> Joshua Sharman Photography &middot; All rights reserved &middot; <a href="mailto:josh@joshuasharman.com">josh@joshuasharman.com</a></p>
+</footer>
+
+<script>
+  document.getElementById('footer-year').textContent = new Date().getFullYear();
+
+  // ─── GHL WEBHOOK ───────────────────────────────────────────────
+  // 1. In GHL go to: Automation → Workflows → New Workflow
+  // 2. Set trigger to "Inbound Webhook"
+  // 3. Copy the webhook URL GHL gives you and paste it below
+  var GHL_WEBHOOK_URL = "https://services.leadconnectorhq.com/hooks/s76Gfcyq4U0iZ1yA3LWg/webhook-trigger/c4f51362-ca21-4999-9c3d-a605de6ae1c7";
+  // ────────────────────────────────────────────────────────────────
+
+  // ============ QUIZ LOGIC ============
+  var quizAnswers = { iam: '', partner: '', timing: '', plan: '', setting: '' };
+  var quizStep = 0;
+  var QUIZ_TOTAL = 5;
+
+  // ── GA4 funnel tracking (populates once a GA4 Measurement ID is added in <head>) ──
+  var QUIZ_STEP_NAMES = ['identity', 'timing', 'plan', 'setting', 'contact'];
+  var quizStepsSent = {};
+  function trackStep(i) {
+    if (i < 0 || i >= QUIZ_STEP_NAMES.length || quizStepsSent[i]) return;
+    quizStepsSent[i] = true;
+    if (typeof gtag === 'function') {
+      gtag('event', 'quiz_step', { step_index: i, step_name: QUIZ_STEP_NAMES[i] });
+    }
+  }
+
+  function scrollToQuiz(e) {
+    if (e) e.preventDefault();
+    document.getElementById('quiz').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  function updateProgress() {
+    var pct = Math.min(100, Math.round(((quizStep + 1) / QUIZ_TOTAL) * 100));
+    var fill = document.getElementById('quiz-progress-fill');
+    var num = document.getElementById('quiz-step-num');
+    if (fill) fill.style.width = pct + '%';
+    if (num) num.textContent = (quizStep + 1);
+  }
+
+  var quizTransitioning = false;
+  function showStep(n) {
+    var current = document.querySelector('.quiz-step.active');
+    var target = document.querySelector('.quiz-step[data-step="' + n + '"]');
+    if (!target || current === target) return;
+    if (quizTransitioning) return; // ignore rapid taps while a step is animating
+    quizTransitioning = true;
+    if (current) {
+      current.classList.add('leaving');
+      setTimeout(function() {
+        current.classList.remove('active', 'leaving');
+        target.classList.add('active');
+        quizTransitioning = false;
+      }, 330);
+    } else {
+      target.classList.add('active');
+      quizTransitioning = false;
+    }
+    quizStep = n;
+    var prog = document.getElementById('quiz-progress');
+    if (prog) prog.style.display = (n >= QUIZ_TOTAL) ? 'none' : '';
+    if (n < QUIZ_TOTAL) { updateProgress(); trackStep(n); }
+    // keep quiz in view on mobile
+    setTimeout(function() {
+      if (n > 0) document.getElementById('quiz').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }, 120);
+  }
+
+  // paired selection (step 1: I am + proposing to)
+  function pairSelect(btn, field, value) {
+    quizAnswers[field] = value;
+    // visually mark selection within this pair group
+    var group = btn.closest('.quiz-options');
+    group.querySelectorAll('.quiz-opt').forEach(function(o) { o.classList.remove('selected'); });
+    btn.classList.add('selected');
+    // auto-advance once both sub-questions answered
+    if (quizAnswers.iam && quizAnswers.partner) {
+      setTimeout(function() { showStep(1); }, 420);
+    }
+  }
+
+  // single-pick steps — auto-advance
+  function pick(field, value) {
+    quizAnswers[field] = value;
+    if (quizStep < 4) {
+      showStep(quizStep + 1);
+    }
+  }
+
+  function nextStep() {
+    if (quizStep === 0 && (!quizAnswers.iam || !quizAnswers.partner)) return;
+    showStep(quizStep + 1);
+  }
+  function prevStep() {
+    if (quizStep > 0) showStep(quizStep - 1);
+  }
+
+  // Australian phone formatting on quiz phone field
+  var qPhone = document.getElementById('q-phone');
+  if (qPhone) {
+    qPhone.addEventListener('input', function(e) {
+      var raw = e.target.value.replace(/[^\d]/g, '');
+      var formatted = raw;
+      if (raw.startsWith('04') || raw.startsWith('05')) {
+        if (raw.length <= 4) formatted = raw;
+        else if (raw.length <= 7) formatted = raw.slice(0,4) + ' ' + raw.slice(4);
+        else formatted = raw.slice(0,4) + ' ' + raw.slice(4,7) + ' ' + raw.slice(7,10);
+      } else if (raw.startsWith('0')) {
+        if (raw.length <= 2) formatted = raw;
+        else if (raw.length <= 6) formatted = raw.slice(0,2) + ' ' + raw.slice(2);
+        else formatted = raw.slice(0,2) + ' ' + raw.slice(2,6) + ' ' + raw.slice(6,10);
+      } else if (raw.startsWith('61')) {
+        formatted = '+' + raw.slice(0,2) + ' ' + raw.slice(2,3) + ' ' + raw.slice(3,7) + ' ' + raw.slice(7,11);
+      }
+      e.target.value = formatted;
+    });
+  }
+
+  function submitQuiz() {
+    var name = document.getElementById('q-name').value.trim();
+    var phone = document.getElementById('q-phone').value.trim();
+    if (!name) { document.getElementById('q-name').focus(); return; }
+    if (!phone) { document.getElementById('q-phone').focus(); return; }
+
+    var payload = {
+      first_name: name.split(' ')[0],
+      last_name: name.split(' ').slice(1).join(' ') || '',
+      name: name,
+      phone: phone,
+      source: 'proposal-quiz-funnel',
+      tags: ['proposal-lead', 'quiz-funnel'],
+      quiz_i_am: quizAnswers.iam,
+      quiz_proposing_to: quizAnswers.partner,
+      quiz_timing: quizAnswers.timing,
+      quiz_has_plan: quizAnswers.plan,
+      quiz_setting: quizAnswers.setting,
+      submitted_at: new Date().toISOString()
+    };
+
+    if (GHL_WEBHOOK_URL) {
+      fetch(GHL_WEBHOOK_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      }).catch(function() {});
+    }
+
+    // Google Ads conversion tracking
+    if (typeof gtag === 'function') {
+      gtag('event', 'conversion', {
+        'send_to': 'AW-18226213062/x4JBCLenqMUcEMbh9_JD',
+        'value': 1.0,
+        'currency': 'USD'
+      });
+    }
+
+    // GA4 lead event (for the funnel completion + a GA4-side conversion)
+    if (typeof gtag === 'function') {
+      gtag('event', 'generate_lead', { currency: 'USD', value: 1.0 });
+    }
+
+    var btn = document.getElementById('q-submit');
+    btn.parentElement.classList.add('submitting');
+    btn.closest('.modal') && btn.closest('.modal').classList.add('submitting');
+    // add submitting state via a wrapper class on the button
+    btn.classList.add('is-loading');
+
+    setTimeout(function() {
+      showStep(5); // thank-you step
+    }, 850);
+  }
+
+  // initialise the quiz progress bar on load
+  updateProgress();
+
+  var reveals = document.querySelectorAll('.reveal');
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  reveals.forEach(function(el) { observer.observe(el); });
+
+  // Fire quiz_start + the first funnel step the first time the quiz is seen
+  var quizSection = document.getElementById('quiz');
+  if (quizSection && 'IntersectionObserver' in window) {
+    var quizStartFired = false;
+    var quizObserver = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting && !quizStartFired) {
+          quizStartFired = true;
+          if (typeof gtag === 'function') gtag('event', 'quiz_start', {});
+          trackStep(0);
+          quizObserver.disconnect();
+        }
+      });
+    }, { threshold: 0.4 });
+    quizObserver.observe(quizSection);
+  }
+
+  window.addEventListener('scroll', function() {
+    document.getElementById('nav').style.padding = window.scrollY > 60 ? '12px 40px' : '18px 40px';
+  });
+</script>
+
+<!-- STICKY MOBILE CTA -->
+<div class="mobile-cta" id="mobile-cta">
+  <a href="#contact" class="btn-shine btn-gold" onclick="scrollToQuiz(event)">Contact Me &rarr;</a>
+</div>
+
+<!-- PRIVACY POLICY -->
+<div class="legal-overlay" id="legal-privacy" role="dialog" aria-modal="true" aria-labelledby="legal-privacy-title" onclick="legalOutside(event,'legal-privacy')">
+  <div class="legal-panel">
+    <button class="legal-close" onclick="legalClose('legal-privacy')" aria-label="Close privacy policy">&times;</button>
+    <h2 id="legal-privacy-title">Privacy Policy</h2>
+    <p class="legal-updated">Last updated: July 2026</p>
+    <p>Joshua Sharman Photography (&ldquo;I&rdquo;, &ldquo;me&rdquo;) operates this website from Sydney, Australia. This policy explains what happens to any information you share here.</p>
+    <h3>What I collect</h3>
+    <p>When you complete the enquiry quiz, I collect the name and phone number you provide, along with the quiz answers you choose to share (who&rsquo;s proposing, your timing, whether you have a plan, and your preferred setting).</p>
+    <h3>How it&rsquo;s used</h3>
+    <p>Your details are used only to reply to your enquiry and help plan your session. They&rsquo;re delivered to my customer-relationship system (LeadConnector / HighLevel) so I can respond, and are never sold or passed to third parties for their marketing.</p>
+    <h3>Analytics &amp; advertising</h3>
+    <p>This site uses Google Ads and Google Analytics tags to understand how visitors find the page and whether the ads are working. These services set cookies; you can manage them in your browser settings or at <a href="https://adssettings.google.com" target="_blank" rel="noopener">adssettings.google.com</a>.</p>
+    <h3>Your choices</h3>
+    <p>To access, correct, or delete anything you&rsquo;ve submitted, email <a href="mailto:josh@joshuasharman.com">josh@joshuasharman.com</a> and I&rsquo;ll take care of it promptly.</p>
+    <h3>Questions</h3>
+    <p>Anything unclear? Email <a href="mailto:josh@joshuasharman.com">josh@joshuasharman.com</a>.</p>
+  </div>
+</div>
+
+<!-- TERMS -->
+<div class="legal-overlay" id="legal-terms" role="dialog" aria-modal="true" aria-labelledby="legal-terms-title" onclick="legalOutside(event,'legal-terms')">
+  <div class="legal-panel">
+    <button class="legal-close" onclick="legalClose('legal-terms')" aria-label="Close terms">&times;</button>
+    <h2 id="legal-terms-title">Terms of Use</h2>
+    <p class="legal-updated">Last updated: July 2026</p>
+    <p>This website provides general information about Joshua Sharman Photography. Completing the quiz or contacting me doesn&rsquo;t create a booking &mdash; sessions are confirmed separately in writing.</p>
+    <p>Pricing shown is a guide in Australian dollars and varies with the scope of your session; you&rsquo;ll always receive a fixed quote before anything is booked.</p>
+    <p>If the weather turns, sessions reschedule at no extra cost, as described on this page.</p>
+    <p>All photographs on this site are &copy; Joshua Sharman Photography and may not be reproduced without permission.</p>
+    <p>Contact: <a href="mailto:josh@joshuasharman.com">josh@joshuasharman.com</a> &middot; Sydney, Australia.</p>
+  </div>
+</div>
+
+<script>
+  // ═══ EXTENSION SCRIPT (additive — the seed's script is untouched above) ═══
+
+  // Legal overlays
+  function legalOpen(e, which) {
+    if (e) e.preventDefault();
+    document.getElementById('legal-' + which).classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function legalClose(id) {
+    document.getElementById(id).classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  function legalOutside(e, id) {
+    if (e.target === document.getElementById(id)) legalClose(id);
+  }
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+      document.querySelectorAll('.legal-overlay.open').forEach(function(el) { legalClose(el.id); });
+    }
+  });
+
+  // Sticky mobile CTA: appears after scrolling past the quiz, hides once the lead is in
+  var stickyBar = document.getElementById('mobile-cta');
+  var quizSectionEl = document.getElementById('quiz');
+  var quizThanksEl = document.getElementById('quiz-thankyou');
+  function updateSticky() {
+    if (!stickyBar || !quizSectionEl) return;
+    var pastQuiz = window.scrollY > (quizSectionEl.offsetTop + quizSectionEl.offsetHeight - window.innerHeight * 0.5);
+    var done = quizThanksEl && quizThanksEl.classList.contains('active');
+    stickyBar.classList.toggle('show', pastQuiz && !done);
+  }
+  window.addEventListener('scroll', updateSticky, { passive: true });
+
+  // Call banner tracking (secondary conversion). Add a Google Ads call-conversion
+  // label here (send_to: 'AW-18226213062/XXXXXXXX') once one exists for phone leads.
+  function trackCallClick() {
+    if (typeof gtag === 'function') {
+      gtag('event', 'call_click', { event_category: 'engagement', event_label: '+61432168197' });
+    }
+  }
+
+  // Guarantee tooltip: hover works via CSS; this adds tap-to-toggle for touch devices
+  document.querySelectorAll('.tip').forEach(function(el) {
+    el.addEventListener('click', function(e) {
+      e.stopPropagation();
+      var wasOpen = el.classList.contains('tip-open');
+      document.querySelectorAll('.tip.tip-open').forEach(function(t) { t.classList.remove('tip-open'); });
+      if (!wasOpen) el.classList.add('tip-open');
+    });
+  });
+  document.addEventListener('click', function() {
+    document.querySelectorAll('.tip.tip-open').forEach(function(t) { t.classList.remove('tip-open'); });
+  });
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') document.querySelectorAll('.tip.tip-open').forEach(function(t) { t.classList.remove('tip-open'); });
+  });
+</script>
+
+</body>
+</html>
