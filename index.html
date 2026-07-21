@@ -540,10 +540,17 @@
   .fineprint a { color: var(--gold); text-decoration: none; cursor: pointer; }
   .fineprint a:hover { text-decoration: underline; }
 
-  /* STICKY MOBILE CTA */
-  .mobile-cta { display: none; position: fixed; left: 0; right: 0; bottom: 0; z-index: 90; padding: 12px 16px calc(12px + env(safe-area-inset-bottom)); background: rgba(26,23,20,0.94); backdrop-filter: blur(8px); border-top: 1px solid rgba(201,169,110,0.35); transform: translateY(110%); transition: transform 0.35s ease; }
+  /* STICKY CTA (mobile + desktop) */
+  .mobile-cta { display: block; position: fixed; left: 0; right: 0; bottom: 0; z-index: 90; padding: 12px 16px calc(12px + env(safe-area-inset-bottom)); background: rgba(26,23,20,0.94); backdrop-filter: blur(8px); border-top: 1px solid rgba(201,169,110,0.35); transform: translateY(110%); transition: transform 0.35s ease; text-align: center; }
   .mobile-cta.show { transform: translateY(0); }
   .mobile-cta .btn-gold { width: 100%; text-align: center; padding: 15px 20px; }
+  /* On wider screens the swap still happens; keep the button a centered pill, not edge-to-edge */
+  @media (min-width: 769px) {
+    .mobile-cta { padding: 14px 16px; }
+    .mobile-cta .btn-gold { width: auto; display: inline-block; padding: 14px 48px; }
+  }
+  /* One banner at a time: hide the top nav (behind the call bar) whenever the bottom CTA is up */
+  body.cta-active nav { transform: translateY(-100%); pointer-events: none; }
 
   /* LEGAL OVERLAYS (privacy / terms) */
   .legal-overlay { display: none; position: fixed; inset: 0; background: rgba(26,23,20,0.72); backdrop-filter: blur(6px); z-index: 999; align-items: center; justify-content: center; padding: 20px; }
@@ -577,9 +584,6 @@
     .pricing { padding: 80px 24px; }
     .fineprint { padding: 16px 24px 0; }
     .legal-panel { padding: 34px 24px 28px; }
-    .mobile-cta { display: block; }
-    /* Only one banner at a time: slide the top nav away (behind the call bar) once the bottom CTA is up */
-    body.cta-active nav { transform: translateY(-100%); pointer-events: none; }
   }
   @media (max-width: 560px) {
     .gallery-grid { grid-template-columns: 1fr; }
