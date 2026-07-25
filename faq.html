@@ -477,16 +477,6 @@ footer a { color: var(--gold); text-decoration: none; }
           <input type="tel" id="lf-phone" name="phone" autocomplete="tel" placeholder="04__ ___ ___" required />
         </div>
       </div>
-      <div>
-        <label for="lf-ctx">What&rsquo;s the main thing on your mind?</label>
-        <select id="lf-ctx" name="context">
-        <option value="staying-secret">Making sure it stays a surprise</option>
-        <option value="pricing">Pricing and what’s included</option>
-        <option value="location">Picking the right location</option>
-        <option value="timing">Dates and availability</option>
-        <option value="something-else">Something else</option>
-        </select>
-      </div>
       <p class="lead-err" id="lf-err" role="alert"></p>
       <button type="submit" class="btn-shine btn-gold lead-submit" id="lf-submit">Get My Free Consultation</button>
     </form>
@@ -542,7 +532,6 @@ footer a { color: var(--gold); text-decoration: none; }
     var err = document.getElementById('lf-err');
     var name = document.getElementById('lf-name').value.trim();
     var phone = document.getElementById('lf-phone').value.trim();
-    var ctx = document.getElementById('lf-ctx').value;
 
     if (!name) { err.textContent = 'Add your name so I know who I\u2019m calling.'; document.getElementById('lf-name').focus(); return; }
     if (phone.replace(/\D/g, '').length < 8) { err.textContent = 'Add a phone number I can reach you on.'; document.getElementById('lf-phone').focus(); return; }
@@ -560,7 +549,6 @@ footer a { color: var(--gold); text-decoration: none; }
       source: 'lp-faq',
       tags: ['proposal-lead', 'google-ads-sitelink', 'lp-faq'],
       landing_page: 'lp-faq',
-      lead_context: ctx,
       gclid: param('gclid'),
       utm_source: param('utm_source'),
       utm_medium: param('utm_medium'),
