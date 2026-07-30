@@ -1320,6 +1320,7 @@
     if (!name) { document.getElementById('q-name').focus(); return; }
     if (!phone) { document.getElementById('q-phone').focus(); return; }
 
+    function param(k){ try { return new URLSearchParams(window.location.search).get(k) || ''; } catch (e) { return ''; } }
     var payload = {
       first_name: name.split(' ')[0],
       last_name: name.split(' ').slice(1).join(' ') || '',
@@ -1332,6 +1333,12 @@
       quiz_timing: quizAnswers.timing,
       quiz_has_plan: quizAnswers.plan,
       quiz_setting: quizAnswers.setting,
+      landing_page: 'proposal-quiz-funnel',
+      gclid: param('gclid'),
+      utm_source: param('utm_source'),
+      utm_medium: param('utm_medium'),
+      utm_campaign: param('utm_campaign'),
+      utm_term: param('utm_term'),
       submitted_at: new Date().toISOString()
     };
 
