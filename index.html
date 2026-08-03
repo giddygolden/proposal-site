@@ -694,23 +694,15 @@
      The real submission happens via fetch() in submitQuiz() — this element is never shown or used directly. -->
 <form name="quiz-funnel" data-netlify="true" netlify-honeypot="bot-field" hidden>
   <input type="text" name="bot-field" />
-  <input type="text" name="first_name" />
-  <input type="text" name="last_name" />
-  <input type="text" name="name" />
-  <input type="tel" name="phone" />
-  <input type="text" name="source" value="proposal-quiz-funnel" />
-  <input type="text" name="tags" value="proposal-lead, quiz-funnel" />
-  <input type="text" name="quiz_i_am" />
-  <input type="text" name="quiz_proposing_to" />
-  <input type="text" name="quiz_timing" />
-  <input type="text" name="quiz_has_plan" />
-  <input type="text" name="quiz_setting" />
-  <input type="text" name="landing_page" value="proposal-quiz-funnel" />
-  <input type="text" name="gclid" />
-  <input type="text" name="utm_source" />
-  <input type="text" name="utm_medium" />
-  <input type="text" name="utm_campaign" />
-  <input type="text" name="utm_term" />
+  <label>Name<input type="text" name="name" /></label>
+  <label>Phone<input type="tel" name="phone" /></label>
+  <label>They are<input type="text" name="they_are" /></label>
+  <label>Proposing to<input type="text" name="proposing_to" /></label>
+  <label>Timing<input type="text" name="timing" /></label>
+  <label>Has a plan<input type="text" name="has_a_plan" /></label>
+  <label>Preferred setting<input type="text" name="preferred_setting" /></label>
+  <label>Page<input type="text" name="page" /></label>
+  <label>Ad tracking<input type="text" name="ad_tracking" /></label>
 </form>
 
 <a class="skip-link" href="#quiz">Skip to the enquiry quiz</a>
@@ -1386,21 +1378,23 @@
       }).catch(function() {});
     }
 
+    var adBits = [];
+    if (payload.utm_source) adBits.push(payload.utm_source);
+    if (payload.utm_medium) adBits.push(payload.utm_medium);
+    if (payload.utm_campaign) adBits.push('campaign: ' + payload.utm_campaign);
+    if (payload.utm_term) adBits.push('term: ' + payload.utm_term);
+    if (payload.gclid) adBits.push('gclid: ' + payload.gclid);
+
     submitToNetlify('quiz-funnel', {
-      first_name: payload.first_name,
-      last_name: payload.last_name,
       name: payload.name,
       phone: payload.phone,
-      quiz_i_am: payload.quiz_i_am,
-      quiz_proposing_to: payload.quiz_proposing_to,
-      quiz_timing: payload.quiz_timing,
-      quiz_has_plan: payload.quiz_has_plan,
-      quiz_setting: payload.quiz_setting,
-      gclid: payload.gclid,
-      utm_source: payload.utm_source,
-      utm_medium: payload.utm_medium,
-      utm_campaign: payload.utm_campaign,
-      utm_term: payload.utm_term
+      they_are: payload.quiz_i_am,
+      proposing_to: payload.quiz_proposing_to,
+      timing: payload.quiz_timing,
+      has_a_plan: payload.quiz_has_plan,
+      preferred_setting: payload.quiz_setting,
+      page: 'Homepage quiz',
+      ad_tracking: adBits.length ? adBits.join(' · ') : 'Direct — not from an ad'
     });
 
     // Google Ads conversion tracking

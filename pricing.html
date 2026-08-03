@@ -470,16 +470,6 @@ footer a { color: var(--gold); text-decoration: none; }
 
     <form class="lead-form reveal reveal-delay-1" id="leadForm" name="lp-pricing" data-netlify="true" netlify-honeypot="bot-field" novalidate>
       <p hidden><label>Don&rsquo;t fill this out: <input name="bot-field" /></label></p>
-      <input type="hidden" name="first_name" id="lf-first-name" />
-      <input type="hidden" name="last_name" id="lf-last-name" />
-      <input type="hidden" name="source" value="lp-pricing" />
-      <input type="hidden" name="tags" value="proposal-lead, google-ads-sitelink, lp-pricing" />
-      <input type="hidden" name="landing_page" value="lp-pricing" />
-      <input type="hidden" name="gclid" id="lf-gclid" />
-      <input type="hidden" name="utm_source" id="lf-utm-source" />
-      <input type="hidden" name="utm_medium" id="lf-utm-medium" />
-      <input type="hidden" name="utm_campaign" id="lf-utm-campaign" />
-      <input type="hidden" name="utm_term" id="lf-utm-term" />
       <div class="lead-row">
         <div>
           <label for="lf-name">Your name</label>
@@ -499,6 +489,8 @@ footer a { color: var(--gold); text-decoration: none; }
         <option value="not-sure-yet">No idea yet — talk me through it</option>
         </select>
       </div>
+      <input type="hidden" name="page" value="Pricing page" />
+      <input type="hidden" name="ad_tracking" />
       <p class="lead-err" id="lf-err" role="alert"></p>
       <button type="submit" class="btn-shine btn-gold lead-submit" id="lf-submit">Get My Free Consultation</button>
     </form>
@@ -548,6 +540,17 @@ footer a { color: var(--gold); text-decoration: none; }
   }
 
   var GHL_WEBHOOK_URL = "https://services.leadconnectorhq.com/hooks/s76Gfcyq4U0iZ1yA3LWg/webhook-trigger/c4f51362-ca21-4999-9c3d-a605de6ae1c7";
+
+  // One readable line summarising where the lead came from, instead of five mostly-empty UTM fields.
+  function adTracking() {
+    var bits = [];
+    if (param('utm_source')) bits.push(param('utm_source'));
+    if (param('utm_medium')) bits.push(param('utm_medium'));
+    if (param('utm_campaign')) bits.push('campaign: ' + param('utm_campaign'));
+    if (param('utm_term')) bits.push('term: ' + param('utm_term'));
+    if (param('gclid')) bits.push('gclid: ' + param('gclid'));
+    return bits.length ? bits.join(' · ') : 'Direct — not from an ad';
+  }
 
   // Dual-write to Netlify Forms while migrating off GHL. Fire-and-forget, never blocks the GHL submit.
   function submitToNetlify(formName, fields) {
@@ -603,17 +606,13 @@ footer a { color: var(--gold); text-decoration: none; }
       }).catch(function () {});
     }
 
+    var ctxEl = document.getElementById('lf-ctx');
     submitToNetlify('lp-pricing', {
-      first_name: payload.first_name,
-      last_name: payload.last_name,
       name: name,
       phone: phone,
-      context: ctx,
-      gclid: payload.gclid,
-      utm_source: payload.utm_source,
-      utm_medium: payload.utm_medium,
-      utm_campaign: payload.utm_campaign,
-      utm_term: payload.utm_term
+      context: ctxEl && ctxEl.selectedIndex >= 0 ? ctxEl.options[ctxEl.selectedIndex].text : ctx,
+      page: 'Pricing page',
+      ad_tracking: adTracking()
     });
 
     if (typeof gtag === 'function') {
