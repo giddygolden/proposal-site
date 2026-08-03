@@ -539,8 +539,6 @@ footer a { color: var(--gold); text-decoration: none; }
     try { return new URLSearchParams(window.location.search).get(k) || ''; } catch (e) { return ''; }
   }
 
-  var GHL_WEBHOOK_URL = "https://services.leadconnectorhq.com/hooks/s76Gfcyq4U0iZ1yA3LWg/webhook-trigger/c4f51362-ca21-4999-9c3d-a605de6ae1c7";
-
   // One readable line summarising where the lead came from, instead of five mostly-empty UTM fields.
   function adTracking() {
     var bits = [];
@@ -580,31 +578,6 @@ footer a { color: var(--gold); text-decoration: none; }
     var btn = document.getElementById('lf-submit');
     btn.disabled = true;
     btn.textContent = 'Sending\u2026';
-
-    var payload = {
-      first_name: name.split(' ')[0],
-      last_name: name.split(' ').slice(1).join(' ') || '',
-      name: name,
-      phone: phone,
-      source: 'lp-pricing',
-      tags: ['proposal-lead', 'google-ads-sitelink', 'lp-pricing'],
-      landing_page: 'lp-pricing',
-      lead_context: ctx,
-      gclid: param('gclid'),
-      utm_source: param('utm_source'),
-      utm_medium: param('utm_medium'),
-      utm_campaign: param('utm_campaign'),
-      utm_term: param('utm_term'),
-      submitted_at: new Date().toISOString()
-    };
-
-    if (GHL_WEBHOOK_URL) {
-      fetch(GHL_WEBHOOK_URL, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(payload)
-      }).catch(function () {});
-    }
 
     var ctxEl = document.getElementById('lf-ctx');
     submitToNetlify('lp-pricing', {

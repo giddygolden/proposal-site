@@ -1214,14 +1214,7 @@
 <script>
   document.getElementById('footer-year').textContent = new Date().getFullYear();
 
-  // ─── GHL WEBHOOK ───────────────────────────────────────────────
-  // 1. In GHL go to: Automation → Workflows → New Workflow
-  // 2. Set trigger to "Inbound Webhook"
-  // 3. Copy the webhook URL GHL gives you and paste it below
-  var GHL_WEBHOOK_URL = "https://services.leadconnectorhq.com/hooks/s76Gfcyq4U0iZ1yA3LWg/webhook-trigger/c4f51362-ca21-4999-9c3d-a605de6ae1c7";
-  // ────────────────────────────────────────────────────────────────
-
-  // Dual-write to Netlify Forms while migrating off GHL. Fire-and-forget, never blocks the GHL submit.
+  // Leads go to Netlify Forms. Fire-and-forget so a network hiccup never blocks the UI.
   function submitToNetlify(formName, fields) {
     try {
       var body = new URLSearchParams();
@@ -1370,14 +1363,6 @@
       submitted_at: new Date().toISOString()
     };
 
-    if (GHL_WEBHOOK_URL) {
-      fetch(GHL_WEBHOOK_URL, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(payload)
-      }).catch(function() {});
-    }
-
     var adBits = [];
     if (payload.utm_source) adBits.push(payload.utm_source);
     if (payload.utm_medium) adBits.push(payload.utm_medium);
@@ -1473,7 +1458,7 @@
     <h3>What I collect</h3>
     <p>When you complete the enquiry quiz, I collect the name and phone number you provide, along with the quiz answers you choose to share (who&rsquo;s proposing, your timing, whether you have a plan, and your preferred setting).</p>
     <h3>How it&rsquo;s used</h3>
-    <p>Your details are used only to reply to your enquiry and help plan your session. They&rsquo;re delivered to my customer-relationship system (LeadConnector / HighLevel) so I can respond, and are never sold or passed to third parties for their marketing.</p>
+    <p>Your details are used only to reply to your enquiry and help plan your session, and are never sold or passed to third parties for their marketing.</p>
     <h3>Analytics &amp; advertising</h3>
     <p>This site uses Google Ads and Google Analytics tags to understand how visitors find the page and whether the ads are working. These services set cookies; you can manage them in your browser settings or at <a href="https://adssettings.google.com" target="_blank" rel="noopener">adssettings.google.com</a>.</p>
     <h3>Your choices</h3>
