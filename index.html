@@ -690,6 +690,29 @@
 </head>
 <body>
 
+<!-- Hidden form purely so Netlify's build bot registers the "quiz-funnel" form + its fields.
+     The real submission happens via fetch() in submitQuiz() — this element is never shown or used directly. -->
+<form name="quiz-funnel" data-netlify="true" netlify-honeypot="bot-field" hidden>
+  <input type="text" name="bot-field" />
+  <input type="text" name="first_name" />
+  <input type="text" name="last_name" />
+  <input type="text" name="name" />
+  <input type="tel" name="phone" />
+  <input type="text" name="source" value="proposal-quiz-funnel" />
+  <input type="text" name="tags" value="proposal-lead, quiz-funnel" />
+  <input type="text" name="quiz_i_am" />
+  <input type="text" name="quiz_proposing_to" />
+  <input type="text" name="quiz_timing" />
+  <input type="text" name="quiz_has_plan" />
+  <input type="text" name="quiz_setting" />
+  <input type="text" name="landing_page" value="proposal-quiz-funnel" />
+  <input type="text" name="gclid" />
+  <input type="text" name="utm_source" />
+  <input type="text" name="utm_medium" />
+  <input type="text" name="utm_campaign" />
+  <input type="text" name="utm_term" />
+</form>
+
 <a class="skip-link" href="#quiz">Skip to the enquiry quiz</a>
 
 <!-- CALL BANNER (secondary conversion path) -->
@@ -1206,6 +1229,20 @@
   var GHL_WEBHOOK_URL = "https://services.leadconnectorhq.com/hooks/s76Gfcyq4U0iZ1yA3LWg/webhook-trigger/c4f51362-ca21-4999-9c3d-a605de6ae1c7";
   // ────────────────────────────────────────────────────────────────
 
+  // Dual-write to Netlify Forms while migrating off GHL. Fire-and-forget, never blocks the GHL submit.
+  function submitToNetlify(formName, fields) {
+    try {
+      var body = new URLSearchParams();
+      body.append('form-name', formName);
+      Object.keys(fields).forEach(function (k) { body.append(k, fields[k] == null ? '' : String(fields[k])); });
+      fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: body.toString()
+      }).catch(function () {});
+    } catch (e) {}
+  }
+
   // ============ QUIZ LOGIC ============
   var quizAnswers = { iam: '', partner: '', timing: '', plan: '', setting: '' };
   var quizStep = 0;
@@ -1348,6 +1385,23 @@
         body: JSON.stringify(payload)
       }).catch(function() {});
     }
+
+    submitToNetlify('quiz-funnel', {
+      first_name: payload.first_name,
+      last_name: payload.last_name,
+      name: payload.name,
+      phone: payload.phone,
+      quiz_i_am: payload.quiz_i_am,
+      quiz_proposing_to: payload.quiz_proposing_to,
+      quiz_timing: payload.quiz_timing,
+      quiz_has_plan: payload.quiz_has_plan,
+      quiz_setting: payload.quiz_setting,
+      gclid: payload.gclid,
+      utm_source: payload.utm_source,
+      utm_medium: payload.utm_medium,
+      utm_campaign: payload.utm_campaign,
+      utm_term: payload.utm_term
+    });
 
     // Google Ads conversion tracking
     if (typeof gtag === 'function') {

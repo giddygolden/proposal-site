@@ -466,7 +466,18 @@ footer a { color: var(--gold); text-decoration: none; }
     <h2 class="reveal">Question I haven&rsquo;t<br/><em>answered here?</em></h2>
     <p class="lead-sub reveal reveal-delay-1">Leave your number and I&rsquo;ll call you back within a business day. No pitch &mdash; just answers.</p>
 
-    <form class="lead-form reveal reveal-delay-1" id="leadForm" novalidate>
+    <form class="lead-form reveal reveal-delay-1" id="leadForm" name="lp-faq" data-netlify="true" netlify-honeypot="bot-field" novalidate>
+      <p hidden><label>Don&rsquo;t fill this out: <input name="bot-field" /></label></p>
+      <input type="hidden" name="first_name" />
+      <input type="hidden" name="last_name" />
+      <input type="hidden" name="source" value="lp-faq" />
+      <input type="hidden" name="tags" value="proposal-lead, google-ads-sitelink, lp-faq" />
+      <input type="hidden" name="landing_page" value="lp-faq" />
+      <input type="hidden" name="gclid" />
+      <input type="hidden" name="utm_source" />
+      <input type="hidden" name="utm_medium" />
+      <input type="hidden" name="utm_campaign" />
+      <input type="hidden" name="utm_term" />
       <div class="lead-row">
         <div>
           <label for="lf-name">Your name</label>
@@ -527,6 +538,20 @@ footer a { color: var(--gold); text-decoration: none; }
 
   var GHL_WEBHOOK_URL = "https://services.leadconnectorhq.com/hooks/s76Gfcyq4U0iZ1yA3LWg/webhook-trigger/c4f51362-ca21-4999-9c3d-a605de6ae1c7";
 
+  // Dual-write to Netlify Forms while migrating off GHL. Fire-and-forget, never blocks the GHL submit.
+  function submitToNetlify(formName, fields) {
+    try {
+      var body = new URLSearchParams();
+      body.append('form-name', formName);
+      Object.keys(fields).forEach(function (k) { body.append(k, fields[k] == null ? '' : String(fields[k])); });
+      fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: body.toString()
+      }).catch(function () {});
+    } catch (e) {}
+  }
+
   document.getElementById('leadForm').addEventListener('submit', function (ev) {
     ev.preventDefault();
     var err = document.getElementById('lf-err');
@@ -564,6 +589,18 @@ footer a { color: var(--gold); text-decoration: none; }
         body: JSON.stringify(payload)
       }).catch(function () {});
     }
+
+    submitToNetlify('lp-faq', {
+      first_name: payload.first_name,
+      last_name: payload.last_name,
+      name: name,
+      phone: phone,
+      gclid: payload.gclid,
+      utm_source: payload.utm_source,
+      utm_medium: payload.utm_medium,
+      utm_campaign: payload.utm_campaign,
+      utm_term: payload.utm_term
+    });
 
     if (typeof gtag === 'function') {
       gtag('event', 'conversion', { 'send_to': 'AW-18226213062/x4JBCLenqMUcEMbh9_JD', 'value': 1.0, 'currency': 'AUD' });
