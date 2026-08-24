@@ -1070,12 +1070,16 @@
     }
     quizStep = n;
     var prog = document.getElementById('quiz-progress');
-    if (prog) prog.style.display = (n >= QUIZ_TOTAL) ? 'none' : '';
+    if (prog) prog.style.visibility = (n >= QUIZ_TOTAL) ? 'hidden' : ''; // keep its space so the box height never changes
     if (n < QUIZ_TOTAL) { updateProgress(); trackStep(n); }
-    // keep quiz in view on mobile
-    setTimeout(function() {
-      if (n > 0) document.getElementById('quiz').scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }, 120);
+    // Bring the quiz into view on the first answer only, and only on mobile where
+    // the next question can otherwise land below the fold. Later answers leave the
+    // visitor's scroll position alone.
+    if (n === 1 && window.matchMedia('(max-width: 768px)').matches) {
+      setTimeout(function() {
+        document.getElementById('quiz').scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 120);
+    }
   }
 
   // paired selection (step 1: I am + proposing to)
@@ -1202,6 +1206,29 @@
 
   // initialise the quiz progress bar on load
   updateProgress();
+
+  // Equalize step heights to the tallest step so the quiz box never resizes
+  // (and jitters) between questions. Re-runs after fonts load and on resize.
+  function sizeQuizSteps() {
+    var steps = document.querySelectorAll('.quiz-step');
+    if (!steps.length) return;
+    var max = 0;
+    steps.forEach(function (el) { el.style.minHeight = ''; });
+    steps.forEach(function (el) {
+      var hidden = !el.classList.contains('active');
+      if (hidden) { el.style.display = 'block'; el.style.visibility = 'hidden'; }
+      max = Math.max(max, el.offsetHeight);
+      if (hidden) { el.style.display = ''; el.style.visibility = ''; }
+    });
+    steps.forEach(function (el) { el.style.minHeight = max + 'px'; });
+  }
+  sizeQuizSteps();
+  if (document.fonts && document.fonts.ready) { document.fonts.ready.then(sizeQuizSteps); }
+  var sizeQuizTimer;
+  window.addEventListener('resize', function () {
+    clearTimeout(sizeQuizTimer);
+    sizeQuizTimer = setTimeout(sizeQuizSteps, 150);
+  }, { passive: true });
 
   var reveals = document.querySelectorAll('.reveal');
   var observer = new IntersectionObserver(function(entries) {
