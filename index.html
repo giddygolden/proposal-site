@@ -34,7 +34,7 @@
       --gold: #C9A96E; --blush: #E8D5C4; --white: #FFFFFF;
       --shadow: rgba(26,23,20,0.18);
     }
-    html { scroll-behavior: smooth; }
+    html { scroll-behavior: smooth; overflow-x: hidden; }
     body { font-family: 'Outfit', sans-serif; background: var(--cream); color: var(--ink); overflow-x: hidden; }
 
     /* NAV */
@@ -628,7 +628,7 @@
     opacity: 0; visibility: hidden; pointer-events: none; z-index: 60;
     transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
   }
-  .tip-bubble::after { content: ''; position: absolute; top: 100%; left: 50%; transform: translateX(-50%); border: 6px solid transparent; border-top-color: var(--ink); }
+  .tip-bubble::after { content: ''; position: absolute; top: 100%; left: calc(50% - var(--tip-arrow-shift, 0px)); transform: translateX(-50%); border: 6px solid transparent; border-top-color: var(--ink); }
   .tip:hover .tip-bubble, .tip:focus .tip-bubble, .tip.tip-open .tip-bubble { opacity: 1; visibility: visible; transform: translateX(-50%) translateY(0); pointer-events: auto; }
 
 </style>
@@ -1553,15 +1553,41 @@
     }
   }
 
-  // Guarantee tooltip: hover works via CSS; this adds tap-to-toggle for touch devices
+  // Guarantee tooltip: hover works via CSS; this adds tap-to-toggle for touch devices.
+  // clampTipBubble nudges the bubble so it always stays inside the viewport — the trust-bar
+  // tip sits near the right edge on phones and would otherwise be cut off.
+  function clampTipBubble(tip) {
+    var b = tip.querySelector('.tip-bubble');
+    if (!b) return;
+    b.style.marginLeft = '';
+    b.style.setProperty('--tip-arrow-shift', '0px');
+    var pad = 12, vw = document.documentElement.clientWidth;
+    var r = b.getBoundingClientRect();
+    var shift = 0;
+    if (r.right > vw - pad) shift = (vw - pad) - r.right;
+    else if (r.left < pad) shift = pad - r.left;
+    if (shift) {
+      shift = Math.round(shift);
+      b.style.marginLeft = shift + 'px';
+      b.style.setProperty('--tip-arrow-shift', shift + 'px');
+    }
+  }
   document.querySelectorAll('.tip').forEach(function(el) {
+    el.addEventListener('mouseenter', function() { clampTipBubble(el); });
     el.addEventListener('click', function(e) {
       e.stopPropagation();
       var wasOpen = el.classList.contains('tip-open');
       document.querySelectorAll('.tip.tip-open').forEach(function(t) { t.classList.remove('tip-open'); });
-      if (!wasOpen) el.classList.add('tip-open');
+      if (!wasOpen) { clampTipBubble(el); el.classList.add('tip-open'); }
     });
   });
+  var tipResizeTimer;
+  window.addEventListener('resize', function() {
+    clearTimeout(tipResizeTimer);
+    tipResizeTimer = setTimeout(function() {
+      document.querySelectorAll('.tip').forEach(function(t) { clampTipBubble(t); });
+    }, 150);
+  }, { passive: true });
   document.addEventListener('click', function() {
     document.querySelectorAll('.tip.tip-open').forEach(function(t) { t.classList.remove('tip-open'); });
   });
