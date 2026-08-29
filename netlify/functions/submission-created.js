@@ -36,7 +36,7 @@ exports.handler = async function (event) {
           name: d.name || '',
           phone: [d.phone, d.email].filter(Boolean).join(' · '),
           page: 'Contact page',
-          ad_tracking: 'Direct (contact form)',
+          ad_tracking: 'In person (conference contact)',
         },
       };
     }
