@@ -17,15 +17,34 @@ exports.handler = async function (event) {
     const body = JSON.parse(event.body);      // { payload: { data: {...}, ... } }
     const form = body && body.payload && body.payload.form_name;
 
-    // Only the quiz funnel feeds the lead tracker.
-    if (form && form !== 'quiz-funnel') {
+    // Only forms that feed the lead tracker get forwarded to the sheet.
+    if (form !== 'quiz-funnel' && form !== 'contact-form') {
       return { statusCode: 200, body: 'ignored: ' + form };
+    }
+
+    let payload = body.payload;
+
+    if (form === 'contact-form') {
+      // The sheet has no dedicated email column, so fold phone + email into
+      // the one "phone" field the Apps Script already writes there. Every
+      // other lead-quiz-only field (they_are, timing, setting, etc.) is left
+      // blank so the row still lines up under the right headers.
+      const d = payload.data || {};
+      payload = {
+        ...payload,
+        data: {
+          name: d.name || '',
+          phone: [d.phone, d.email].filter(Boolean).join(' · '),
+          page: 'Contact page',
+          ad_tracking: 'Direct (contact form)',
+        },
+      };
     }
 
     const res = await fetch(SHEET_WEBHOOK, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ payload: body.payload }),
+      body: JSON.stringify({ payload }),
       redirect: 'manual',                     // 302 from Google = success, don't chase it
     });
 

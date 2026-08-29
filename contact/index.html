@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact | Joshua Sharman</title>
+<meta name="description" content="Contact Joshua Sharman.">
+<link rel="canonical" href="https://joshuasharman.com/contact">
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500&display=swap" rel="stylesheet" />
+
+<style>
+:root { --cream: #FAF8F5; --ink: #1A1714; --warm-mid: #7C6A5A; --gold: #C9A96E; --blush: #E8D5C4; --white: #FFFFFF; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { overflow-x: hidden; }
+body {
+  font-family: 'Outfit', sans-serif; background: var(--cream); color: var(--ink);
+  min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 40px 20px;
+}
+.card { width: 100%; max-width: 380px; }
+h1 { font-size: 1.4rem; font-weight: 500; margin-bottom: 24px; }
+
+.field { margin-bottom: 16px; }
+.field label { display: block; font-size: 0.78rem; font-weight: 500; color: var(--warm-mid); margin-bottom: 6px; }
+.field input {
+  width: 100%; padding: 13px 14px; font-family: 'Outfit', sans-serif; font-size: 0.97rem;
+  font-weight: 300; color: var(--ink); background: var(--white);
+  border: 1.5px solid var(--blush); border-radius: 2px; outline: none; transition: border-color 0.2s ease;
+}
+.field input:focus { border-color: var(--gold); }
+
+button {
+  width: 100%; margin-top: 8px; padding: 15px; border: none; border-radius: 2px;
+  background: var(--ink); color: var(--white); font-family: 'Outfit', sans-serif;
+  font-size: 0.95rem; font-weight: 500; cursor: pointer;
+  transition: background 0.2s ease, transform 0.15s ease;
+}
+button:hover { background: var(--gold); color: var(--ink); transform: translateY(-1px); }
+
+.hp { position: absolute; left: -9999px; }
+</style>
+</head>
+<body>
+
+<div class="card">
+  <h1>Contact</h1>
+
+  <form name="contact-form" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/contact/thanks">
+    <input type="hidden" name="form-name" value="contact-form" />
+    <p class="hp"><label>Don't fill this out if you're human: <input name="bot-field" /></label></p>
+
+    <div class="field">
+      <label for="name">Name</label>
+      <input id="name" name="name" type="text" required autocomplete="name" />
+    </div>
+    <div class="field">
+      <label for="phone">Number</label>
+      <input id="phone" name="phone" type="tel" required autocomplete="tel" />
+    </div>
+    <div class="field">
+      <label for="email">Email</label>
+      <input id="email" name="email" type="email" required autocomplete="email" />
+    </div>
+
+    <button type="submit">Send</button>
+  </form>
+</div>
+
+</body>
+</html>
