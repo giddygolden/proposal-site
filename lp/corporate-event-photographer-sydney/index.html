@@ -88,8 +88,16 @@
     .btn-ghost:hover { border-color: var(--gold); color: var(--gold); transform: translateY(-2px); }
 
     /* HERO */
-    .hero { position: relative; min-height: 100vh; display: flex; align-items: flex-end; padding: 0 0 80px; overflow: hidden; margin-top: 60px; }
+    .hero { position: relative; min-height: 100vh; display: flex; align-items: flex-end; padding: 0 0 80px; overflow: hidden; margin-top: 60px; background: var(--ink); }
     .hero-bg { position: absolute; inset: 0; background-position: center 20%; background-size: cover; filter: brightness(0.8); background-image: url('/images/site/events/event-isc-gala-host-woman.jpg'); } /* gala speaker, main hero */
+    /* This source photo is low-resolution (540x360) — on wide screens, cover-fill it
+       across the whole hero and it visibly blurs. Past 768px, constrain it to a
+       right-hand panel closer to its native size instead of stretching it full-bleed;
+       the uncovered left side falls back to the hero's solid --ink background. */
+    @media (min-width: 769px) {
+      .hero-bg, .hero-gradient { left: auto; right: 0; width: min(760px, 58vw); }
+      .hero-gradient { background: linear-gradient(to right, var(--ink) 0%, rgba(26,23,20,0.75) 12%, rgba(26,23,20,0) 32%), linear-gradient(to bottom, rgba(26,23,20,0.05) 0%, rgba(26,23,20,0.02) 30%, rgba(26,23,20,0.55) 70%, rgba(26,23,20,0.84) 100%); }
+    }
     .hero-gradient { position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(26,23,20,0.05) 0%, rgba(26,23,20,0.02) 30%, rgba(26,23,20,0.55) 70%, rgba(26,23,20,0.84) 100%); }
     .hero-content { position: relative; z-index: 2; max-width: 780px; padding: 0 48px; }
     .hero-eyebrow { font-size: 0.72rem; font-weight: 500; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin-bottom: 18px; opacity: 0; animation: fadeUp 0.8s 0.3s forwards; }
@@ -706,7 +714,7 @@
   <div class="fold2-inner">
 
     <div class="fold2-image-wrap reveal">
-      <img class="fold2-image" src="/images/site/events/event-isc-awards-group.jpg" alt="Four people in formal attire holding an award certificate at a gala night" loading="lazy" />
+      <img class="fold2-image" src="/images/site/events/event-isc-gala-host-speaker-award.jpg" alt="Woman speaking at a lectern accepting an award at the ISC Annual Gala" loading="lazy" />
       <div class="social-proof-badge">
         <div class="badge-number">50+</div>
         <div class="badge-label">Events Covered</div>
@@ -792,7 +800,7 @@
         <figcaption>The moment that mattered</figcaption>
       </figure>
       <figure class="g-item g-tall reveal">
-        <img src="/images/site/events/event-isc-panel-seated.jpg" alt="Three panellists seated on stage during a conference discussion" loading="lazy" decoding="async" />
+        <img src="/images/site/events/event-lorourke-panel-leather-chairs.jpg" alt="Three panellists in conversation on leather armchairs during a conference discussion" loading="lazy" decoding="async" />
         <figcaption>Panels, captured properly</figcaption>
       </figure>
       <figure class="g-item g-wide reveal reveal-delay-1">
