@@ -766,6 +766,150 @@
   </div>
 </section>
 
+<!-- QUIZ -->
+<section class="quiz-section" id="quiz">
+  <div class="quiz-bg"></div>
+  <div class="quiz-bg-gradient"></div>
+  <div class="quiz-wrap">
+
+    <div class="quiz-progress" id="quiz-progress">
+      <div class="quiz-progress-label">Step <span id="quiz-step-num">1</span> of 5</div>
+      <div class="quiz-progress-track"><div class="quiz-progress-fill" id="quiz-progress-fill"></div></div>
+    </div>
+
+    <!-- STEP 1: identity pair -->
+    <div class="quiz-step active" data-step="0">
+      <span class="quiz-eyebrow">Let&rsquo;s plan your shoot</span>
+      <div class="quiz-pair">
+        <div class="quiz-pair-q">I&rsquo;m looking for&hellip;</div>
+        <div class="quiz-options cols-2">
+          <button class="quiz-opt" onclick="pairSelect(this,'iam','Just my own headshot')">
+            <span class="quiz-opt-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg></span>
+            <span class="quiz-opt-label">Just my own headshot</span>
+          </button>
+          <button class="quiz-opt" onclick="pairSelect(this,'iam','The whole team')">
+            <span class="quiz-opt-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.2"/><circle cx="17" cy="9" r="2.6"/><path d="M2.5 21c0-3.6 2.9-6.5 6.5-6.5s6.5 2.9 6.5 6.5"/><path d="M15.8 14.8c2.9.4 5.2 2.9 5.2 6.2"/></svg></span>
+            <span class="quiz-opt-label">The whole team</span>
+          </button>
+        </div>
+      </div>
+      <div class="quiz-pair">
+        <div class="quiz-pair-q">Mainly for&hellip;</div>
+        <div class="quiz-options cols-2">
+          <button class="quiz-opt" onclick="pairSelect(this,'partner','Internal use')">
+            <span class="quiz-opt-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V7l8-4v18M19 21V11l-6-4"/><path d="M9 9v.01M9 12v.01M9 15v.01M9 18v.01"/></svg></span>
+            <span class="quiz-opt-label">Internal use</span>
+          </button>
+          <button class="quiz-opt" onclick="pairSelect(this,'partner','Website or marketing')">
+            <span class="quiz-opt-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg></span>
+            <span class="quiz-opt-label">Website / marketing</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STEP 2: timing -->
+    <div class="quiz-step" data-step="1">
+      <div class="quiz-question">When are you looking <em>to shoot?</em></div>
+      <div class="quiz-hint">No wrong answer. It just helps me plan.</div>
+      <div class="quiz-options cols-4">
+        <button class="quiz-opt" onclick="pick('timing','Within a week')">
+          <span class="quiz-opt-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h7l-1 8 10-12h-7z"/></svg></span>
+          <span class="quiz-opt-label">Within a week<small>It&rsquo;s go time</small></span>
+        </button>
+        <button class="quiz-opt" onclick="pick('timing','Within a month')">
+          <span class="quiz-opt-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></span>
+          <span class="quiz-opt-label">Within a month<small>Coming up soon</small></span>
+        </button>
+        <button class="quiz-opt" onclick="pick('timing','Within three months')">
+          <span class="quiz-opt-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></span>
+          <span class="quiz-opt-label">Within three months<small>Planning ahead</small></span>
+        </button>
+        <button class="quiz-opt" onclick="pick('timing','Within a year')">
+          <span class="quiz-opt-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 1 0 10 10"/><path d="M22 2 12 12"/></svg></span>
+          <span class="quiz-opt-label">Within a year<small>Plenty of time</small></span>
+        </button>
+      </div>
+      <button class="quiz-back" onclick="prevStep()">&larr; Back</button>
+    </div>
+
+    <!-- STEP 3: have a plan -->
+    <div class="quiz-step" data-step="2">
+      <div class="quiz-question">Do you know <em>what you need</em> yet?</div>
+      <div class="quiz-hint">Either way, you&rsquo;re in good hands.</div>
+      <div class="quiz-options cols-1">
+        <button class="quiz-opt" onclick="pick('plan','Yes')">
+          <span class="quiz-opt-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4 12 14.01l-3-3"/></svg></span>
+          <span class="quiz-opt-label">Yes</span>
+        </button>
+        <button class="quiz-opt" onclick="pick('plan','No')">
+          <span class="quiz-opt-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg></span>
+          <span class="quiz-opt-label">No</span>
+        </button>
+        <button class="quiz-opt" onclick="pick('plan','No, and I would love some help planning')">
+          <span class="quiz-opt-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 15.09 8.26 22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg></span>
+          <span class="quiz-opt-label q3-long">No, and I&rsquo;d love some help planning, thanks mate</span>
+        </button>
+      </div>
+      <button class="quiz-back" onclick="prevStep()">&larr; Back</button>
+    </div>
+
+    <!-- STEP 4: setting (the question I added) -->
+    <div class="quiz-step" data-step="3">
+      <div class="quiz-question">Where do you picture <em>the shoot?</em></div>
+      <div class="quiz-hint">A starting point. We can always change it.</div>
+      <div class="quiz-options cols-4">
+        <button class="quiz-opt" onclick="pick('setting','Our office')">
+          <span class="quiz-opt-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="1"/><path d="M9 22v-4h6v4M9 7h1M14 7h1M9 11h1M14 11h1M9 15h1M14 15h1"/></svg></span>
+          <span class="quiz-opt-label">Our office</span>
+        </button>
+        <button class="quiz-opt" onclick="pick('setting','In-studio')">
+          <span class="quiz-opt-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><circle cx="12" cy="13" r="3"/></svg></span>
+          <span class="quiz-opt-label">In-studio</span>
+        </button>
+        <button class="quiz-opt" onclick="pick('setting','A meeting room')">
+          <span class="quiz-opt-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V7l8-4v18M19 21V11l-6-4"/><path d="M9 9v.01M9 12v.01M9 15v.01M9 18v.01"/></svg></span>
+          <span class="quiz-opt-label">A meeting room</span>
+        </button>
+        <button class="quiz-opt" onclick="pick('setting','Not sure yet')">
+          <span class="quiz-opt-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg></span>
+          <span class="quiz-opt-label">Not sure yet<small>We can figure it out</small></span>
+        </button>
+      </div>
+      <button class="quiz-back" onclick="prevStep()">&larr; Back</button>
+    </div>
+
+    <!-- STEP 5: contact gate -->
+    <div class="quiz-step" data-step="4">
+      <span class="quiz-eyebrow">One last thing</span>
+      <div class="quiz-question">Let&rsquo;s <em>get in touch</em></div>
+      <div class="quiz-hint">I&rsquo;ll text you back personally, usually within 30 minutes.</div>
+      <div style="max-width:380px;margin:0 auto;text-align:left;">
+        <div class="form-group">
+          <label for="q-name" style="color:rgba(255,255,255,0.7);">Full Name</label>
+          <input type="text" id="q-name" name="first_name" autocomplete="name" placeholder="First and last name" />
+        </div>
+        <div class="form-group">
+          <label for="q-phone" style="color:rgba(255,255,255,0.7);">Phone Number</label>
+          <input type="tel" id="q-phone" name="phone" autocomplete="tel" />
+        </div>
+        <button class="form-submit" id="q-submit" onclick="submitQuiz()" style="margin-top:10px;"><span class="btn-label">Let&rsquo;s do this &rarr;</span><span class="btn-spinner"></span></button>
+        <p style="margin-top:14px; font-size:0.76rem; color:rgba(255,255,255,0.5); font-weight:300; text-align:center;">No commitment. Just a conversation.</p>
+      </div>
+      <button class="quiz-back" onclick="prevStep()">&larr; Back</button>
+    </div>
+
+    <!-- THANK YOU (quiz) -->
+    <div class="quiz-step" data-step="5" id="quiz-thankyou">
+      <img class="thank-you-scene" src="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='46' fill='none' stroke='%23C9A96E' stroke-width='4'/%3E%3Cpath d='M30 52l14 14 26-30' fill='none' stroke='%23C9A96E' stroke-width='6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E" alt="Booking confirmed" style="width:96px;height:96px;margin-bottom:22px;border:none;border-radius:0;" />
+      <div class="quiz-question" style="margin-bottom:4px;">Thank you.</div>
+      <div class="quiz-subq" style="margin-bottom:0;">I&rsquo;ll be in touch shortly.</div>
+    </div>
+
+  </div>
+</section>
+
+
 <!-- STATS -->
 <section class="stats" aria-label="Track record">
   <div class="stats-inner">
@@ -990,149 +1134,6 @@
   </div>
 </section>
 
-
-<!-- QUIZ -->
-<section class="quiz-section" id="quiz">
-  <div class="quiz-bg"></div>
-  <div class="quiz-bg-gradient"></div>
-  <div class="quiz-wrap">
-
-    <div class="quiz-progress" id="quiz-progress">
-      <div class="quiz-progress-label">Step <span id="quiz-step-num">1</span> of 5</div>
-      <div class="quiz-progress-track"><div class="quiz-progress-fill" id="quiz-progress-fill"></div></div>
-    </div>
-
-    <!-- STEP 1: identity pair -->
-    <div class="quiz-step active" data-step="0">
-      <span class="quiz-eyebrow">Let&rsquo;s plan your shoot</span>
-      <div class="quiz-pair">
-        <div class="quiz-pair-q">I&rsquo;m looking for&hellip;</div>
-        <div class="quiz-options cols-2">
-          <button class="quiz-opt" onclick="pairSelect(this,'iam','Just my own headshot')">
-            <span class="quiz-opt-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg></span>
-            <span class="quiz-opt-label">Just my own headshot</span>
-          </button>
-          <button class="quiz-opt" onclick="pairSelect(this,'iam','The whole team')">
-            <span class="quiz-opt-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.2"/><circle cx="17" cy="9" r="2.6"/><path d="M2.5 21c0-3.6 2.9-6.5 6.5-6.5s6.5 2.9 6.5 6.5"/><path d="M15.8 14.8c2.9.4 5.2 2.9 5.2 6.2"/></svg></span>
-            <span class="quiz-opt-label">The whole team</span>
-          </button>
-        </div>
-      </div>
-      <div class="quiz-pair">
-        <div class="quiz-pair-q">Mainly for&hellip;</div>
-        <div class="quiz-options cols-2">
-          <button class="quiz-opt" onclick="pairSelect(this,'partner','Internal use')">
-            <span class="quiz-opt-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V7l8-4v18M19 21V11l-6-4"/><path d="M9 9v.01M9 12v.01M9 15v.01M9 18v.01"/></svg></span>
-            <span class="quiz-opt-label">Internal use</span>
-          </button>
-          <button class="quiz-opt" onclick="pairSelect(this,'partner','Website or marketing')">
-            <span class="quiz-opt-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg></span>
-            <span class="quiz-opt-label">Website / marketing</span>
-          </button>
-        </div>
-      </div>
-    </div>
-
-    <!-- STEP 2: timing -->
-    <div class="quiz-step" data-step="1">
-      <div class="quiz-question">When are you looking <em>to shoot?</em></div>
-      <div class="quiz-hint">No wrong answer. It just helps me plan.</div>
-      <div class="quiz-options cols-4">
-        <button class="quiz-opt" onclick="pick('timing','Within a week')">
-          <span class="quiz-opt-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h7l-1 8 10-12h-7z"/></svg></span>
-          <span class="quiz-opt-label">Within a week<small>It&rsquo;s go time</small></span>
-        </button>
-        <button class="quiz-opt" onclick="pick('timing','Within a month')">
-          <span class="quiz-opt-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></span>
-          <span class="quiz-opt-label">Within a month<small>Coming up soon</small></span>
-        </button>
-        <button class="quiz-opt" onclick="pick('timing','Within three months')">
-          <span class="quiz-opt-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></span>
-          <span class="quiz-opt-label">Within three months<small>Planning ahead</small></span>
-        </button>
-        <button class="quiz-opt" onclick="pick('timing','Within a year')">
-          <span class="quiz-opt-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 1 0 10 10"/><path d="M22 2 12 12"/></svg></span>
-          <span class="quiz-opt-label">Within a year<small>Plenty of time</small></span>
-        </button>
-      </div>
-      <button class="quiz-back" onclick="prevStep()">&larr; Back</button>
-    </div>
-
-    <!-- STEP 3: have a plan -->
-    <div class="quiz-step" data-step="2">
-      <div class="quiz-question">Do you know <em>what you need</em> yet?</div>
-      <div class="quiz-hint">Either way, you&rsquo;re in good hands.</div>
-      <div class="quiz-options cols-1">
-        <button class="quiz-opt" onclick="pick('plan','Yes')">
-          <span class="quiz-opt-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4 12 14.01l-3-3"/></svg></span>
-          <span class="quiz-opt-label">Yes</span>
-        </button>
-        <button class="quiz-opt" onclick="pick('plan','No')">
-          <span class="quiz-opt-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg></span>
-          <span class="quiz-opt-label">No</span>
-        </button>
-        <button class="quiz-opt" onclick="pick('plan','No, and I would love some help planning')">
-          <span class="quiz-opt-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 15.09 8.26 22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg></span>
-          <span class="quiz-opt-label q3-long">No, and I&rsquo;d love some help planning, thanks mate</span>
-        </button>
-      </div>
-      <button class="quiz-back" onclick="prevStep()">&larr; Back</button>
-    </div>
-
-    <!-- STEP 4: setting (the question I added) -->
-    <div class="quiz-step" data-step="3">
-      <div class="quiz-question">Where do you picture <em>the shoot?</em></div>
-      <div class="quiz-hint">A starting point. We can always change it.</div>
-      <div class="quiz-options cols-4">
-        <button class="quiz-opt" onclick="pick('setting','Our office')">
-          <span class="quiz-opt-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="1"/><path d="M9 22v-4h6v4M9 7h1M14 7h1M9 11h1M14 11h1M9 15h1M14 15h1"/></svg></span>
-          <span class="quiz-opt-label">Our office</span>
-        </button>
-        <button class="quiz-opt" onclick="pick('setting','In-studio')">
-          <span class="quiz-opt-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><circle cx="12" cy="13" r="3"/></svg></span>
-          <span class="quiz-opt-label">In-studio</span>
-        </button>
-        <button class="quiz-opt" onclick="pick('setting','A meeting room')">
-          <span class="quiz-opt-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V7l8-4v18M19 21V11l-6-4"/><path d="M9 9v.01M9 12v.01M9 15v.01M9 18v.01"/></svg></span>
-          <span class="quiz-opt-label">A meeting room</span>
-        </button>
-        <button class="quiz-opt" onclick="pick('setting','Not sure yet')">
-          <span class="quiz-opt-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg></span>
-          <span class="quiz-opt-label">Not sure yet<small>We can figure it out</small></span>
-        </button>
-      </div>
-      <button class="quiz-back" onclick="prevStep()">&larr; Back</button>
-    </div>
-
-    <!-- STEP 5: contact gate -->
-    <div class="quiz-step" data-step="4">
-      <span class="quiz-eyebrow">One last thing</span>
-      <div class="quiz-question">Let&rsquo;s <em>get in touch</em></div>
-      <div class="quiz-hint">I&rsquo;ll text you back personally, usually within 30 minutes.</div>
-      <div style="max-width:380px;margin:0 auto;text-align:left;">
-        <div class="form-group">
-          <label for="q-name" style="color:rgba(255,255,255,0.7);">Full Name</label>
-          <input type="text" id="q-name" name="first_name" autocomplete="name" placeholder="First and last name" />
-        </div>
-        <div class="form-group">
-          <label for="q-phone" style="color:rgba(255,255,255,0.7);">Phone Number</label>
-          <input type="tel" id="q-phone" name="phone" autocomplete="tel" />
-        </div>
-        <button class="form-submit" id="q-submit" onclick="submitQuiz()" style="margin-top:10px;"><span class="btn-label">Let&rsquo;s do this &rarr;</span><span class="btn-spinner"></span></button>
-        <p style="margin-top:14px; font-size:0.76rem; color:rgba(255,255,255,0.5); font-weight:300; text-align:center;">No commitment. Just a conversation.</p>
-      </div>
-      <button class="quiz-back" onclick="prevStep()">&larr; Back</button>
-    </div>
-
-    <!-- THANK YOU (quiz) -->
-    <div class="quiz-step" data-step="5" id="quiz-thankyou">
-      <img class="thank-you-scene" src="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='46' fill='none' stroke='%23C9A96E' stroke-width='4'/%3E%3Cpath d='M30 52l14 14 26-30' fill='none' stroke='%23C9A96E' stroke-width='6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E" alt="Booking confirmed" style="width:96px;height:96px;margin-bottom:22px;border:none;border-radius:0;" />
-      <div class="quiz-question" style="margin-bottom:4px;">Thank you.</div>
-      <div class="quiz-subq" style="margin-bottom:0;">I&rsquo;ll be in touch shortly.</div>
-    </div>
-
-  </div>
-</section>
 
 <!-- FOLD 3: FINAL CTA -->
 <section class="fold3" id="contact">
