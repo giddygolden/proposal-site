@@ -672,11 +672,49 @@
   <div class="hero-bg" style="background-image:url('/images/site/corporate/corporate-foit-team-group-desk.jpg'); background-position: center 30%;"></div>
   <div class="hero-gradient"></div>
   <div class="hero-content">
-    <p class="hero-eyebrow">Corporate Photography &middot; Sydney &amp; Beyond</p>
-    <h1 class="hero-headline">Show up like<br/><em>the company you actually are.</em></h1>
+    <p class="hero-eyebrow" id="hero-eyebrow">Personal Branding &amp; Corporate Photography &middot; Sydney &amp; Beyond</p>
+    <h1 class="hero-headline" id="hero-headline">A day of photos,<br/><em>a month of content.</em></h1>
     <div class="hero-actions"><a href="#contact" class="btn-shine btn-gold" onclick="scrollToQuiz(event)">Plan My Shoot: It&rsquo;s Free</a></div>
   </div>
 </section>
+
+<script>
+  // Ad-group message match: Final URL suffix sets ?ag=<key> per ad group so the
+  // hero headline mirrors whatever search term/headline brought the click in.
+  // No param (organic/direct traffic) keeps the default personal-branding copy above.
+  (function () {
+    var variants = {
+      core: {
+        eyebrow: 'Corporate Headshot Photography &middot; Sydney &amp; Beyond',
+        headline: 'Corporate headshots,<br/><em>done properly.</em>'
+      },
+      generic: {
+        eyebrow: 'Professional Headshot Photography &middot; Sydney &amp; Beyond',
+        headline: 'Headshot photography,<br/><em>done right.</em>'
+      },
+      executive: {
+        eyebrow: 'Executive Headshot Photography &middot; Sydney &amp; Beyond',
+        headline: 'Executive headshots,<br/><em>for your team.</em>'
+      },
+      business: {
+        eyebrow: 'Business &amp; Commercial Photography &middot; Sydney &amp; Beyond',
+        headline: 'Business photography,<br/><em>done properly.</em>'
+      },
+      portraits: {
+        eyebrow: 'Corporate Portrait Photography &middot; Sydney &amp; Beyond',
+        headline: 'Corporate portraits,<br/><em>done properly.</em>'
+      }
+    };
+    var key = new URLSearchParams(window.location.search).get('ag');
+    var variant = key && variants[key];
+    if (variant) {
+      var eyebrowEl = document.getElementById('hero-eyebrow');
+      var headlineEl = document.getElementById('hero-headline');
+      if (eyebrowEl) eyebrowEl.innerHTML = variant.eyebrow;
+      if (headlineEl) headlineEl.innerHTML = variant.headline;
+    }
+  })();
+</script>
 
 <!-- TRUST BAR -->
 <div class="trust-bar">

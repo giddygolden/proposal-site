@@ -672,11 +672,41 @@
   <div class="hero-bg" style="background-image:url('/images/site/events/event-isc-gala-host-podium-pointing.jpg'); background-position: center 20%;"></div>
   <div class="hero-gradient"></div>
   <div class="hero-content">
-    <p class="hero-eyebrow">Corporate Event Photography &middot; Sydney &amp; Beyond</p>
-    <h1 class="hero-headline">You fill the room,<br/><em>I&rsquo;ll handle the rest.</em></h1>
+    <p class="hero-eyebrow" id="hero-eyebrow">Corporate Event Photography &middot; Sydney &amp; Beyond</p>
+    <h1 class="hero-headline" id="hero-headline">You fill the room,<br/><em>I&rsquo;ll handle the rest.</em></h1>
     <div class="hero-actions"><a href="#contact" class="btn-shine btn-gold" onclick="scrollToQuiz(event)">Plan My Coverage: It&rsquo;s Free</a></div>
   </div>
 </section>
+
+<script>
+  // Ad-group message match: Final URL suffix sets ?ag=<key> per ad group so the
+  // hero headline mirrors whatever search term/headline brought the click in.
+  // No param (organic/direct traffic) keeps the default copy above.
+  (function () {
+    var variants = {
+      core: {
+        eyebrow: 'Corporate Event Photography &middot; Sydney &amp; Beyond',
+        headline: 'Corporate event photography,<br/><em>you fill the room.</em>'
+      },
+      conference: {
+        eyebrow: 'Conference Photography &middot; Sydney &amp; Beyond',
+        headline: 'Conference photography,<br/><em>done properly.</em>'
+      },
+      commercial: {
+        eyebrow: 'Corporate &amp; Commercial Photography &middot; Sydney &amp; Beyond',
+        headline: 'Corporate &amp; commercial<br/><em>event photography.</em>'
+      }
+    };
+    var key = new URLSearchParams(window.location.search).get('ag');
+    var variant = key && variants[key];
+    if (variant) {
+      var eyebrowEl = document.getElementById('hero-eyebrow');
+      var headlineEl = document.getElementById('hero-headline');
+      if (eyebrowEl) eyebrowEl.innerHTML = variant.eyebrow;
+      if (headlineEl) headlineEl.innerHTML = variant.headline;
+    }
+  })();
+</script>
 
 <!-- TRUST BAR -->
 <div class="trust-bar">
