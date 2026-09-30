@@ -23,9 +23,9 @@
 <meta name="description" content="Sydney personal branding &amp; content day photography for business owners, coaches and creators. A day of tailored photos, a month of ready-to-use content. Transparent pricing from $799. Free 30-second planning quiz." />
 <meta name="robots" content="index, follow" />
 <meta name="theme-color" content="#1A1714" />
-<link rel="canonical" href="https://joshuasharman.com/personal-branding-photographer-sydney.html" />
+<link rel="canonical" href="https://joshuasharman.com/lp/personal-branding-photographer-sydney/" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://joshuasharman.com/personal-branding-photographer-sydney.html" />
+<meta property="og:url" content="https://joshuasharman.com/lp/personal-branding-photographer-sydney/" />
 <meta property="og:title" content="Sydney Personal Branding Photographer | Content Day Photography | Joshua Sharman" />
 <meta property="og:description" content="Sydney personal branding &amp; content day photography for business owners, coaches and creators. A day of tailored photos, a month of ready-to-use content. Transparent pricing from $799. Free 30-second planning quiz." />
 <meta property="og:image" content="/images/site/personal-branding/pb-black-dress-studio-portrait.jpg" />
@@ -95,14 +95,30 @@
     .btn-ghost:hover { border-color: var(--gold); color: var(--gold); transform: translateY(-2px); }
 
     /* HERO */
-    .hero { position: relative; min-height: 100vh; display: flex; align-items: flex-end; padding: 0 0 80px; overflow: hidden; margin-top: 60px; }
-    .hero-bg { position: absolute; inset: 0; background-position: center 22%; background-size: cover; filter: brightness(0.72); background-image: url('/images/site/personal-branding/pb-black-dress-studio-portrait.jpg'); } /* personal-brand portrait, main hero */
-    .hero-gradient { position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(26,23,20,0.05) 0%, rgba(26,23,20,0.02) 30%, rgba(26,23,20,0.55) 70%, rgba(26,23,20,0.84) 100%); }
-    .hero-content { position: relative; z-index: 2; max-width: 780px; padding: 0 48px; }
+    .hero { position: relative; height: 100vh; min-height: 640px; display: flex; align-items: stretch; overflow: hidden; margin-top: 60px; background: var(--ink); }
+    .hero-content-wrap { flex: 1 1 44%; display: flex; align-items: flex-end; padding: 0 0 80px; position: relative; z-index: 2; }
+    .hero-content { max-width: 620px; padding: 0 48px; }
     .hero-eyebrow { font-size: 0.72rem; font-weight: 500; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin-bottom: 18px; opacity: 0; animation: fadeUp 0.8s 0.3s forwards; }
-    .hero-headline { font-family: 'Cormorant Garamond', serif; font-size: clamp(3rem, 6vw, 5.2rem); font-weight: 300; line-height: 1.08; color: var(--white); margin-bottom: 36px; opacity: 0; animation: fadeUp 0.8s 0.5s forwards; }
+    .hero-headline { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.7rem, 4.6vw, 4.2rem); font-weight: 300; line-height: 1.1; color: var(--white); margin-bottom: 36px; opacity: 0; animation: fadeUp 0.8s 0.5s forwards; }
     .hero-headline em { font-style: italic; color: var(--gold); }
     .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; opacity: 0; animation: fadeUp 0.8s 0.7s forwards; }
+
+    /* HERO COLLAGE */
+    .hero-collage {
+      flex: 1 1 56%;
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      grid-template-rows: repeat(3, 1fr);
+      gap: 8px;
+      padding: 84px 24px 24px 8px;
+    }
+    .hc-tile { position: relative; overflow: hidden; border-radius: 2px; opacity: 0; animation: fadeIn 0.9s ease forwards; }
+    .hc-tile img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .hc-1 { grid-column: 1; grid-row: 1 / span 2; animation-delay: 0.15s; }
+    .hc-2 { grid-column: 2; grid-row: 1; animation-delay: 0.3s; }
+    .hc-3 { grid-column: 2; grid-row: 2; animation-delay: 0.45s; }
+    .hc-4 { grid-column: 1; grid-row: 3; animation-delay: 0.6s; }
+    .hc-5 { grid-column: 2; grid-row: 3; animation-delay: 0.75s; }
 
     /* TRUST BAR */
     .trust-bar { background: var(--ink); padding: 20px 40px; display: flex; justify-content: center; align-items: center; gap: 48px; flex-wrap: wrap; }
@@ -198,7 +214,10 @@
     @media (max-width: 768px) {
       nav { padding: 10px 20px; }
       nav.scrolled { padding: 8px 20px; }
-      .hero-content { padding: 0 24px; }
+      .hero { flex-direction: column; height: auto; min-height: 0; }
+      .hero-content-wrap { flex: none; padding: 40px 0 32px; order: 2; }
+      .hero-content { padding: 0 24px; max-width: none; }
+      .hero-collage { flex: none; order: 1; height: 46vh; min-height: 300px; padding: 78px 12px 10px; }
       .fold2-inner { grid-template-columns: 1fr; gap: 60px; }
       .fold2-text { padding-left: 0; }
       .social-proof-badge { right: 0; bottom: -20px; }
@@ -649,7 +668,7 @@
   "@type": "ProfessionalService",
   "name": "Joshua Sharman Photography",
   "description": "Sydney personal branding and content day photography for business owners, coaches and creators &mdash; a day of tailored photos, a month of ready-to-use content.",
-  "url": "https://joshuasharman.com/personal-branding-photographer-sydney.html",
+  "url": "https://joshuasharman.com/lp/personal-branding-photographer-sydney/",
   "email": "josh@joshuasharman.com",
   "telephone": "+61432168197",
   "image": "/images/site/personal-branding/pb-black-dress-studio-portrait.jpg",
@@ -704,12 +723,19 @@
 
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-bg" style="background-image:url('/images/site/personal-branding/pb-black-dress-studio-portrait.jpg'); background-position: center 22%;"></div>
-  <div class="hero-gradient"></div>
-  <div class="hero-content">
-    <p class="hero-eyebrow" id="hero-eyebrow">Personal Branding &amp; Content Day Photography &middot; Sydney &amp; Beyond</p>
-    <h1 class="hero-headline" id="hero-headline">A month of content,<br/><em>in one day.</em></h1>
-    <div class="hero-actions"><a href="#contact" class="btn-shine btn-gold" onclick="scrollToQuiz(event)">Plan My Content Day: It&rsquo;s Free</a></div>
+  <div class="hero-content-wrap">
+    <div class="hero-content">
+      <p class="hero-eyebrow" id="hero-eyebrow">Personal Branding &amp; Content Day Photography &middot; Sydney &amp; Beyond</p>
+      <h1 class="hero-headline" id="hero-headline">A month of content,<br/><em>in one day.</em></h1>
+      <div class="hero-actions"><a href="#contact" class="btn-shine btn-gold" onclick="scrollToQuiz(event)">Plan My Content Day: It&rsquo;s Free</a></div>
+    </div>
+  </div>
+  <div class="hero-collage" aria-hidden="true">
+    <div class="hc-tile hc-1"><img src="/images/site/personal-branding/pb-black-dress-studio-portrait.jpg" alt="" style="object-position: center 20%;" /></div>
+    <div class="hc-tile hc-2"><img src="/images/site/personal-branding/pb-musician-performing-guitar.jpg" alt="" style="object-position: center 30%;" /></div>
+    <div class="hc-tile hc-3"><img src="/images/site/personal-branding/pb-cutting-board-cooking-content.jpg" alt="" /></div>
+    <div class="hc-tile hc-4"><img src="/images/site/personal-branding/pb-styled-props-flatlay.jpg" alt="" /></div>
+    <div class="hc-tile hc-5"><img src="/images/site/personal-branding/pb-laptop-consulting-session.jpg" alt="" style="object-position: center 25%;" /></div>
   </div>
 </section>
 
@@ -1019,7 +1045,7 @@
         <figcaption>Content, made in the moment</figcaption>
       </figure>
       <figure class="g-item g-wide reveal reveal-delay-1">
-        <img src="/images/site/personal-branding/pb-laptop-consulting-session.jpg" alt="Consultant smiling at a client during a laptop session" loading="lazy" decoding="async" style="object-position: center 60%;" />
+        <img src="/images/site/personal-branding/pb-laptop-consulting-session.jpg" alt="Consultant smiling at a client during a laptop session" loading="lazy" decoding="async" style="object-position: center 30%;" />
         <figcaption>Coaches &amp; consultants, covered too</figcaption>
       </figure>
       <figure class="g-item g-tall reveal">
@@ -1081,7 +1107,7 @@
         </div>
       </a>
       <a class="svc svc-small reveal reveal-delay-3" href="#contact" onclick="scrollToQuiz(event)">
-        <img src="/images/site/personal-branding/pb-laptop-consulting-session.jpg" alt="Consultant in conversation with a client over a laptop" loading="lazy" decoding="async" />
+        <img src="/images/site/personal-branding/pb-laptop-consulting-session.jpg" alt="Consultant in conversation with a client over a laptop" loading="lazy" decoding="async" style="object-position: center 25%;" />
         <div class="svc-overlay"></div>
         <div class="svc-content">
           <h3>Coaches &amp; Consultants</h3>
