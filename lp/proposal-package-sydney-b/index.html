@@ -250,7 +250,7 @@
     @media (max-width: 480px) {
       .hero-bg { background-image: url('/images/site/6a5f2254baf5f6da40c68d84.webp') !important; background-position: center 30% !important; }
       .hero-gradient { background: linear-gradient(to bottom, rgba(26,23,20,0.1) 0%, rgba(26,23,20,0.15) 35%, rgba(26,23,20,0.72) 58%, rgba(26,23,20,0.92) 100%) !important; }
-      .hero { min-height: calc(100vh - 98px); height: calc(100vh - 98px); padding-bottom: 72px; align-items: flex-end; }
+      .hero { min-height: 0; height: auto; padding-top: 130px; padding-bottom: 28px; align-items: flex-end; }
       .hero-content { position: relative; }
       .hero-content::before { content: ''; position: absolute; left: -24px; right: -24px; top: -16px; bottom: -16px; background: rgba(15,13,11,0.38); backdrop-filter: blur(2px); z-index: -1; border-radius: 4px; }
       .hero-eyebrow { display: none; }
@@ -716,31 +716,6 @@
   </div>
 </section>
 
-<!-- TRUST BAR -->
-<div class="trust-bar">
-  <div class="trust-item-guarantee">
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#C9A96E" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-    <a onclick="scrollToQuiz(event)" href="#contact" style="color:var(--gold);text-decoration:underline;cursor:pointer;font-weight:500;">Learn About My 100% Happiness Guarantee</a>
-    <span class="tip" tabindex="0"><span class="tip-icon">i</span><span class="tip-bubble">If you&rsquo;re not happy with your delivery for any reason, I&rsquo;ll give you a full refund. (I&rsquo;ve never had anyone take me up on this)</span></span>
-  </div>
-  <div class="trust-divider"></div>
-  <div class="trust-item">
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-    Fast Response, Let&rsquo;s Plan Today
-  </div>
-  <div class="trust-divider"></div>
-  <div class="trust-item">
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-    130+ 5-Star Reviews
-  </div>
-  <div class="trust-divider"></div>
-  <div class="trust-item">
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-    Insured, Equipped &amp; Professional
-  </div>
-</div>
-
-
 <!-- BENEFIT ROWS (objections turned into reassurance, paired with real work) -->
 <section class="benefits">
   <div class="benefit-row reveal">
@@ -774,95 +749,30 @@
 </section>
 
 
-<!-- PRICING -->
-<section class="pricing" id="pricing">
-  <div class="pricing-inner">
-    <div class="pricing-head">
-      <span class="section-eyebrow reveal">Honest numbers</span>
-      <h2 class="section-headline reveal reveal-delay-1">Know the price<br/><em>before we talk.</em></h2>
-      <p class="section-body reveal reveal-delay-2">No &ldquo;enquire for pricing&rdquo; games. Two ways to work together &mdash; every one starts with a free consultation.</p>
-    </div>
-    <div class="price-grid">
-      <div class="price-card featured compact reveal">
-        <div class="price-tier">Full Production</div>
-        <div class="price-amount"><small>Up to</small> $8,350 <small>AUD</small></div>
-        <p class="price-desc">A proposal built like a film set.</p>
-        <p class="price-inline">Limousine &amp; private chef <span class="sep">&#10022;</span> florals, styling &amp; delivery <span class="sep">&#10022;</span> custom light-up signs <span class="sep">&#10022;</span> drone &amp; second videographer</p>
-        <a href="#contact" class="btn-shine btn-gold" onclick="scrollToQuiz(event)" style="text-align:center;">Design My Proposal</a>
-      </div>
-      <div class="price-card reveal reveal-delay-1">
-        <div class="price-tier">Photography</div>
-        <div class="price-amount"><small>From</small> $799 <small>AUD</small></div>
-        <p class="price-desc">Me, the long lens, and the moment &mdash; captured without them ever knowing.</p>
-        <ul class="price-list">
-          <li>Covert proposal coverage (or any session)</li>
-          <li>Location &amp; timing planned together</li>
-          <li>Celebration coverage after the yes</li>
-          <li>Edited, ready-to-share gallery</li>
-        </ul>
-        <a href="#contact" class="btn-shine btn-dark-lg" onclick="scrollToQuiz(event)" style="text-align:center;">Check My Date</a>
-      </div>
-    </div>
-    <p class="price-note reveal">Free consultations &mdash; no commitment, just a conversation.</p>
-<div style="text-align:center; margin-top:26px;" class="reveal"><a href="#contact" class="btn-shine btn-gold" onclick="scrollToQuiz(event)">Start With This Package &rarr;</a></div>
-
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <div class="trust-item-guarantee">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#C9A96E" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+    <a onclick="scrollToQuiz(event)" href="#contact" style="color:var(--gold);text-decoration:underline;cursor:pointer;font-weight:500;">Learn About My 100% Happiness Guarantee</a>
+    <span class="tip" tabindex="0"><span class="tip-icon">i</span><span class="tip-bubble">If you&rsquo;re not happy with your delivery for any reason, I&rsquo;ll give you a full refund. (I&rsquo;ve never had anyone take me up on this)</span></span>
   </div>
-</section>
-
-<!-- HOW IT WORKS -->
-<section class="how" id="how">
-  <div class="how-inner">
-    <div class="how-head">
-      <span class="section-eyebrow reveal">The covert operation</span>
-      <h2 class="section-headline reveal reveal-delay-1">How the secret<br/><em>stays a secret.</em></h2>
-    </div>
-    <div class="steps">
-      <div class="step reveal">
-        <div class="step-num">01</div>
-        <h3>Tell me the plan</h3>
-        <p>A free, no-pressure call. Bring an idea or no idea at all &mdash; we&rsquo;ll pick the location, the timing and the angle together, all behind their back.</p>
-      </div>
-      <div class="step reveal reveal-delay-1">
-        <div class="step-num">02</div>
-        <h3>I disappear</h3>
-        <p>On the day I&rsquo;m early, out of sight and dressed like a tourist. They won&rsquo;t know I&rsquo;m there to shoot the proposal until after the proposal starts.</p>
-      </div>
-      <div class="step reveal reveal-delay-2">
-        <div class="step-num">03</div>
-        <h3>The yes &mdash; and after</h3>
-        <p>The moment lands, fully captured. Then I step in for the champagne, the tears, and the celebration that follows.</p>
-      </div>
-    </div>
+  <div class="trust-divider"></div>
+  <div class="trust-item">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+    Fast Response, Let&rsquo;s Plan Today
   </div>
-</section>
-
-<!-- TESTIMONIAL OVERLAY -->
-<section class="testimonial-overlay">
-  <div class="to-bg" style="background-image:url('/images/site/6a5e88fbecb87d54c1b86c0c.webp');"></div>
-  <div class="to-content reveal">
-    <div class="to-stars"><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span></div>
-    <p class="to-quote">&ldquo;Worth every penny and more.&rdquo;</p>
-    <span class="to-author">James &amp; Priya &middot; Sydney Harbour, March 2025</span>
+  <div class="trust-divider"></div>
+  <div class="trust-item">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+    130+ 5-Star Reviews
   </div>
-</section>
-
-<!-- STATS / ABOUT JOSH -->
-<section class="stats">
-  <div class="stats-inner">
-    <div class="reveal">
-      <div class="stat-number">10<em>+</em></div>
-      <div class="stat-label">Years Experience</div>
-    </div>
-    <div class="reveal reveal-delay-1">
-      <div class="stat-number">200<em>+</em></div>
-      <div class="stat-label">Couples Captured</div>
-    </div>
-    <div class="reveal reveal-delay-2">
-      <div class="stat-number">130<em>+</em></div>
-      <div class="stat-label">5-Star Reviews</div>
-    </div>
+  <div class="trust-divider"></div>
+  <div class="trust-item">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+    Insured, Equipped &amp; Professional
   </div>
-</section>
+</div>
+
 
 <!-- GALLERY -->
 <section class="gallery" id="gallery">
@@ -919,6 +829,96 @@
     <h2>Still deciding? <em>Lock in your date.</em></h2>
     <p>Packages from $799 AUD. Free consultation, no commitment &mdash; just a conversation about your plan.</p>
     <a href="#contact" class="btn-shine btn-gold" onclick="scrollToQuiz(event)">Check My Date</a>
+  </div>
+</section>
+
+<!-- TESTIMONIAL OVERLAY -->
+<section class="testimonial-overlay">
+  <div class="to-bg" style="background-image:url('/images/site/6a5e88fbecb87d54c1b86c0c.webp');"></div>
+  <div class="to-content reveal">
+    <div class="to-stars"><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span></div>
+    <p class="to-quote">&ldquo;Worth every penny and more.&rdquo;</p>
+    <span class="to-author">James &amp; Priya &middot; Sydney Harbour, March 2025</span>
+  </div>
+</section>
+
+<!-- STATS / ABOUT JOSH -->
+<section class="stats">
+  <div class="stats-inner">
+    <div class="reveal">
+      <div class="stat-number">10<em>+</em></div>
+      <div class="stat-label">Years Experience</div>
+    </div>
+    <div class="reveal reveal-delay-1">
+      <div class="stat-number">200<em>+</em></div>
+      <div class="stat-label">Couples Captured</div>
+    </div>
+    <div class="reveal reveal-delay-2">
+      <div class="stat-number">130<em>+</em></div>
+      <div class="stat-label">5-Star Reviews</div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS (rewritten for the proposal-package narrative) -->
+<section class="how" id="how">
+  <div class="how-inner">
+    <div class="how-head">
+      <span class="section-eyebrow reveal">Simple, start to finish</span>
+      <h2 class="section-headline reveal reveal-delay-1">How a proposal<br/><em>comes together.</em></h2>
+    </div>
+    <div class="steps">
+      <div class="step reveal">
+        <div class="step-num">01</div>
+        <h3>Pick your package</h3>
+        <p>From a $799 covert session to the full $8,350 production &mdash; choose what fits, or hop on a free call and we&rsquo;ll build one together.</p>
+      </div>
+      <div class="step reveal reveal-delay-1">
+        <div class="step-num">02</div>
+        <h3>We plan every detail</h3>
+        <p>Location, timing, styling, extras &mdash; whatever your package includes, we lock it in together so the day runs exactly to plan.</p>
+      </div>
+      <div class="step reveal reveal-delay-2">
+        <div class="step-num">03</div>
+        <h3>The yes &mdash; and after</h3>
+        <p>The moment lands, fully captured. Then I stick around for the champagne, the tears, and the celebration that follows.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="pricing" id="pricing">
+  <div class="pricing-inner">
+    <div class="pricing-head">
+      <span class="section-eyebrow reveal">Honest numbers</span>
+      <h2 class="section-headline reveal reveal-delay-1">Know the price<br/><em>before we talk.</em></h2>
+      <p class="section-body reveal reveal-delay-2">No &ldquo;enquire for pricing&rdquo; games. Two ways to work together &mdash; every one starts with a free consultation.</p>
+    </div>
+    <div class="price-grid">
+      <div class="price-card featured compact reveal">
+        <div class="price-tier">Full Production</div>
+        <div class="price-amount"><small>Up to</small> $8,350 <small>AUD</small></div>
+        <p class="price-desc">A proposal built like a film set.</p>
+        <p class="price-inline">Limousine &amp; private chef <span class="sep">&#10022;</span> florals, styling &amp; delivery <span class="sep">&#10022;</span> custom light-up signs <span class="sep">&#10022;</span> drone &amp; second videographer</p>
+        <a href="#contact" class="btn-shine btn-gold" onclick="scrollToQuiz(event)" style="text-align:center;">Design My Proposal</a>
+      </div>
+      <div class="price-card reveal reveal-delay-1">
+        <div class="price-tier">Photography</div>
+        <div class="price-amount"><small>From</small> $799 <small>AUD</small></div>
+        <p class="price-desc">Me, the long lens, and the moment &mdash; captured without them ever knowing.</p>
+        <ul class="price-list">
+          <li>Covert proposal coverage (or any session)</li>
+          <li>Location &amp; timing planned together</li>
+          <li>Celebration coverage after the yes</li>
+          <li>Edited, ready-to-share gallery</li>
+        </ul>
+        <a href="#contact" class="btn-shine btn-dark-lg" onclick="scrollToQuiz(event)" style="text-align:center;">Check My Date</a>
+      </div>
+    </div>
+    <p class="price-note reveal">Free consultations &mdash; no commitment, just a conversation.</p>
+<div style="text-align:center; margin-top:26px;" class="reveal"><a href="#contact" class="btn-shine btn-gold" onclick="scrollToQuiz(event)">Start With This Package &rarr;</a></div>
+
   </div>
 </section>
 
