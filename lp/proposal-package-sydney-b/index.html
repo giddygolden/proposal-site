@@ -96,6 +96,7 @@
     .hero-headline { font-family: 'Cormorant Garamond', serif; font-size: clamp(3rem, 6vw, 5.2rem); font-weight: 300; line-height: 1.08; color: var(--white); margin-bottom: 36px; opacity: 0; animation: fadeUp 0.8s 0.5s forwards; }
     .hero-headline em { font-style: italic; color: var(--gold); }
     .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; opacity: 0; animation: fadeUp 0.8s 0.7s forwards; }
+    .hero-sub { margin: -14px 0 34px; }
 
     /* TRUST BAR */
     .trust-bar { background: var(--ink); padding: 20px 40px; display: flex; justify-content: center; align-items: center; gap: 48px; flex-wrap: wrap; }
@@ -247,8 +248,12 @@
     
     
     @media (max-width: 480px) {
-      .hero-headline { font-size: 2.5rem; }
-      
+      .hero { padding-bottom: 20px; align-items: center; }
+      .hero-eyebrow { margin-bottom: 8px; font-size: 0.62rem; }
+      .hero-headline { font-size: 1.8rem; margin-bottom: 10px; line-height: 1.12; }
+      .hero-sub { margin: 0 0 16px; font-size: 0.88rem !important; line-height: 1.5 !important; }
+      .hero-actions { gap: 8px; }
+      .hero-actions .btn-shine { padding: 12px 20px !important; font-size: 0.7rem; }
     }
 
 
@@ -703,7 +708,7 @@
   <div class="hero-content">
     <p class="hero-eyebrow">Joshua Sharman &middot; Sydney &amp; Surroundings</p>
     <h1 class="hero-headline">Turn your proposal into a <em>lifelong memory.</em></h1>
-<p style="margin:-14px 0 34px; font-size:1rem; font-weight:300; line-height:1.7; color:rgba(255,255,255,0.85); max-width:54ch; opacity:0; animation:fadeUp 0.8s 0.6s forwards;">I help you turn your proposal into a lifelong special memory you can share with your partner!</p>    <div class="hero-actions"><a href="#how" class="btn-shine btn-gold">See How</a><a href="#contact" class="btn-shine btn-ghost" onclick="scrollToQuiz(event)">Book a Free Consultation</a></div>
+<p class="hero-sub" style="font-size:1rem; font-weight:300; line-height:1.7; color:rgba(255,255,255,0.85); max-width:54ch; opacity:0; animation:fadeUp 0.8s 0.6s forwards;">I help you turn your proposal into a lifelong special memory you can share with your partner!</p>    <div class="hero-actions"><a href="#how" class="btn-shine btn-gold">See How</a><a href="#contact" class="btn-shine btn-ghost" onclick="scrollToQuiz(event)">Book a Free Consultation</a></div>
   </div>
 </section>
 
