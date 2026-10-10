@@ -1086,16 +1086,14 @@
 
   // Leads go to Netlify Forms. Fire-and-forget so a network hiccup never blocks the UI.
   function submitToNetlify(formName, fields) {
-    try {
-      var body = new URLSearchParams();
-      body.append('form-name', formName);
-      Object.keys(fields).forEach(function (k) { body.append(k, fields[k] == null ? '' : String(fields[k])); });
-      fetch('/', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: body.toString()
-      }).catch(function () {});
-    } catch (e) {}
+    var body = new URLSearchParams();
+    body.append('form-name', formName);
+    Object.keys(fields).forEach(function (k) { body.append(k, fields[k] == null ? '' : String(fields[k])); });
+    return fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: body.toString()
+    }).then(function (res) { return res.ok; }).catch(function () { return false; });
   }
 
   // ============ QUIZ LOGIC ============
@@ -1244,6 +1242,12 @@
     if (payload.utm_term) adBits.push('term: ' + payload.utm_term);
     if (payload.gclid) adBits.push('gclid: ' + payload.gclid);
 
+    var btn = document.getElementById('q-submit');
+    btn.parentElement.classList.add('submitting');
+    btn.closest('.modal') && btn.closest('.modal').classList.add('submitting');
+    // add submitting state via a wrapper class on the button
+    btn.classList.add('is-loading');
+
     submitToNetlify('quiz-funnel', {
       name: payload.name,
       phone: payload.phone,
@@ -1254,31 +1258,22 @@
       preferred_setting: payload.quiz_setting,
       page: 'LP: Proposal Photographer',
       ad_tracking: adBits.length ? adBits.join(' · ') : 'Direct — not from an ad'
+    }).then(function (delivered) {
+      // Only fire ad conversions once the lead actually reached Netlify — firing
+      // unconditionally here counted clicks as leads even when the submission
+      // failed silently (network hiccup, ad blocker, Netlify rejecting it, etc.).
+      if (delivered && typeof gtag === 'function') {
+        gtag('event', 'conversion', {
+          'send_to': 'AW-18226213062/x4JBCLenqMUcEMbh9_JD',
+          'value': 1.0,
+          'currency': 'USD'
+        });
+        gtag('event', 'generate_lead', { currency: 'USD', value: 1.0 });
+      }
+      setTimeout(function() {
+        showStep(5); // thank-you step
+      }, 850);
     });
-
-    // Google Ads conversion tracking
-    if (typeof gtag === 'function') {
-      gtag('event', 'conversion', {
-        'send_to': 'AW-18226213062/x4JBCLenqMUcEMbh9_JD',
-        'value': 1.0,
-        'currency': 'USD'
-      });
-    }
-
-    // GA4 lead event (for the funnel completion + a GA4-side conversion)
-    if (typeof gtag === 'function') {
-      gtag('event', 'generate_lead', { currency: 'USD', value: 1.0 });
-    }
-
-    var btn = document.getElementById('q-submit');
-    btn.parentElement.classList.add('submitting');
-    btn.closest('.modal') && btn.closest('.modal').classList.add('submitting');
-    // add submitting state via a wrapper class on the button
-    btn.classList.add('is-loading');
-
-    setTimeout(function() {
-      showStep(5); // thank-you step
-    }, 850);
   }
 
   // initialise the quiz progress bar on load
