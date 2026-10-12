@@ -96,6 +96,7 @@
     .hero-headline { font-family: 'Cormorant Garamond', serif; font-size: clamp(3rem, 6vw, 5.2rem); font-weight: 300; line-height: 1.08; color: var(--white); margin-bottom: 36px; opacity: 0; animation: fadeUp 0.8s 0.5s forwards; }
     .hero-headline em { font-style: italic; color: var(--gold); }
     .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; opacity: 0; animation: fadeUp 0.8s 0.7s forwards; }
+    .hero-sub { margin: -14px 0 34px; }
 
     /* TRUST BAR */
     .trust-bar { background: var(--ink); padding: 20px 40px; display: flex; justify-content: center; align-items: center; gap: 48px; flex-wrap: wrap; }
@@ -106,6 +107,7 @@
     .trust-item-guarantee { display: flex; align-items: center; gap: 10px; font-size: 0.78rem; font-weight: 500; letter-spacing: 0.06em; white-space: nowrap; }
     .trust-item-guarantee a { color: var(--gold); text-decoration: underline; cursor: pointer; }
     .trust-item-guarantee a:hover { color: var(--white); }
+    .mobile-stat-item { display: none; }
 
     /* FOLD 2 */
     .fold2 { padding: 100px 40px; background: var(--cream); overflow: hidden; }
@@ -247,8 +249,20 @@
     
     
     @media (max-width: 480px) {
-      .hero-headline { font-size: 2.5rem; }
-      
+      .hero-bg { background-image: url('/images/site/6a5f2254baf5f6da40c68d84.webp') !important; background-position: center 30% !important; }
+      .hero-gradient { background: linear-gradient(to bottom, rgba(26,23,20,0.1) 0%, rgba(26,23,20,0.15) 35%, rgba(26,23,20,0.72) 58%, rgba(26,23,20,0.92) 100%) !important; }
+      .hero { min-height: calc(100vh - 98px); height: calc(100vh - 98px); padding-bottom: 72px; align-items: flex-end; }
+      .hero-content { position: relative; }
+      .hero-content::before { content: ''; position: absolute; left: -24px; right: -24px; top: -16px; bottom: -16px; background: rgba(15,13,11,0.38); backdrop-filter: blur(2px); z-index: -1; border-radius: 4px; }
+      .hero-eyebrow { display: none; }
+      .hero-headline { font-size: 1.8rem; margin-bottom: 10px; line-height: 1.12; }
+      .hero-sub { margin: 0 0 16px; font-size: 0.88rem !important; line-height: 1.5 !important; }
+      .hero-actions { gap: 8px; }
+      .hero-actions .btn-shine { padding: 12px 20px !important; font-size: 0.7rem; }
+      .mobile-hide { display: none !important; }
+      .mobile-stat-item { display: flex; }
+      .mobile-stat-item.trust-divider { display: block; }
+      .stats { display: none; }
     }
 
 
@@ -445,6 +459,37 @@
   .step-num { font-family: 'Cormorant Garamond', serif; font-size: 3rem; font-weight: 300; font-style: italic; color: var(--gold); line-height: 1; margin-bottom: 14px; }
   .step h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.55rem; font-weight: 400; margin-bottom: 12px; color: var(--ink); }
   .step p { font-size: 0.95rem; font-weight: 300; line-height: 1.75; color: var(--warm-mid); }
+
+  /* BENEFIT ROWS */
+  .benefits { background: var(--white); padding: 20px 40px 80px; }
+  .benefit-row { max-width: 1040px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: center; padding: 56px 0; }
+  .benefit-row:not(:last-child) { border-bottom: 1px solid var(--blush); }
+  .benefit-row.reverse .benefit-image { order: 2; }
+  .benefit-row.reverse .benefit-text { order: 1; }
+  .benefit-image { width: 100%; aspect-ratio: 4/3; object-fit: cover; display: block; box-shadow: 10px 10px 32px var(--shadow); }
+  .benefit-text h3 { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.8rem, 3vw, 2.4rem); font-weight: 300; color: var(--ink); margin-bottom: 14px; }
+  .benefit-text h3 em { font-style: italic; color: var(--gold); }
+  .benefit-text p { font-size: 1rem; font-weight: 300; line-height: 1.78; color: var(--warm-mid); }
+  @media (max-width: 768px) {
+    .benefit-row, .benefit-row.reverse { grid-template-columns: 1fr; gap: 24px; padding: 40px 0; }
+    .benefit-row.reverse .benefit-image, .benefit-row.reverse .benefit-text { order: unset; }
+  }
+
+  /* TESTIMONIAL OVERLAY */
+  .testimonial-overlay { position: relative; min-height: 64vh; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+  .to-bg { position: absolute; inset: 0; background-size: cover; background-position: center 42%; filter: brightness(0.5); }
+  .to-content { position: relative; z-index: 2; max-width: 700px; text-align: center; padding: 70px 40px; }
+  .to-quote { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.8rem, 4vw, 2.8rem); font-style: italic; font-weight: 300; color: var(--white); line-height: 1.3; margin-bottom: 22px; }
+  .to-stars { display: flex; gap: 5px; justify-content: center; margin-bottom: 16px; }
+  .to-stars .star { color: var(--gold); font-size: 1.1rem; }
+  .to-author { font-size: 0.78rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.75); }
+
+  /* SECOND CTA BAND */
+  .cta-repeat { background: var(--ink); padding: 72px 40px; text-align: center; }
+  .cta-repeat-inner { max-width: 620px; margin: 0 auto; }
+  .cta-repeat h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.9rem, 3.4vw, 2.6rem); font-weight: 300; color: var(--white); margin-bottom: 16px; }
+  .cta-repeat h2 em { font-style: italic; color: var(--gold); }
+  .cta-repeat p { font-size: 0.98rem; font-weight: 300; color: rgba(255,255,255,0.7); margin-bottom: 30px; }
 
   /* STATS BAND */
   .stats { background: var(--ink); padding: 56px 40px; }
@@ -667,14 +712,63 @@
 
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-bg" style="background-image:url('/images/site/6a5e88fbbaf5f6da409eaca3.webp');"></div>
+  <div class="hero-bg" style="background-image:url('/images/site/6a5e88f9ecb87d54c1b86bf4-flip.webp'); background-position: 35% 35%;"></div>
   <div class="hero-gradient"></div>
   <div class="hero-content">
-    <p class="hero-eyebrow">Transparent pricing &middot; Sydney &amp; beyond</p>
-    <h1 class="hero-headline">Proposal packages,<br/><em>from $799.</em></h1>
-<p style="margin:-14px 0 34px; font-size:1rem; font-weight:300; line-height:1.7; color:rgba(255,255,255,0.85); max-width:54ch; opacity:0; animation:fadeUp 0.8s 0.6s forwards;">No &ldquo;enquire for pricing.&rdquo; See exactly what&rsquo;s included, then book a free planning call.</p>    <div class="hero-actions"><a href="#pricing" class="btn-shine btn-gold">Lock In Pricing</a><a href="#contact" class="btn-shine btn-ghost" onclick="scrollToQuiz(event)">Check My Date</a></div>
+    <p class="hero-eyebrow">Joshua Sharman &middot; Sydney &amp; Surroundings</p>
+    <h1 class="hero-headline">Turn your proposal into a <em>lifelong memory.</em></h1>
+<p class="hero-sub" style="font-size:1rem; font-weight:300; line-height:1.7; color:rgba(255,255,255,0.85); max-width:54ch; opacity:0; animation:fadeUp 0.8s 0.6s forwards;">I help you turn your proposal into a lifelong special memory you can share with your partner!</p>    <div class="hero-actions"><a href="#how" class="btn-shine btn-gold">See How</a><a href="#contact" class="btn-shine btn-ghost" onclick="scrollToQuiz(event)">Book a Free Consultation</a></div>
   </div>
 </section>
+
+<!-- GALLERY -->
+<section class="gallery" id="gallery">
+  <div class="gallery-inner">
+    <div class="gallery-head">
+      <div>
+        <span class="section-eyebrow reveal">Recent proposal photography &middot; Sydney &amp; beyond</span>
+        <h2 class="section-headline reveal reveal-delay-1">Real questions,<br/><em>real yeses.</em></h2>
+      </div>
+      <a href="#contact" class="btn-shine btn-dark reveal reveal-delay-2" onclick="scrollToQuiz(event)" style="margin-bottom: 6px;">Plan Yours</a>
+    </div>
+    <div class="gallery-grid">
+      <figure class="g-item g-feat reveal">
+        <img src="/images/site/6a5e88fba60fa529fd545cba.webp" alt="Man kneeling to propose on a candle-lit jetty at golden hour" loading="lazy" decoding="async" />
+        <figcaption>A proposal on the dock</figcaption>
+      </figure>
+      <figure class="g-item g-tall reveal reveal-delay-1">
+        <img src="/images/site/6a5e88f9ecb87d54c1b86bf4.webp" alt="Newly engaged couple laughing as champagne sprays over a coastal clifftop" loading="lazy" decoding="async" style="object-position: 30% center;" />
+        <figcaption>The champagne aftermath</figcaption>
+      </figure>
+      <figure class="g-item g-tall reveal mobile-hide">
+        <img src="/images/site/6a5e88f9baf5f6da409eac6b.webp" alt="Two women holding hands and smiling in front of a red rose arch and Will You Marry Me neon sign" loading="lazy" decoding="async" />
+        <figcaption>Runa&rsquo;s yes, framed in roses</figcaption>
+      </figure>
+      <figure class="g-item g-wide reveal reveal-delay-1">
+        <img src="/images/site/6a5e88fc1097b81195781282.webp" alt="Friends spraying champagne at a headland proposal set-up with red roses and a neon sign" loading="lazy" decoding="async" style="object-position: center 48%;" />
+        <figcaption>Atharva&rsquo;s crew, zero chill</figcaption>
+      </figure>
+      <figure class="g-item g-tall reveal reveal-delay-2">
+        <img src="/images/site/6a5e88f9300bfb1db854450b.webp" alt="Woman holding her partner's face as he kneels with the engagement ring in a botanic garden" loading="lazy" decoding="async" />
+        <figcaption>A garden ambush</figcaption>
+      </figure>
+      <figure class="g-item g-tall reveal mobile-hide">
+        <img src="/images/site/6a5e88fbecb87d54c1b86c0c.webp" alt="A newly engaged couple with champagne and flowers as a crowd cheers behind them in Porto, Portugal" loading="lazy" decoding="async" style="object-position: center 30%;" />
+        <figcaption>A yes in Porto &mdash; I travel</figcaption>
+      </figure>
+      <a class="g-cta reveal reveal-delay-1" href="#contact" onclick="scrollToQuiz(event)">
+        <span class="g-cta-eyebrow">Your turn</span>
+        <span class="g-cta-line">The next yes could be yours.</span>
+        <span class="g-cta-arrow">Start planning &rarr;</span>
+      </a>
+    </div>
+    <div class="gallery-cta reveal">
+      <a href="#contact" class="btn-shine btn-dark-lg" onclick="scrollToQuiz(event)">I Want Photos Like These</a>
+    </div>
+  </div>
+</section>
+
+
 
 <!-- TRUST BAR -->
 <div class="trust-bar">
@@ -698,8 +792,115 @@
     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
     Insured, Equipped &amp; Professional
   </div>
+  <div class="trust-divider mobile-stat-item"></div>
+  <div class="trust-item mobile-stat-item">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2l1.4 5.3 5.6.3-4.2 3.6 1.5 5.4L12 13.8 7.7 16.6l1.5-5.4-4.2-3.6 5.6-.3z"/></svg>
+    10+ Years Experience
+  </div>
+  <div class="trust-divider mobile-stat-item"></div>
+  <div class="trust-item mobile-stat-item">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+    200+ Couples Captured
+  </div>
 </div>
 
+
+<!-- BENEFIT ROWS (objections turned into reassurance, paired with real work) -->
+<section class="benefits">
+  <div class="benefit-row reveal">
+    <img class="benefit-image" src="/images/site/6a5e88fba60fa529fd545cba.webp" alt="Man kneeling to propose on a candle-lit jetty at golden hour" loading="lazy" decoding="async" />
+    <div class="benefit-text">
+      <h3>Maximum <em>discretion.</em></h3>
+      <p>On the day I&rsquo;m early, out of sight and dressed like a tourist. She won&rsquo;t know I&rsquo;m there to shoot the proposal until after the proposal starts.</p>
+    </div>
+  </div>
+  <div class="benefit-row reverse reveal mobile-hide">
+    <img class="benefit-image" src="/images/site/6a5e88f9300bfb1db854450b.webp" alt="Woman holding her partner's face as he kneels with the engagement ring in a botanic garden" loading="lazy" decoding="async" />
+    <div class="benefit-text">
+      <h3>Easy <em>planning.</em></h3>
+      <p>Most people don&rsquo;t have a location or a plan yet. Bring the ring (or not even that) and an idea &mdash; or no idea at all &mdash; and we&rsquo;ll build it together on a free call.</p>
+    </div>
+  </div>
+  <div class="benefit-row reveal">
+    <img class="benefit-image" src="/images/site/6a5e88fc1097b81195781282.webp" alt="Friends spraying champagne at a headland proposal set-up with red roses and a neon sign" loading="lazy" decoding="async" style="object-position: center 48%;" />
+    <div class="benefit-text">
+      <h3>Plans change, <em>it&rsquo;s okay.</em></h3>
+      <p>Change of plans? No problem. We can reschedule for no charge up to 48 hours before the shoot.</p>
+    </div>
+  </div>
+  <div class="benefit-row reverse reveal mobile-hide">
+    <img class="benefit-image" src="/images/site/6a5e88f9baf5f6da409eac6b.webp" alt="Two women holding hands and smiling in front of a red rose arch and Will You Marry Me neon sign" loading="lazy" decoding="async" />
+    <div class="benefit-text">
+      <h3>Fast <em>turnaround.</em></h3>
+      <p>Average delivery is well under a week. Need to share the news sooner? Expedited delivery is available.</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- SECOND CTA (repeat conversion push) -->
+<section class="cta-repeat">
+  <div class="cta-repeat-inner reveal">
+    <h2>Still deciding? <em>Lock in your date.</em></h2>
+    <p>Packages from $799 AUD. Free consultation, no commitment &mdash; just a conversation about your plan.</p>
+    <a href="#contact" class="btn-shine btn-gold" onclick="scrollToQuiz(event)">Check My Date</a>
+  </div>
+</section>
+
+<!-- TESTIMONIAL OVERLAY -->
+<section class="testimonial-overlay">
+  <div class="to-bg" style="background-image:url('/images/site/6a5e88fbecb87d54c1b86c0c.webp');"></div>
+  <div class="to-content reveal">
+    <div class="to-stars"><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span></div>
+    <p class="to-quote">&ldquo;Worth every penny and more.&rdquo;</p>
+    <span class="to-author">James &amp; Priya &middot; Sydney Harbour, March 2025</span>
+  </div>
+</section>
+
+<!-- STATS / ABOUT JOSH -->
+<section class="stats">
+  <div class="stats-inner">
+    <div class="reveal">
+      <div class="stat-number">10<em>+</em></div>
+      <div class="stat-label">Years Experience</div>
+    </div>
+    <div class="reveal reveal-delay-1">
+      <div class="stat-number">200<em>+</em></div>
+      <div class="stat-label">Couples Captured</div>
+    </div>
+    <div class="reveal reveal-delay-2">
+      <div class="stat-number">130<em>+</em></div>
+      <div class="stat-label">5-Star Reviews</div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS (rewritten for the proposal-package narrative) -->
+<section class="how" id="how">
+  <div class="how-inner">
+    <div class="how-head">
+      <span class="section-eyebrow reveal">Simple, start to finish</span>
+      <h2 class="section-headline reveal reveal-delay-1">How a proposal<br/><em>comes together.</em></h2>
+    </div>
+    <div class="steps">
+      <div class="step reveal">
+        <div class="step-num">01</div>
+        <h3>Pick your package</h3>
+        <p>From a $799 covert session to the full $8,350 production &mdash; choose what fits, or hop on a free call and we&rsquo;ll build one together.</p>
+      </div>
+      <div class="step reveal reveal-delay-1">
+        <div class="step-num">02</div>
+        <h3>We plan every detail</h3>
+        <p>Location, timing, styling, extras &mdash; whatever your package includes, we lock it in together so the day runs exactly to plan.</p>
+      </div>
+      <div class="step reveal reveal-delay-2">
+        <div class="step-num">03</div>
+        <h3>The yes &mdash; and after</h3>
+        <p>The moment lands, fully captured. Then I stick around for the champagne, the tears, and the celebration that follows.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- PRICING -->
 <section class="pricing" id="pricing">
@@ -736,86 +937,8 @@
   </div>
 </section>
 
-
-<!-- HOW IT WORKS -->
-<section class="how" id="how">
-  <div class="how-inner">
-    <div class="how-head">
-      <span class="section-eyebrow reveal">The covert operation</span>
-      <h2 class="section-headline reveal reveal-delay-1">How the secret<br/><em>stays a secret.</em></h2>
-    </div>
-    <div class="steps">
-      <div class="step reveal">
-        <div class="step-num">01</div>
-        <h3>Tell me the plan</h3>
-        <p>A free, no-pressure call. Bring an idea or no idea at all &mdash; we&rsquo;ll pick the location, the timing and the angle together, all behind their back.</p>
-      </div>
-      <div class="step reveal reveal-delay-1">
-        <div class="step-num">02</div>
-        <h3>I disappear</h3>
-        <p>On the day I&rsquo;m early, out of sight and dressed like a tourist. They won&rsquo;t know I&rsquo;m there to shoot the proposal until after the proposal starts.</p>
-      </div>
-      <div class="step reveal reveal-delay-2">
-        <div class="step-num">03</div>
-        <h3>The yes &mdash; and after</h3>
-        <p>The moment lands, fully captured. Then I step in for the champagne, the tears, and the celebration that follows.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<!-- GALLERY -->
-<section class="gallery" id="gallery">
-  <div class="gallery-inner">
-    <div class="gallery-head">
-      <div>
-        <span class="section-eyebrow reveal">Recent proposal photography &middot; Sydney &amp; beyond</span>
-        <h2 class="section-headline reveal reveal-delay-1">Real questions,<br/><em>real yeses.</em></h2>
-      </div>
-      <a href="#contact" class="btn-shine btn-dark reveal reveal-delay-2" onclick="scrollToQuiz(event)" style="margin-bottom: 6px;">Plan Yours</a>
-    </div>
-    <div class="gallery-grid">
-      <figure class="g-item g-feat reveal">
-        <img src="/images/site/6a5e88fba60fa529fd545cba.webp" alt="Man kneeling to propose on a candle-lit jetty at golden hour" loading="lazy" decoding="async" />
-        <figcaption>A proposal on the dock</figcaption>
-      </figure>
-      <figure class="g-item g-tall reveal reveal-delay-1">
-        <img src="/images/site/6a5e88f9ecb87d54c1b86bf4.webp" alt="Newly engaged couple laughing as champagne sprays over a coastal clifftop" loading="lazy" decoding="async" style="object-position: 30% center;" />
-        <figcaption>The champagne aftermath</figcaption>
-      </figure>
-      <figure class="g-item g-tall reveal">
-        <img src="/images/site/6a5e88f9baf5f6da409eac6b.webp" alt="Two women holding hands and smiling in front of a red rose arch and Will You Marry Me neon sign" loading="lazy" decoding="async" />
-        <figcaption>Runa&rsquo;s yes, framed in roses</figcaption>
-      </figure>
-      <figure class="g-item g-wide reveal reveal-delay-1">
-        <img src="/images/site/6a5e88fc1097b81195781282.webp" alt="Friends spraying champagne at a headland proposal set-up with red roses and a neon sign" loading="lazy" decoding="async" style="object-position: center 48%;" />
-        <figcaption>Atharva&rsquo;s crew, zero chill</figcaption>
-      </figure>
-      <figure class="g-item g-tall reveal reveal-delay-2">
-        <img src="/images/site/6a5e88f9300bfb1db854450b.webp" alt="Woman holding her partner's face as he kneels with the engagement ring in a botanic garden" loading="lazy" decoding="async" />
-        <figcaption>A garden ambush</figcaption>
-      </figure>
-      <figure class="g-item g-tall reveal">
-        <img src="/images/site/6a5e88fbecb87d54c1b86c0c.webp" alt="A newly engaged couple with champagne and flowers as a crowd cheers behind them in Porto, Portugal" loading="lazy" decoding="async" style="object-position: center 30%;" />
-        <figcaption>A yes in Porto &mdash; I travel</figcaption>
-      </figure>
-      <a class="g-cta reveal reveal-delay-1" href="#contact" onclick="scrollToQuiz(event)">
-        <span class="g-cta-eyebrow">Your turn</span>
-        <span class="g-cta-line">The next yes could be yours.</span>
-        <span class="g-cta-arrow">Start planning &rarr;</span>
-      </a>
-    </div>
-    <div class="gallery-cta reveal">
-      <a href="#contact" class="btn-shine btn-dark-lg" onclick="scrollToQuiz(event)">I Want Photos Like These</a>
-    </div>
-  </div>
-</section>
-
-
-
 <!-- FAQ -->
-<section style="padding:90px 40px;background:#fff;">
+<section id="faq" style="padding:90px 40px;background:#fff;">
   <div style="max-width:760px;margin:0 auto;">
     <span class="section-eyebrow reveal" style="display:block;margin-bottom:12px;">Common questions</span>
     <h2 class="section-headline reveal" style="margin-bottom:48px;">Before you ask,<br/><em>here&rsquo;s what I&rsquo;d tell you.</em></h2>
