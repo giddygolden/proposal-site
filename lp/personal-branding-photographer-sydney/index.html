@@ -558,6 +558,7 @@
   .price-inline { font-size: 0.88rem; font-weight: 300; line-height: 1.75; color: var(--ink); margin-bottom: 22px; }
   .price-inline .sep { color: var(--gold); font-size: 0.7rem; padding: 0 5px; }
   .price-card.compact .btn-shine { margin-top: auto; }
+  .price-badge { display: inline-block; background: var(--gold); color: var(--ink); font-size: 0.68rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; padding: 5px 14px; border-radius: 20px; margin-bottom: 16px; }
 
   /* GUARANTEE BAND */
   .guarantee { background: var(--cream); border-top: 1px solid rgba(201,169,110,0.25); border-bottom: 1px solid rgba(201,169,110,0.25); padding: 34px 40px; }
@@ -682,7 +683,7 @@
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
-    { "@type": "Question", "name": "How much does a content day cost?", "acceptedAnswer": { "@type": "Answer", "text": "A personal branding session starts at $799. A full content day (portraits plus behind-the-scenes and process shots) goes up to $1,800. Consultations are free. No commitment, just a conversation about your brief." } },
+    { "@type": "Question", "name": "How much does a content day cost?", "acceptedAnswer": { "@type": "Answer", "text": "A Personal Branding Session starts at $799. The Premium Content Package (portraits plus behind-the-scenes and process shots) starts from $1,800. Consultations are free. No commitment, just a conversation about your brief." } },
     { "@type": "Question", "name": "Can you shoot at my home, studio or office?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, most content days happen wherever you actually work: your kitchen, your studio, your office. A portable lighting kit travels with me so the setting stays authentic." } },
     { "@type": "Question", "name": "What does a month of content actually mean?", "acceptedAnswer": { "@type": "Answer", "text": "A single content day typically delivers 500+ photos: portraits, behind-the-scenes shots and process shots, edited and ready to post across your website, socials and email for weeks." } },
     { "@type": "Question", "name": "How quickly do I get the photos back?", "acceptedAnswer": { "@type": "Answer", "text": "Within a week for most sessions. Need them sooner for a launch or a rebrand? Expedited delivery is available. Just ask on the planning call." } },
@@ -1159,23 +1160,29 @@
     </div>
     <div class="price-grid">
       <div class="price-card featured compact reveal">
-        <div class="price-tier">Full Content Day</div>
-        <div class="price-amount"><small>Up to</small> $1,800 <small>AUD</small></div>
-        <p class="price-desc">A full day: personal brand portraits plus behind-the-scenes and process shots.</p>
-        <p class="price-inline">Full-day on-site <span class="sep">&#10022;</span> portraits &amp; process shots <span class="sep">&#10022;</span> a month&rsquo;s worth of content <span class="sep">&#10022;</span> ready-to-use gallery within a week</p>
-        <a href="#contact" class="btn-shine btn-gold" onclick="scrollToQuiz(event)" style="text-align:center;">Plan My Content Day</a>
-      </div>
-      <div class="price-card reveal reveal-delay-1">
+        <span class="price-badge">Most Booked</span>
         <div class="price-tier">Personal Branding Session</div>
         <div class="price-amount"><small>From</small> $799 <small>AUD</small></div>
-        <p class="price-desc">A half-day session for updated portraits, on-site or in-studio.</p>
+        <p class="price-desc">Updated portraits, on-site or in-studio &mdash; the easiest way to start.</p>
         <ul class="price-list">
           <li>Personal brand portraits</li>
           <li>Consistent lighting &amp; a set that feels like you</li>
           <li>Optional behind-the-scenes candids</li>
           <li>Edited, ready-to-use gallery within a week</li>
         </ul>
-        <a href="#contact" class="btn-shine btn-dark-lg" onclick="scrollToQuiz(event)" style="text-align:center;">Check My Date</a>
+        <a href="#contact" class="btn-shine btn-gold" onclick="scrollToQuiz(event)" style="text-align:center;">Check My Date</a>
+      </div>
+      <div class="price-card compact reveal reveal-delay-1">
+        <div class="price-tier">Premium Content Package</div>
+        <div class="price-amount"><small>From</small> $1,800 <small>AUD</small></div>
+        <p class="price-desc">The complete experience: personal brand portraits plus behind-the-scenes and process shots.</p>
+        <ul class="price-list">
+          <li>On-site, start to finish</li>
+          <li>Portraits &amp; process shots</li>
+          <li>A month&rsquo;s worth of content</li>
+          <li>Ready-to-use gallery within a week</li>
+        </ul>
+        <a href="#contact" class="btn-shine btn-dark-lg" onclick="scrollToQuiz(event)" style="text-align:center;">Plan My Content Day</a>
       </div>
     </div>
     <p class="price-note reveal">Free consultations. No commitment, just a conversation.</p>
@@ -1200,7 +1207,7 @@
     <div class="faq-list">
       <details class="faq-item reveal">
         <summary class="faq-q">How much does a content day cost?</summary>
-        <p class="faq-a">A personal branding session starts at $799. A full content day (portraits plus behind-the-scenes and process shots) goes up to $1,800. Consultations are free. No commitment, just a conversation about your brief.</p>
+        <p class="faq-a">A Personal Branding Session starts at $799. The Premium Content Package (portraits plus behind-the-scenes and process shots) starts from $1,800. Consultations are free. No commitment, just a conversation about your brief.</p>
       </details>
       <details class="faq-item reveal">
         <summary class="faq-q">Can you shoot at my home, studio or office?</summary>
