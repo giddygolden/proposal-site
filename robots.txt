@@ -2,3 +2,11 @@ User-agent: *
 Disallow: /lp/
 Allow: /lp/personal-branding-photographer-sydney/
 Disallow: /topsecret/
+
+# AdsBot-Google evaluates Landing Page Experience for Quality Score and does
+# NOT inherit the generic Disallow above - it needs its own explicit rule.
+# These LPs stay out of organic search (noindex meta + the "*" block above)
+# but must stay crawlable by AdsBot or Google can't assess/score them.
+User-agent: AdsBot-Google
+Allow: /lp/
+Disallow: /topsecret/
