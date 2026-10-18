@@ -1054,6 +1054,7 @@
           <input type="tel" id="q-phone" name="phone" autocomplete="tel" />
         </div>
         <button class="form-submit" id="q-submit" onclick="submitQuiz()" style="margin-top:10px;"><span class="btn-label">Let&rsquo;s do this &rarr;</span><span class="btn-spinner"></span></button>
+        <p id="q-error" role="alert" hidden style="margin-top:12px; font-size:0.86rem; line-height:1.5; color:#F2B8A8; text-align:center;">That didn&rsquo;t go through. Please try again, or call or text me on <a href="tel:+61432168197" style="color:inherit; text-decoration:underline;">+61 432 168 197</a>.</p>
         <p style="margin-top:14px; font-size:0.76rem; color:rgba(255,255,255,0.5); font-weight:300; text-align:center;">No commitment. Just a conversation.</p>
       </div>
       <button class="quiz-back" onclick="prevStep()">&larr; Back</button>
@@ -1094,6 +1095,16 @@
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
       body: body.toString()
     }).then(function (res) { return res.ok; }).catch(function () { return false; });
+  }
+  // A send that fails is retried once after a short pause. Callers only show
+  // the thank-you when this resolves true, so a lost lead never looks sent.
+  function sendLead(formName, fields) {
+    return submitToNetlify(formName, fields).then(function (ok) {
+      if (ok) return true;
+      return new Promise(function (r) { setTimeout(r, 1500); }).then(function () {
+        return submitToNetlify(formName, fields);
+      });
+    });
   }
 
   // ============ QUIZ LOGIC ============
@@ -1242,13 +1253,16 @@
     if (payload.utm_term) adBits.push('term: ' + payload.utm_term);
     if (payload.gclid) adBits.push('gclid: ' + payload.gclid);
 
+    var qErr = document.getElementById('q-error');
+    if (qErr) qErr.hidden = true;
+
     var btn = document.getElementById('q-submit');
     btn.parentElement.classList.add('submitting');
     btn.closest('.modal') && btn.closest('.modal').classList.add('submitting');
     // add submitting state via a wrapper class on the button
     btn.classList.add('is-loading');
 
-    submitToNetlify('quiz-funnel', {
+    sendLead('quiz-funnel', {
       name: payload.name,
       phone: payload.phone,
       they_are: payload.quiz_i_am,
@@ -1259,6 +1273,13 @@
       page: 'LP: Proposal Photographer',
       ad_tracking: adBits.length ? adBits.join(' · ') : 'Direct — not from an ad'
     }).then(function (delivered) {
+      if (!delivered) {
+        // Unlock the button and offer the phone instead of a false thank-you.
+        btn.classList.remove('is-loading');
+        btn.parentElement.classList.remove('submitting');
+        if (qErr) qErr.hidden = false;
+        return;
+      }
       // Only fire ad conversions once the lead actually reached Netlify — firing
       // unconditionally here counted clicks as leads even when the submission
       // failed silently (network hiccup, ad blocker, Netlify rejecting it, etc.).

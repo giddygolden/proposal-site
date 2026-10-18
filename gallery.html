@@ -515,18 +515,26 @@ footer a { color: var(--gold); text-decoration: none; }
     return bits.length ? bits.join(' · ') : 'Direct — not from an ad';
   }
 
-  // Dual-write to Netlify Forms while migrating off GHL. Fire-and-forget, never blocks the GHL submit.
+  // Leads go to Netlify Forms. Resolves true only once Netlify has accepted the lead.
   function submitToNetlify(formName, fields) {
-    try {
-      var body = new URLSearchParams();
-      body.append('form-name', formName);
-      Object.keys(fields).forEach(function (k) { body.append(k, fields[k] == null ? '' : String(fields[k])); });
-      fetch('/', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: body.toString()
-      }).catch(function () {});
-    } catch (e) {}
+    var body = new URLSearchParams();
+    body.append('form-name', formName);
+    Object.keys(fields).forEach(function (k) { body.append(k, fields[k] == null ? '' : String(fields[k])); });
+    return fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: body.toString()
+    }).then(function (res) { return res.ok; }).catch(function () { return false; });
+  }
+  // A send that fails is retried once after a short pause. Callers only show
+  // the thank-you when this resolves true, so a lost lead never looks sent.
+  function sendLead(formName, fields) {
+    return submitToNetlify(formName, fields).then(function (ok) {
+      if (ok) return true;
+      return new Promise(function (r) { setTimeout(r, 1500); }).then(function () {
+        return submitToNetlify(formName, fields);
+      });
+    });
   }
 
   document.getElementById('leadForm').addEventListener('submit', function (ev) {
@@ -541,27 +549,36 @@ footer a { color: var(--gold); text-decoration: none; }
     err.textContent = '';
 
     var btn = document.getElementById('lf-submit');
+    var btnLabel = btn.textContent;
     btn.disabled = true;
     btn.textContent = 'Sending\u2026';
 
     var ctxEl = document.getElementById('lf-ctx');
-    submitToNetlify('lp-gallery', {
+    sendLead('lp-gallery', {
       name: name,
       phone: phone,
       context: ctxEl && ctxEl.selectedIndex >= 0 ? ctxEl.options[ctxEl.selectedIndex].text : ctx,
       page: 'Gallery page',
       ad_tracking: adTracking()
+    }).then(function (delivered) {
+      if (!delivered) {
+        // Unlock the form and offer the phone instead of a false thank-you.
+        btn.disabled = false;
+        btn.textContent = btnLabel;
+        err.innerHTML = 'That didn\u2019t go through. Please try again, or call or text me on <a href="tel:+61432168197" style="color:inherit; text-decoration:underline;">+61 432 168 197</a>.';
+        return;
+      }
+
+      if (typeof gtag === 'function') {
+        gtag('event', 'conversion', { 'send_to': 'AW-18226213062/x4JBCLenqMUcEMbh9_JD', 'value': 1.0, 'currency': 'AUD' });
+        gtag('event', 'generate_lead', { currency: 'AUD', value: 1.0, page_source: 'lp-gallery' });
+      }
+
+      setTimeout(function () {
+        document.getElementById('enquire').classList.add('done');
+        document.getElementById('enquire').scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }, 650);
     });
-
-    if (typeof gtag === 'function') {
-      gtag('event', 'conversion', { 'send_to': 'AW-18226213062/x4JBCLenqMUcEMbh9_JD', 'value': 1.0, 'currency': 'AUD' });
-      gtag('event', 'generate_lead', { currency: 'AUD', value: 1.0, page_source: 'lp-gallery' });
-    }
-
-    setTimeout(function () {
-      document.getElementById('enquire').classList.add('done');
-      document.getElementById('enquire').scrollIntoView({ behavior: 'smooth', block: 'center' });
-    }, 650);
   });
 </script>
 </body>
