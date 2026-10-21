@@ -411,7 +411,29 @@
     .g-feat { grid-column: span 2; aspect-ratio: 16/10; }
     .g-tall { aspect-ratio: 4/5; }
     .g-wide { grid-column: span 2; aspect-ratio: 2.4/1; }
+    .g-square { aspect-ratio: 1/1; }
+    .g-item { cursor: zoom-in; }
+    .g-item::after { content: ''; position: absolute; inset: 0; background: rgba(26,23,20,0.18); opacity: 0; transition: opacity 0.3s ease; }
+    .g-item:hover::after { opacity: 1; }
     .gallery-cta { text-align: center; margin-top: 52px; }
+
+    /* LIGHTBOX */
+    .lightbox { display: none; position: fixed; inset: 0; z-index: 998; background: rgba(13,11,9,0.94); align-items: center; justify-content: center; padding: 32px; }
+    .lightbox.open { display: flex; }
+    .lightbox-img-wrap { position: relative; max-width: 1100px; max-height: 90vh; width: 100%; display: flex; align-items: center; justify-content: center; }
+    .lightbox-img-wrap img { max-width: 100%; max-height: 86vh; width: auto; height: auto; object-fit: contain; box-shadow: 0 24px 80px rgba(0,0,0,0.5); }
+    .lightbox-caption { position: absolute; bottom: -34px; left: 0; right: 0; text-align: center; font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(255,255,255,0.7); }
+    .lightbox-close { position: absolute; top: 20px; right: 24px; background: none; border: none; color: var(--white); font-size: 2rem; line-height: 1; cursor: pointer; z-index: 2; }
+    .lightbox-close:hover { color: var(--gold); }
+    .lightbox-nav { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.25); color: var(--white); width: 48px; height: 48px; border-radius: 50%; cursor: pointer; font-size: 1.3rem; display: flex; align-items: center; justify-content: center; transition: background 0.2s ease; }
+    .lightbox-nav:hover { background: rgba(255,255,255,0.18); }
+    .lightbox-prev { left: 12px; }
+    .lightbox-next { right: 12px; }
+    @media (max-width: 640px) {
+      .lightbox { padding: 16px; }
+      .lightbox-nav { width: 40px; height: 40px; font-size: 1.1rem; }
+      .lightbox-close { top: 10px; right: 14px; }
+    }
 
     /* LOCATIONS */
     .locations { padding: 100px 40px; background: var(--white); }
@@ -503,6 +525,7 @@
       .gallery-grid { grid-template-columns: 1fr; }
       .g-feat { grid-column: span 1; aspect-ratio: 4/3; }
       .g-wide { grid-column: span 1; aspect-ratio: 4/3; }
+      .g-square { aspect-ratio: 4/3; }
     }
 
     /* CALL BANNER */
@@ -701,20 +724,48 @@
 </section>
 
 <!-- GALLERY -->
-<!-- All 6 now real wedding photos from Joshua's portfolio -->
+<!-- 18 real wedding photos from Joshua's portfolio, click-to-enlarge lightbox -->
 <section class="gallery" id="gallery">
   <div class="gallery-inner">
     <div class="gallery-head">
       <div>
         <span class="section-eyebrow reveal">A taste of the work &middot; real weddings</span>
-        <h2 class="section-headline reveal reveal-delay-1">Real couples,<br/><em>real moments.</em></h2>
+        <h2 class="section-headline reveal reveal-delay-1">A glimpse into<br/><em>special moments.</em></h2>
       </div>
       <a href="#quiz" class="btn-shine btn-dark reveal reveal-delay-2" onclick="scrollToQuiz(event)" style="margin-bottom: 6px;">Check Availability</a>
     </div>
-    <p class="section-body reveal" style="max-width:62ch;margin-bottom:28px;">Real weddings from across Sydney and beyond &mdash; vineyards, the Harbour, the coast.</p>
+    <p class="section-body reveal" style="max-width:62ch;margin-bottom:28px;">Real weddings from across Sydney and beyond &mdash; vineyards, the Harbour, the coast. Tap any photo for a closer look.</p>
     <div class="gallery-grid">
       <figure class="g-item g-feat reveal">
         <img src="/images/weddings/portfolio/215.webp" alt="Bride and groom kissing under a blooming jacaranda tree" loading="lazy" decoding="async" />
+        <figcaption>Real wedding day</figcaption>
+      </figure>
+      <figure class="g-item g-tall reveal reveal-delay-1">
+        <img src="/images/weddings/portfolio/197.webp" alt="Bride and groom kissing in a hillside field, veil blowing in the wind" loading="lazy" decoding="async" />
+        <figcaption>Real wedding day</figcaption>
+      </figure>
+      <figure class="g-item g-tall reveal">
+        <img src="/images/weddings/portfolio/205.webp" alt="Bride and groom kissing in front of the Sydney Opera House" loading="lazy" decoding="async" />
+        <figcaption>Real wedding day</figcaption>
+      </figure>
+      <figure class="g-item g-wide reveal">
+        <img src="/images/weddings/portfolio2/290.webp" alt="The whole wedding party cheering with the Harbour Bridge behind them" loading="lazy" decoding="async" />
+        <figcaption>Real wedding day</figcaption>
+      </figure>
+      <figure class="g-item g-tall reveal reveal-delay-1">
+        <img src="/images/weddings/portfolio/234.webp" alt="Bride laughing with two friends, Sydney Harbour behind them" loading="lazy" decoding="async" />
+        <figcaption>Real wedding day</figcaption>
+      </figure>
+      <figure class="g-item g-tall reveal">
+        <img src="/images/weddings/portfolio/221.webp" alt="Bride and groom embracing on the rocks at a Sydney beach" loading="lazy" decoding="async" />
+        <figcaption>Real wedding day</figcaption>
+      </figure>
+      <figure class="g-item g-square reveal reveal-delay-2">
+        <img src="/images/weddings/annabel-daniel/242.webp" alt="Four bridesmaids in matching pyjamas, toasting with champagne" loading="lazy" decoding="async" />
+        <figcaption>Annabel &amp; Daniel&rsquo;s wedding day</figcaption>
+      </figure>
+      <figure class="g-item g-wide reveal">
+        <img src="/images/weddings/portfolio/199.webp" alt="Bride laughing, carried by four groomsmen in a vineyard" loading="lazy" decoding="async" />
         <figcaption>Real wedding day</figcaption>
       </figure>
       <figure class="g-item g-tall reveal reveal-delay-1">
@@ -722,19 +773,39 @@
         <figcaption>Annabel &amp; Daniel&rsquo;s wedding day</figcaption>
       </figure>
       <figure class="g-item g-tall reveal">
-        <img src="/images/weddings/annabel-daniel/194.webp" alt="Bride holding her bouquet, smiling with a bridesmaid behind her" loading="lazy" decoding="async" />
+        <img src="/images/weddings/annabel-daniel/193.webp" alt="Bride smiling, reflected in a mirror while getting ready" loading="lazy" decoding="async" />
+        <figcaption>Annabel &amp; Daniel&rsquo;s wedding day</figcaption>
+      </figure>
+      <figure class="g-item g-tall reveal reveal-delay-2">
+        <img src="/images/weddings/portfolio/211.webp" alt="Bride and groom laughing together, seated on fig tree roots" loading="lazy" decoding="async" />
+        <figcaption>Real wedding day</figcaption>
+      </figure>
+      <figure class="g-item g-square reveal">
+        <img src="/images/weddings/annabel-daniel/192.webp" alt="Wedding dress, veil and shoes laid out before the ceremony" loading="lazy" decoding="async" />
         <figcaption>Annabel &amp; Daniel&rsquo;s wedding day</figcaption>
       </figure>
       <figure class="g-item g-wide reveal reveal-delay-1">
-        <img src="/images/weddings/portfolio/199.webp" alt="Bride laughing, carried by four groomsmen in a vineyard" loading="lazy" decoding="async" />
-        <figcaption>Real wedding day</figcaption>
-      </figure>
-      <figure class="g-item g-tall reveal reveal-delay-2">
-        <img src="/images/weddings/portfolio/234.webp" alt="Bride laughing with two friends, Sydney Harbour behind them" loading="lazy" decoding="async" />
+        <img src="/images/weddings/portfolio2/282.webp" alt="Bride and groom with two groomsmen, Sydney Harbour Bridge behind them" loading="lazy" decoding="async" />
         <figcaption>Real wedding day</figcaption>
       </figure>
       <figure class="g-item g-tall reveal">
-        <img src="/images/weddings/portfolio/221.webp" alt="Bride and groom embracing on the rocks at a Sydney beach" loading="lazy" decoding="async" />
+        <img src="/images/weddings/annabel-daniel/194.webp" alt="Bride holding her bouquet, smiling with a bridesmaid behind her" loading="lazy" decoding="async" />
+        <figcaption>Annabel &amp; Daniel&rsquo;s wedding day</figcaption>
+      </figure>
+      <figure class="g-item g-tall reveal reveal-delay-2">
+        <img src="/images/weddings/portfolio2/283.webp" alt="Bride smiling in golden light, walking with guests behind her" loading="lazy" decoding="async" />
+        <figcaption>Real wedding day</figcaption>
+      </figure>
+      <figure class="g-item g-wide reveal">
+        <img src="/images/weddings/portfolio2/285.webp" alt="Bride and groom kissing as guests applaud, Sydney Harbour Bridge behind them" loading="lazy" decoding="async" />
+        <figcaption>Real wedding day</figcaption>
+      </figure>
+      <figure class="g-item g-wide reveal reveal-delay-1">
+        <img src="/images/weddings/portfolio2/280.webp" alt="The whole wedding party gathered on the clifftop after the ceremony" loading="lazy" decoding="async" />
+        <figcaption>Real wedding day</figcaption>
+      </figure>
+      <figure class="g-item g-square reveal">
+        <img src="/images/weddings/portfolio2/291.webp" alt="Wedding guests celebrating together on a harbour ferry" loading="lazy" decoding="async" />
         <figcaption>Real wedding day</figcaption>
       </figure>
     </div>
@@ -743,6 +814,17 @@
     </div>
   </div>
 </section>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Photo viewer" onclick="if(event.target===this) closeLightbox()">
+  <button class="lightbox-close" onclick="closeLightbox()" aria-label="Close photo viewer">&times;</button>
+  <button class="lightbox-nav lightbox-prev" onclick="navLightbox(-1)" aria-label="Previous photo">&larr;</button>
+  <div class="lightbox-img-wrap">
+    <img id="lightbox-img" src="" alt="" />
+    <p class="lightbox-caption" id="lightbox-caption"></p>
+  </div>
+  <button class="lightbox-nav lightbox-next" onclick="navLightbox(1)" aria-label="Next photo">&rarr;</button>
+</div>
 
 <!-- LOCATIONS -->
 <section class="locations" id="locations">
@@ -1212,6 +1294,41 @@
     });
   }, { threshold: 0.12 });
   reveals.forEach(function(el) { observer.observe(el); });
+
+  // GALLERY LIGHTBOX
+  var lbPhotos = Array.prototype.map.call(document.querySelectorAll('.gallery-grid .g-item img'), function(img) {
+    return { src: img.getAttribute('src'), alt: img.getAttribute('alt') };
+  });
+  var lbIndex = 0;
+  var lbEl = document.getElementById('lightbox');
+  var lbImg = document.getElementById('lightbox-img');
+  var lbCaption = document.getElementById('lightbox-caption');
+  function showLightbox(i) {
+    lbIndex = (i + lbPhotos.length) % lbPhotos.length;
+    var p = lbPhotos[lbIndex];
+    lbImg.src = p.src;
+    lbImg.alt = p.alt;
+    lbCaption.textContent = p.alt;
+  }
+  function openLightbox(i) {
+    showLightbox(i);
+    lbEl.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  window.closeLightbox = function () {
+    lbEl.classList.remove('open');
+    document.body.style.overflow = '';
+  };
+  window.navLightbox = function (dir) { showLightbox(lbIndex + dir); };
+  document.querySelectorAll('.gallery-grid .g-item').forEach(function (fig, i) {
+    fig.addEventListener('click', function () { openLightbox(i); });
+  });
+  document.addEventListener('keydown', function (e) {
+    if (!lbEl.classList.contains('open')) return;
+    if (e.key === 'Escape') window.closeLightbox();
+    if (e.key === 'ArrowLeft') window.navLightbox(-1);
+    if (e.key === 'ArrowRight') window.navLightbox(1);
+  });
 
   // Fire quiz_start + the first funnel step the first time the quiz is seen
   var quizSection = document.getElementById('quiz');
