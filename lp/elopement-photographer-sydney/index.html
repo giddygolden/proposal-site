@@ -453,10 +453,10 @@
 
     /* PRICING */
     .pricing { padding: 100px 40px; background: var(--cream); }
-    .pricing-inner { max-width: 980px; margin: 0 auto; }
+    .pricing-inner { max-width: 1060px; margin: 0 auto; }
     .pricing-head { max-width: 620px; margin-bottom: 56px; }
     .price-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-    .price-card { background: var(--white); border: 1.5px solid var(--blush); padding: 40px 36px; display: flex; flex-direction: column; transition: transform 0.3s ease, box-shadow 0.3s ease; }
+    .price-card { background: var(--white); border: 1.5px solid var(--blush); padding: 36px 32px; display: flex; flex-direction: column; transition: transform 0.3s ease, box-shadow 0.3s ease; }
     .price-card:hover { transform: translateY(-4px); box-shadow: 0 16px 44px rgba(26,23,20,0.1); }
     .price-card.featured { border-color: var(--gold); box-shadow: 0 10px 36px rgba(201,169,110,0.18); }
     .price-tier { font-size: 0.7rem; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 14px; }
@@ -853,38 +853,62 @@
 </section>
 
 <!-- PRICING -->
-<!-- Confirmed starting prices (Elopement $890 / Small Wedding $2,700). -->
+<!-- 4 tiers per Joshua's pricing structure: Elopement/Registry $800, Wedding Day $1,800, Wedding Story $2,800 (featured), Complete Story $3,800. -->
 <section class="pricing" id="pricing">
   <div class="pricing-inner">
     <div class="pricing-head">
       <span class="section-eyebrow reveal">Packages</span>
       <h2 class="section-headline reveal reveal-delay-1">Elopement &amp;<br/><em>small wedding packages.</em></h2>
-      <p class="section-body reveal reveal-delay-2">Two ways to work together. Exact pricing depends on your date, hours and location &mdash; every enquiry starts with a free, no-pressure call.</p>
+      <p class="section-body reveal reveal-delay-2">Four ways to work together. Exact pricing depends on your date, hours and location &mdash; every enquiry starts with a free, no-pressure call.</p>
     </div>
     <div class="price-grid">
       <div class="price-card reveal">
         <div class="price-tier">Elopement / Registry</div>
-        <div class="price-amount">From $890<small>Exact quote confirmed on a call</small></div>
-        <p class="price-desc">Just the two of you (plus witnesses, if you have them) &mdash; the ceremony and the moments around it, fully covered.</p>
+        <div class="price-amount">From $800<small>Exact quote confirmed on a call</small></div>
+        <p class="price-desc">Just the two of you (plus witnesses, if you have them) &mdash; up to 90 minutes, fully covered.</p>
         <ul class="price-list">
+          <li>Up to 90 minutes coverage</li>
           <li>Ceremony &amp; key-moment coverage</li>
-          <li>Arrival / getting-ready shots</li>
+          <li>Couple portraits &amp; family photos</li>
           <li>Edited, ready-to-share gallery</li>
-          <li>Coverage hours &mdash; confirmed when we chat</li>
         </ul>
         <a href="#quiz" class="btn-shine btn-dark-lg" onclick="scrollToQuiz(event)" style="text-align:center;">Check My Availability</a>
       </div>
-      <div class="price-card featured reveal reveal-delay-1">
-        <div class="price-tier">Small Wedding</div>
-        <div class="price-amount">From $2,700<small>Exact quote confirmed on a call</small></div>
-        <p class="price-desc">A small wedding, done properly &mdash; typically up to around 30 guests.</p>
+      <div class="price-card reveal reveal-delay-1">
+        <div class="price-tier">Wedding Day</div>
+        <div class="price-amount">From $1,800<small>Exact quote confirmed on a call</small></div>
+        <p class="price-desc">A sensible option for intimate weddings &mdash; up to 3 hours of coverage.</p>
         <ul class="price-list">
-          <li>Ceremony &amp; reception coverage</li>
+          <li>Up to 3 hours coverage</li>
+          <li>Ceremony &amp; portrait coverage</li>
+          <li>Group &amp; family photos</li>
+          <li>Edited, ready-to-share gallery</li>
+        </ul>
+        <a href="#quiz" class="btn-shine btn-dark-lg" onclick="scrollToQuiz(event)" style="text-align:center;">Check My Availability</a>
+      </div>
+      <div class="price-card featured reveal reveal-delay-2">
+        <div class="price-tier">Wedding Story</div>
+        <div class="price-amount">From $2,800<small>Exact quote confirmed on a call</small></div>
+        <p class="price-desc">Our most booked package &mdash; full-day coverage so nothing gets missed.</p>
+        <ul class="price-list">
+          <li>Full-day coverage</li>
+          <li>Ceremony, portraits &amp; reception</li>
           <li>Group &amp; candid photography</li>
           <li>Edited, ready-to-share gallery</li>
-          <li>Coverage hours &mdash; confirmed when we chat</li>
         </ul>
         <a href="#quiz" class="btn-shine btn-gold" onclick="scrollToQuiz(event)" style="text-align:center;">Check My Availability</a>
+      </div>
+      <div class="price-card reveal">
+        <div class="price-tier">Complete Story</div>
+        <div class="price-amount">From $3,800<small>Exact quote confirmed on a call</small></div>
+        <p class="price-desc">Your complete day, start to finish, with nothing left out.</p>
+        <ul class="price-list">
+          <li>Complete day coverage, start to finish</li>
+          <li>Ceremony, portraits, reception &amp; party</li>
+          <li>Group &amp; candid photography</li>
+          <li>Edited, ready-to-share gallery &amp; priority turnaround</li>
+        </ul>
+        <a href="#quiz" class="btn-shine btn-dark-lg" onclick="scrollToQuiz(event)" style="text-align:center;">Check My Availability</a>
       </div>
     </div>
     <p class="price-note reveal">Free, no-obligation calls &mdash; just a conversation about your date and your plans.</p>
