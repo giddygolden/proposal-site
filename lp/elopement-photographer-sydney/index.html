@@ -116,6 +116,24 @@
     .fold3-headline em { font-style: italic; color: var(--gold); }
     .fold3-sub { font-size: 0.98rem; font-weight: 300; line-height: 1.72; color: rgba(255,255,255,0.8); max-width: 480px; margin: 0 auto 36px; }
 
+    /* RECENT PHOTOSHOOTS */
+    .shoots { padding: 110px 40px; background: var(--cream); }
+    .shoots-inner { max-width: 1200px; margin: 0 auto; }
+    .shoots-head { text-align: center; max-width: 620px; margin: 0 auto 56px; }
+    .shoots-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 36px; }
+    .shoot-card { }
+    .shoot-collage { display: grid; grid-template-columns: 1.3fr 1fr; grid-template-rows: 1fr 1fr; gap: 6px; aspect-ratio: 4/3; border-radius: 4px; overflow: hidden; }
+    .shoot-collage img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .shoot-collage .shoot-main { grid-row: 1 / 3; }
+    .shoot-meta { display: flex; align-items: baseline; justify-content: space-between; margin-top: 16px; gap: 12px; }
+    .shoot-meta h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 400; color: var(--ink); }
+    .shoot-meta span { font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--warm-mid); white-space: nowrap; }
+    .shoots-cta { text-align: center; margin-top: 56px; }
+    @media (max-width: 768px) {
+      .shoots { padding: 80px 24px; }
+      .shoots-grid { grid-template-columns: 1fr; gap: 32px; }
+    }
+
     .form-group { margin-bottom: 14px; }
     .form-group label { display: block; font-size: 0.72rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--warm-mid); margin-bottom: 7px; }
     .form-group input { width: 100%; padding: 12px 14px; font-family: 'Outfit', sans-serif; font-size: 0.97rem; font-weight: 300; color: var(--ink); background: var(--white); border: 1.5px solid var(--blush); border-radius: 1px; outline: none; transition: border-color 0.2s ease; }
@@ -546,9 +564,9 @@
   <div class="hero-bg"></div>
   <div class="hero-gradient"></div>
   <div class="hero-content">
-    <p class="hero-eyebrow" id="hero-eyebrow">Elopement &amp; Short-Notice Wedding Photography &middot; Sydney &amp; Beyond</p>
+    <p class="hero-eyebrow" id="hero-eyebrow">Joshua Sharman</p>
     <h1 class="hero-headline" id="hero-headline">Elopement &amp; Small Wedding<br/><em>Photographer in Sydney.</em></h1>
-    <p class="hero-sub">Available at short notice &mdash; tell me your date and I&rsquo;ll call you the same day.</p>
+    <p class="hero-sub">I&rsquo;ll make sure your precious moments are captured, beautifully, on your very special day.</p>
     <div class="hero-actions"><a href="#quiz" class="btn-shine btn-gold" onclick="scrollToQuiz(event)">Check My Availability</a></div>
   </div>
 </section>
@@ -577,15 +595,51 @@
   </div>
 </div>
 
-<!-- AVAILABILITY -->
-<section class="fold3 availability" id="availability">
-  <div class="fold3-bg"></div>
-  <div class="fold3-gradient"></div>
-  <div class="fold3-content">
-    <span class="section-eyebrow reveal" style="color:var(--gold);">No fake scarcity &mdash; just a straight answer</span>
-    <h2 class="fold3-headline reveal reveal-delay-1">Dates I have<br/><em>open.</em></h2>
-    <p class="fold3-sub reveal reveal-delay-2">Send me your date and I&rsquo;ll call you the same day for a quick chat about your plans &mdash; whether it&rsquo;s weeks away or months out.</p>
-    <a href="#quiz" class="btn-shine btn-gold reveal reveal-delay-3" onclick="scrollToQuiz(event)">Check My Date &rarr;</a>
+<!-- RECENT PHOTOSHOOTS -->
+<section class="shoots" id="availability">
+  <div class="shoots-inner">
+    <div class="shoots-head">
+      <span class="section-eyebrow reveal">Recent work</span>
+      <h2 class="section-headline reveal reveal-delay-1">See what my recent<br/><em>photoshoots look like.</em></h2>
+      <p class="section-body reveal reveal-delay-2">A few real weddings, start to finish &mdash; and whatever your date, I&rsquo;ll call you the same day to talk through it.</p>
+    </div>
+    <div class="shoots-grid">
+      <div class="shoot-card reveal">
+        <div class="shoot-collage">
+          <img class="shoot-main" src="/images/weddings/portfolio/197.webp" alt="Bride and groom kissing in a hillside field, veil blowing in the wind" loading="lazy" decoding="async" />
+          <img src="/images/weddings/portfolio/196.webp" alt="Bride and groom exchanging rings on a countryside hillside" loading="lazy" decoding="async" />
+          <img src="/images/weddings/portfolio/198.webp" alt="Reception table setting with eucalyptus and lemon details" loading="lazy" decoding="async" />
+        </div>
+        <div class="shoot-meta"><h3>Hillside &amp; Vineyard</h3><span>Countryside</span></div>
+      </div>
+      <div class="shoot-card reveal reveal-delay-1">
+        <div class="shoot-collage">
+          <img class="shoot-main" src="/images/weddings/portfolio/205.webp" alt="Bride and groom kissing in front of the Sydney Opera House" loading="lazy" decoding="async" />
+          <img src="/images/weddings/portfolio/206.webp" alt="Bride smiling outdoors, holding her bouquet" loading="lazy" decoding="async" />
+          <img src="/images/weddings/portfolio/201.webp" alt="Wedding dress and veil hanging in a sunlit window" loading="lazy" decoding="async" />
+        </div>
+        <div class="shoot-meta"><h3>Sydney Harbour</h3><span>Sydney</span></div>
+      </div>
+      <div class="shoot-card reveal reveal-delay-2">
+        <div class="shoot-collage">
+          <img class="shoot-main" src="/images/weddings/portfolio/215.webp" alt="Bride and groom kissing under a blooming jacaranda tree" loading="lazy" decoding="async" />
+          <img src="/images/weddings/portfolio/211.webp" alt="Bride and groom laughing together, seated on fig tree roots" loading="lazy" decoding="async" />
+          <img src="/images/weddings/portfolio/213.webp" alt="Bride and groom foreheads together, smiling" loading="lazy" decoding="async" />
+        </div>
+        <div class="shoot-meta"><h3>Garden Ceremony</h3><span>Sydney</span></div>
+      </div>
+      <div class="shoot-card reveal reveal-delay-3">
+        <div class="shoot-collage">
+          <img class="shoot-main" src="/images/weddings/portfolio/221.webp" alt="Bride and groom embracing under a rock formation by the sea" loading="lazy" decoding="async" />
+          <img src="/images/weddings/portfolio/222.webp" alt="Bride laughing with a friend by the ocean" loading="lazy" decoding="async" />
+          <img src="/images/weddings/portfolio/225.webp" alt="Bride and groom sharing an emotional hug by the coast" loading="lazy" decoding="async" />
+        </div>
+        <div class="shoot-meta"><h3>Coastal &amp; Clifftop</h3><span>Sydney Coast</span></div>
+      </div>
+    </div>
+    <div class="shoots-cta reveal">
+      <a href="#quiz" class="btn-shine btn-gold" onclick="scrollToQuiz(event)">Check My Date &rarr;</a>
+    </div>
   </div>
 </section>
 
@@ -593,7 +647,7 @@
 <div class="stats">
   <div class="stats-inner">
     <div class="reveal"><div class="stat-number"><em>10+</em></div><div class="stat-label">Years Experience</div></div>
-    <div class="reveal reveal-delay-1"><div class="stat-number"><em>200+</em></div><div class="stat-label">Couples Captured</div></div>
+    <div class="reveal reveal-delay-1"><div class="stat-number"><em>200+</em></div><div class="stat-label">Photoshoots</div></div>
     <div class="reveal reveal-delay-2"><div class="stat-number"><em>130+</em></div><div class="stat-label">5-Star Reviews</div></div>
   </div>
 </div>
@@ -1170,24 +1224,19 @@
   (function () {
     var variants = {
       elopement: {
-        eyebrow: 'Elopement Photography &middot; Sydney &amp; Beyond',
         headline: 'Elopement Photographer<br/><em>Sydney.</em>'
       },
       shortnotice: {
-        eyebrow: 'Short-Notice Wedding Photography &middot; Sydney &amp; Beyond',
         headline: 'Last Minute<br/><em>Wedding Photos.</em>'
       },
       wedding: {
-        eyebrow: 'Wedding Photography &middot; Sydney &amp; Beyond',
         headline: 'Wedding Photographer<br/><em>Sydney.</em>'
       }
     };
     var key = new URLSearchParams(window.location.search).get('ag');
     var variant = key && variants[key];
     if (variant) {
-      var eyebrowEl = document.getElementById('hero-eyebrow');
       var headlineEl = document.getElementById('hero-headline');
-      if (eyebrowEl) eyebrowEl.innerHTML = variant.eyebrow;
       if (headlineEl) headlineEl.innerHTML = variant.headline;
     }
   })();
