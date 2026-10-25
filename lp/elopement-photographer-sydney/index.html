@@ -564,10 +564,10 @@
   <input type="text" name="bot-field" />
   <label>Name<input type="text" name="name" /></label>
   <label>Phone<input type="tel" name="phone" /></label>
-  <label>Planning type<input type="text" name="planning_type" /></label>
-  <label>Wedding date timing<input type="text" name="wedding_date_timing" /></label>
-  <label>Location preference<input type="text" name="location_pref" /></label>
-  <label>Wants planning help<input type="text" name="wants_planning_help" /></label>
+  <label>They are (planning type)<input type="text" name="they_are" /></label>
+  <label>Timing (wedding date)<input type="text" name="timing" /></label>
+  <label>Preferred setting (location)<input type="text" name="preferred_setting" /></label>
+  <label>Has a plan (wants planning help)<input type="text" name="has_a_plan" /></label>
   <label>Page<input type="text" name="page" /></label>
   <label>Ad tracking<input type="text" name="ad_tracking" /></label>
 </form>
@@ -1255,13 +1255,19 @@
     var btn = document.getElementById('q-submit');
     btn.classList.add('is-loading');
 
+    // The lead-tracker sheet's Apps Script only recognises the fixed column
+    // set every other LP's quiz uses (they_are / proposing_to / timing /
+    // has_a_plan / preferred_setting) — it has no idea about this page's own
+    // field names, so submissions under those names write blank/missing rows.
+    // Mapped onto the nearest matching columns until the script itself is
+    // updated to understand elopement-specific fields.
     submitToNetlify('quiz-funnel', {
       name: payload.name,
       phone: payload.phone,
-      planning_type: payload.quiz_planning_type,
-      wedding_date_timing: payload.quiz_wedding_date_timing,
-      location_pref: payload.quiz_location_pref,
-      wants_planning_help: payload.quiz_wants_planning_help,
+      they_are: payload.quiz_planning_type,
+      timing: payload.quiz_wedding_date_timing,
+      preferred_setting: payload.quiz_location_pref,
+      has_a_plan: payload.quiz_wants_planning_help,
       page: 'LP: Elopement',
       ad_tracking: adBits.length ? adBits.join(' · ') : 'Direct — not from an ad'
     }).then(function (delivered) {
