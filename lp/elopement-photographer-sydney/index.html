@@ -567,7 +567,6 @@
   <label>They are (planning type)<input type="text" name="they_are" /></label>
   <label>Timing (wedding date)<input type="text" name="timing" /></label>
   <label>Preferred setting (location)<input type="text" name="preferred_setting" /></label>
-  <label>Has a plan (wants planning help)<input type="text" name="has_a_plan" /></label>
   <label>Page<input type="text" name="page" /></label>
   <label>Ad tracking<input type="text" name="ad_tracking" /></label>
 </form>
@@ -964,7 +963,7 @@
   <div class="quiz-wrap">
 
     <div class="quiz-progress" id="quiz-progress">
-      <div class="quiz-progress-label">Step <span id="quiz-step-num">1</span> of 5</div>
+      <div class="quiz-progress-label">Step <span id="quiz-step-num">1</span> of 4</div>
       <div class="quiz-progress-track"><div class="quiz-progress-fill" id="quiz-progress-fill"></div></div>
     </div>
 
@@ -1051,25 +1050,8 @@
       <button class="quiz-back" onclick="prevStep()">&larr; Back</button>
     </div>
 
-    <!-- STEP 4: planning help -->
+    <!-- STEP 4: contact gate -->
     <div class="quiz-step" data-step="3">
-      <div class="quiz-question">Would you like help <em>planning the day?</em></div>
-      <div class="quiz-hint">Either way, you&rsquo;re in good hands.</div>
-      <div class="quiz-options cols-1">
-        <button class="quiz-opt" onclick="pick('wants_planning_help','Yes')">
-          <span class="quiz-opt-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4 12 14.01l-3-3"/></svg></span>
-          <span class="quiz-opt-label">Yes</span>
-        </button>
-        <button class="quiz-opt" onclick="pick('wants_planning_help','No')">
-          <span class="quiz-opt-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg></span>
-          <span class="quiz-opt-label">No</span>
-        </button>
-      </div>
-      <button class="quiz-back" onclick="prevStep()">&larr; Back</button>
-    </div>
-
-    <!-- STEP 5: contact gate -->
-    <div class="quiz-step" data-step="4">
       <span class="quiz-eyebrow">One last thing</span>
       <div class="quiz-question">Let&rsquo;s <em>get in touch</em></div>
       <div class="quiz-hint">I&rsquo;ll call you the same day.</div>
@@ -1089,7 +1071,7 @@
     </div>
 
     <!-- THANK YOU (quiz) -->
-    <div class="quiz-step" data-step="5" id="quiz-thankyou">
+    <div class="quiz-step" data-step="4" id="quiz-thankyou">
       <div class="quiz-question" style="margin-bottom:4px;">Thank you!</div>
       <div class="quiz-subq" style="margin-bottom:0;">I&rsquo;ll call you today, or first thing tomorrow if it&rsquo;s late.</div>
     </div>
@@ -1125,12 +1107,12 @@
   }
 
   // ============ QUIZ LOGIC ============
-  var quizAnswers = { planning_type: '', wedding_date_timing: '', location_pref: '', wants_planning_help: '' };
+  var quizAnswers = { planning_type: '', wedding_date_timing: '', location_pref: '' };
   var quizStep = 0;
-  var QUIZ_TOTAL = 5;
+  var QUIZ_TOTAL = 4;
 
   // ── GA4 funnel tracking (populates once a GA4 Measurement ID is added in <head>) ──
-  var QUIZ_STEP_NAMES = ['planning_type', 'date_timing', 'location', 'planning_help', 'contact'];
+  var QUIZ_STEP_NAMES = ['planning_type', 'date_timing', 'location', 'contact'];
   var quizStepsSent = {};
   function trackStep(i) {
     if (i < 0 || i >= QUIZ_STEP_NAMES.length || quizStepsSent[i]) return;
@@ -1185,7 +1167,7 @@
   // single-pick steps — auto-advance
   function pick(field, value) {
     quizAnswers[field] = value;
-    if (quizStep < 4) {
+    if (quizStep < 3) {
       showStep(quizStep + 1);
     }
   }
@@ -1235,7 +1217,6 @@
       quiz_planning_type: quizAnswers.planning_type,
       quiz_wedding_date_timing: quizAnswers.wedding_date_timing,
       quiz_location_pref: quizAnswers.location_pref,
-      quiz_wants_planning_help: quizAnswers.wants_planning_help,
       landing_page: 'elopement-quiz-funnel',
       gclid: param('gclid'),
       utm_source: param('utm_source'),
@@ -1267,7 +1248,6 @@
       they_are: payload.quiz_planning_type,
       timing: payload.quiz_wedding_date_timing,
       preferred_setting: payload.quiz_location_pref,
-      has_a_plan: payload.quiz_wants_planning_help,
       page: 'LP: Elopement',
       ad_tracking: adBits.length ? adBits.join(' · ') : 'Direct — not from an ad'
     }).then(function (delivered) {
@@ -1283,7 +1263,7 @@
         gtag('event', 'generate_lead', { currency: 'USD', value: 1.0 });
       }
       setTimeout(function() {
-        showStep(5); // thank-you step
+        showStep(4); // thank-you step
       }, 850);
     });
   }
