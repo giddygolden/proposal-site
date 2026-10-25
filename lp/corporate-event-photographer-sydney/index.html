@@ -475,6 +475,23 @@
   .g-cta-arrow { font-size: 0.74rem; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); }
   .gallery-cta { text-align: center; margin-top: 52px; }
 
+  /* RECENT EVENTS (collages grouped by event) */
+  .shoots { padding: 110px 40px; background: var(--cream); }
+  .shoots-inner { max-width: 1200px; margin: 0 auto; }
+  .shoots-head { text-align: center; max-width: 640px; margin: 0 auto 56px; }
+  .shoots-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 36px; }
+  .shoot-collage { display: grid; grid-template-columns: 1.3fr 1fr; grid-template-rows: 1fr 1fr; gap: 6px; aspect-ratio: 4/3; border-radius: 4px; overflow: hidden; }
+  .shoot-collage img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .shoot-collage .shoot-main { grid-row: 1 / 3; }
+  .shoot-meta { display: flex; align-items: baseline; justify-content: space-between; margin-top: 16px; gap: 12px; }
+  .shoot-meta h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 400; color: var(--ink); }
+  .shoot-meta span { font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--warm-mid); white-space: nowrap; }
+  .shoots-cta { text-align: center; margin-top: 56px; }
+  @media (max-width: 768px) {
+    .shoots { padding: 80px 24px; }
+    .shoots-grid { grid-template-columns: 1fr; gap: 32px; }
+  }
+
   /* SERVICES */
   .services { padding: 100px 40px; background: var(--white); }
   .services-inner { max-width: 1140px; margin: 0 auto; }
@@ -672,10 +689,10 @@
   <div class="hero-bg" style="background-image:url('/images/site/events/event-isc-gala-host-podium-pointing.jpg'); background-position: center 20%;"></div>
   <div class="hero-gradient"></div>
   <div class="hero-content">
-    <p class="hero-eyebrow" id="hero-eyebrow">Corporate Event Photography &middot; Sydney &amp; Beyond</p>
-    <h1 class="hero-headline" id="hero-headline">You fill the room,<br/><em>I&rsquo;ll handle the rest.</em></h1>
-    <p class="hero-sub" id="hero-sub" style="margin-top:-18px; margin-bottom:34px; font-size:1.05rem; font-weight:300; line-height:1.7; color:rgba(255,255,255,0.85); max-width:52ch; opacity:0; animation:fadeUp 0.8s 0.6s forwards;">I photograph corporate events &mdash; conferences, galas and award nights &mdash; capturing the speakers, the candid moments and the room itself, with a gallery turned around fast enough for your recap post.</p>
-    <div class="hero-actions"><a href="#contact" class="btn-shine btn-gold" onclick="scrollToQuiz(event)">Plan My Coverage: It&rsquo;s Free</a><a href="#how" class="btn-shine btn-ghost">See How It Works</a></div>
+    <p class="hero-eyebrow" id="hero-eyebrow">Joshua Sharman | Sydney &amp; Beyond</p>
+    <h1 class="hero-headline" id="hero-headline">Event Photographer<br/><em>Sydney &amp; Beyond.</em></h1>
+    <p class="hero-sub" id="hero-sub" style="margin-top:-18px; margin-bottom:34px; font-size:1.05rem; font-weight:300; line-height:1.7; color:rgba(255,255,255,0.85); max-width:52ch; opacity:0; animation:fadeUp 0.8s 0.6s forwards;">Specialising in capturing the energy, people and key moments of your event &mdash; galas, conferences, celebrations and everything between.</p>
+    <div class="hero-actions"><a href="#contact" class="btn-shine btn-gold" onclick="scrollToQuiz(event)">Get a Free Quote</a><a href="#how" class="btn-shine btn-ghost">See How It Works</a></div>
   </div>
 </section>
 
@@ -686,24 +703,19 @@
   (function () {
     var variants = {
       core: {
-        eyebrow: 'Corporate Event Photography &middot; Sydney &amp; Beyond',
-        headline: 'Corporate event photography,<br/><em>you fill the room.</em>'
+        headline: 'Event Photography,<br/><em>done properly.</em>'
       },
       conference: {
-        eyebrow: 'Conference Photography &middot; Sydney &amp; Beyond',
-        headline: 'Conference photography,<br/><em>done properly.</em>'
+        headline: 'Conference Photography,<br/><em>done properly.</em>'
       },
       commercial: {
-        eyebrow: 'Corporate &amp; Commercial Photography &middot; Sydney &amp; Beyond',
-        headline: 'Corporate &amp; commercial<br/><em>event photography.</em>'
+        headline: 'Corporate &amp; Commercial<br/><em>Event Photography.</em>'
       }
     };
     var key = new URLSearchParams(window.location.search).get('ag');
     var variant = key && variants[key];
     if (variant) {
-      var eyebrowEl = document.getElementById('hero-eyebrow');
       var headlineEl = document.getElementById('hero-headline');
-      if (eyebrowEl) eyebrowEl.innerHTML = variant.eyebrow;
       if (headlineEl) headlineEl.innerHTML = variant.headline;
     }
   })();
@@ -955,6 +967,54 @@
   <span class="section-eyebrow reveal">Ready when you are</span>
   <h2 class="section-headline reveal reveal-delay-1" style="color:var(--white); margin-bottom:30px;">Dates fill fast.<br/><em>Let&rsquo;s lock yours in.</em></h2>
   <a href="#contact" class="btn-shine btn-gold reveal reveal-delay-2" onclick="scrollToQuiz(event)">Plan My Coverage &rarr;</a>
+</section>
+
+<!-- RECENT EVENTS -->
+<section class="shoots" id="recent-events">
+  <div class="shoots-inner">
+    <div class="shoots-head">
+      <span class="section-eyebrow reveal">Recent work</span>
+      <h2 class="section-headline reveal reveal-delay-1">A glimpse into<br/><em>recent events.</em></h2>
+      <p class="section-body reveal reveal-delay-2">Galas, conferences, panels and private celebrations &mdash; whatever the room, I turn up, blend in and come away with the moments that actually mattered.</p>
+    </div>
+    <div class="shoots-grid">
+      <div class="shoot-card reveal">
+        <div class="shoot-collage">
+          <img class="shoot-main" src="/images/site/events/event-isc-gala-host-podium-pointing.jpg" alt="Host addressing the room from the podium at an awards gala" loading="lazy" decoding="async" />
+          <img src="/images/site/events/event-isc-gala-dancers-performance.webp" alt="Performers on stage during a gala opening ceremony" loading="lazy" decoding="async" />
+          <img src="/images/site/events/event-isc-stage-group-full.jpg" alt="Full audience of over 100 guests under stage lighting" loading="lazy" decoding="async" />
+        </div>
+        <div class="shoot-meta"><h3>Awards Gala</h3><span>Sydney CBD</span></div>
+      </div>
+      <div class="shoot-card reveal reveal-delay-1">
+        <div class="shoot-collage">
+          <img class="shoot-main" src="/images/site/events/event-conference-podium-presentation.jpg" alt="Speaker presenting from a lectern with a data slide on screen" loading="lazy" decoding="async" />
+          <img src="/images/site/events/event-conference-speaker-podium.jpg" alt="Conference speaker addressing the audience" loading="lazy" decoding="async" />
+          <img src="/images/site/events/event-conference-networking.jpg" alt="Attendees networking between sessions" loading="lazy" decoding="async" />
+        </div>
+        <div class="shoot-meta"><h3>Conference</h3><span>Full day</span></div>
+      </div>
+      <div class="shoot-card reveal reveal-delay-2">
+        <div class="shoot-collage">
+          <img class="shoot-main" src="/images/site/events/event-lorourke-panel-leather-chairs.jpg" alt="Three panellists in conversation on leather armchairs" loading="lazy" decoding="async" />
+          <img src="/images/site/events/event-lorourke-group-stage.jpg" alt="Panel group on stage during a discussion" loading="lazy" decoding="async" />
+          <img src="/images/site/events/event-lorourke-panel-01.jpg" alt="Panellist mid-conversation during a discussion" loading="lazy" decoding="async" />
+        </div>
+        <div class="shoot-meta"><h3>Panel Discussion</h3><span>Sydney</span></div>
+      </div>
+      <div class="shoot-card reveal">
+        <div class="shoot-collage">
+          <img class="shoot-main" src="/images/site/events/event-birthday-cake-candles.jpg" alt="Guest blowing out candles on a flower-topped cake at a birthday party" loading="lazy" decoding="async" />
+          <img src="/images/site/events/event-golf-day-speaker.jpg" alt="Speaker addressing attendees at a corporate golf day" loading="lazy" decoding="async" />
+          <img src="/images/site/events/event-cocktail-fire-performer.webp" alt="Fire performer entertaining guests at a rooftop cocktail event" loading="lazy" decoding="async" />
+        </div>
+        <div class="shoot-meta"><h3>Celebrations</h3><span>Private events</span></div>
+      </div>
+    </div>
+    <div class="shoots-cta reveal">
+      <a href="#contact" class="btn-shine btn-gold" onclick="scrollToQuiz(event)">Plan My Coverage</a>
+    </div>
+  </div>
 </section>
 
 <!-- GALLERY -->
